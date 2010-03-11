@@ -1,0 +1,1 @@
+<?php include(SIMPLEDARK_TEMPLATES . '/singular.php'); ?>

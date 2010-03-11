@@ -1,0 +1,22 @@
+.wp-pagenavi {
+	*position:relative;
+}
+
+.wp-pagenavi span, .wp-pagenavi a {
+	*display: inline;
+	*vertical-align:middle;
+	padding:0 3px 2px;
+}
+
+.wp-pagenavi span.pages {
+	color:#999;
+}
+
+.wp-pagenavi .current {
+	*position:relative;
+	*top:-1px;
+	padding:4px;
+	color:#666;
+	background-color:#181818;
+	border:1px solid #333;
+}
