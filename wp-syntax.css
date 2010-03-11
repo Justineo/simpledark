@@ -1,0 +1,60 @@
+.wp_syntax {
+  position:relative;
+  color: #100;
+  background: #2c2c2c;
+  border: 1px solid #3c3c3c;
+  margin: 0 0 1.5em 0;
+  overflow: auto;
+}
+
+.wp_syntax_lang {
+  background-color:#3c3c3c;
+  position:absolute;
+  right:0;
+  padding:1px 10px 3px;
+  color:#ddd; font-size:9px; font-weight:700;
+  text-transform:uppercase;
+  -moz-border-radius-bottomleft:5px;
+  -webkit-border-bottom-left-radius:5px;
+  border-radius-bottomleft:5px;
+}
+
+.wp_syntax table, .wp_syntax td, .wp_syntax th {
+	border:none;
+}
+
+/* IE FIX */
+.wp_syntax {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: expression(this.scrollWidth > this.offsetWidth ? 15 : 0);
+  width: 99%;
+}
+
+.wp_syntax table {
+  border-collapse: collapse;
+}
+
+.wp_syntax div, .wp_syntax td {
+  vertical-align: top;
+  padding: 2px 4px;
+}
+
+.wp_syntax .line_numbers {
+  text-align: right;
+  background: #3c3c3c;
+  color: #eee;
+  overflow: visible;
+}
+
+/* potential overrides for other styles */
+.wp_syntax pre {
+  margin: 0;
+  width: auto;
+  float: none;
+  clear: none;
+  overflow: visible;
+  font-size: 12px;
+  line-height: 1.333;
+  white-space: pre;
+}

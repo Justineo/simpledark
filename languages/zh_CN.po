@@ -1,0 +1,528 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SimpleDark v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-10 19:46+0800\n"
+"PO-Revision-Date: 2010-03-10 22:18+0800\n"
+"Last-Translator: Justice <justice360@gmail.com>\n"
+"Language-Team: lync.in\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:7
+#: header.php:7
+msgid "/style.css"
+msgstr "/style.zh_CN.css"
+
+#: 404.php:13
+msgid "Sorry, the page you are looking for cannot be found."
+msgstr "对不起，您所访问的页面不存在。"
+
+#: 404.php:15
+#, php-format
+msgid "The requested URL <code>%s</code> was not found on this server."
+msgstr "服务器上找不到您请求的地址 <code>%s</code> 。"
+
+#: 404.php:16
+msgid "It is possible that the address is incorrect, or that the page no longer exists."
+msgstr "这有可能因为您输入的地址有误，也可能因为页面被删除了。"
+
+#: 404.php:17
+msgid "We suggest you to try these links:"
+msgstr "您不妨尝试点击下面的链接："
+
+#: 404.php:19
+msgid "Go back to last page"
+msgstr "返回上一个您访问过的页面"
+
+#: 404.php:20
+#, php-format
+msgid "Go to the home page of %s"
+msgstr "回到 %s 的主页"
+
+#: ajax-comments-post.php:66
+msgid "Please don't send duplicate comment."
+msgstr "请不要发送重复的评论。"
+
+#: ajax-comments-post.php:95
+msgid "You are posting comments too quickly."
+msgstr "您提交评论的速度过快了。"
+
+#: ajax-comments-post.php:108
+msgid "Error: comment ID not found."
+msgstr "错误：未找到该评论 ID"
+
+#: ajax-comments-post.php:113
+msgid "Sorry, comments are closed for this item."
+msgstr "对不起，这个项目的评论已被关闭。"
+
+#: ajax-comments-post.php:143
+msgid "Sorry, you must be logged in to post a comment."
+msgstr "对不起，您必须登陆以后才能发表评论。"
+
+#: ajax-comments-post.php:151
+msgid "Error: please fill the required fields (name, email)."
+msgstr "错误：请填写必须的信息(名字、电子邮件)。"
+
+#: ajax-comments-post.php:154
+msgid "Error: please enter a valid email address."
+msgstr "错位：请填写一个合法的电子邮件地址。"
+
+#: ajax-comments-post.php:159
+msgid "Error: please type a comment."
+msgstr "错误：请输入一条评论。"
+
+#: ajax-comments-post.php:185
+msgid "Comment submitted!"
+msgstr "评论已提交！"
+
+#: ajax-posts-load.php:18
+#: functions.php:160
+#: functions.php:161
+msgid "Sticky"
+msgstr "置顶"
+
+#: ajax-posts-load.php:20
+#: index.php:22
+#: templates/singular.php:13
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "%s 的永久链接"
+
+#: ajax-posts-load.php:21
+#: index.php:23
+#: templates/singular.php:14
+msgid " posted in "
+msgstr " 发表于 "
+
+#: ajax-posts-load.php:21
+#: index.php:23
+#: templates/singular.php:14
+msgid "X Comments"
+msgstr "评论数未知"
+
+#: ajax-posts-load.php:21
+#: index.php:23
+#: templates/singular.php:14
+msgid "No Comments"
+msgstr "尚无评论"
+
+#: ajax-posts-load.php:21
+#: index.php:23
+#: templates/singular.php:14
+msgid "1 Comment"
+msgstr "1 条评论"
+
+#: ajax-posts-load.php:21
+#: index.php:23
+#: templates/singular.php:14
+msgid "% Comments"
+msgstr "% 条评论"
+
+#: ajax-posts-load.php:21
+#: index.php:23
+#: templates/singular.php:14
+msgid "Comments Off"
+msgstr "评论关闭"
+
+#: ajax-posts-load.php:21
+#: index.php:23
+#: templates/comment.php:18
+#: templates/singular.php:14
+#: templates/thread-comment.php:18
+msgid "Edit"
+msgstr "编辑"
+
+#: ajax-posts-load.php:23
+#: index.php:25
+msgid "Read More"
+msgstr "阅读全部"
+
+#: ajax-posts-load.php:41
+#: index.php:43
+msgid "Older Posts"
+msgstr "较旧的文章"
+
+#: ajax-posts-load.php:41
+#: index.php:43
+msgid "Newer Posts"
+msgstr "较新的文章"
+
+#: ajax-posts-load.php:51
+#, php-format
+msgid "No posts found. Why not <a title=\"Go Back\" href=\"%s\">go back to the last page</a> ?"
+msgstr "没有找到符合条件的文章。建议您<a title=\"返回\" href=\"%s\">返回前一个访问过的页面</a>。"
+
+#: comments.php:8
+msgid "Comments"
+msgstr "回复"
+
+#: comments.php:8
+#: comments.php:113
+msgid "X"
+msgstr "未知"
+
+#: comments.php:12
+msgid "You must enter the password to view the comments."
+msgstr "您必须输入密码后才能查看评论。"
+
+#: comments.php:24
+msgid "No comments yet."
+msgstr "尚无评论。"
+
+#: comments.php:40
+msgid "Leave a Reply"
+msgstr "添加回复"
+
+#: comments.php:40
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "回复 %s"
+
+#: comments.php:47
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "您必须<a href=\"%s\">登陆</a>后才能发表评论。"
+
+#: comments.php:56
+#, php-format
+msgid "Logged in as %s."
+msgstr "%s 已经登陆。"
+
+#: comments.php:56
+msgid "Manage Profile"
+msgstr "管理账户"
+
+#: comments.php:56
+msgid "Logout"
+msgstr "登出"
+
+#: comments.php:61
+#, php-format
+msgid "Welcome back, %s."
+msgstr "欢迎回来，%s。"
+
+#: comments.php:61
+msgid "Change"
+msgstr "修改"
+
+#: comments.php:68
+msgid "Name"
+msgstr "名字"
+
+#: comments.php:72
+msgid "Email"
+msgstr "电子邮件"
+
+#: comments.php:76
+msgid "Website"
+msgstr "网站"
+
+#: comments.php:83
+msgid "<strong>Allowed Tags</strong> - You may use these tags in your comment."
+msgstr "<strong>允许使用的标签</strong> - 您可以在评论中使用如下的标签。"
+
+#: comments.php:93
+msgid "Submit Comment"
+msgstr "提交评论"
+
+#: comments.php:103
+msgid "Comments are closed."
+msgstr "评论已关闭。"
+
+#: comments.php:113
+msgid "Pingbacks"
+msgstr "引用通告"
+
+#: comments.php:131
+msgid "No pingbacks yet."
+msgstr "尚无引用通告。"
+
+#: footer.php:4
+#, php-format
+msgid "Powered by %s"
+msgstr "由 %s 驱动"
+
+#: footer.php:4
+#, php-format
+msgid "Theme %1$s by %2$s"
+msgstr "主题 %1$s 由 %2$s 提供"
+
+#: footer.php:9
+#, php-format
+msgid "Licensed under a <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a>"
+msgstr "采用 <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a> 许可证"
+
+#: footer.php:9
+msgid "License Details"
+msgstr "许可证详情"
+
+#: functions.php:62
+msgid "F, Y"
+msgstr "Y年n月"
+
+#: functions.php:65
+msgid "Y"
+msgstr "Y年"
+
+#: functions.php:95
+msgid "Untitled"
+msgstr "无标题"
+
+#: functions.php:154
+msgid "Protected"
+msgstr "密码保护"
+
+#: functions.php:156
+msgid "Private"
+msgstr "私人"
+
+#: functions.php:159
+msgid "Announcement"
+msgstr "公告"
+
+#: index.php:53
+#, php-format
+msgid "No posts found. Why not <a title=\"Go Back\" href=\"%1$s\"%2$s>go back to the last page</a> ?"
+msgstr "没有找到符合条件的文章。 建议您<a title=\"返回\" href=\"%1$s\"%2$s>返回上一个页面</a>。"
+
+#: templates/comment.php:18
+#: templates/thread-comment.php:18
+msgid "Reply to this comment"
+msgstr "回复这条评论"
+
+#: templates/comment.php:18
+#: templates/thread-comment.php:18
+msgid "Reply"
+msgstr "回复"
+
+#: templates/comment.php:20
+#: templates/thread-comment.php:20
+msgid "Your comment is awaiting moderation."
+msgstr "您的评论正在等待审核。"
+
+#: templates/content-header.php:7
+#, php-format
+msgid "Search results for <strong>&ldquo;%s&rdquo;</strong>"
+msgstr "<strong>&ldquo;%s&rdquo;</strong>的搜索结果"
+
+#: templates/content-header.php:8
+#, php-format
+msgid "Posts under <strong>%s</strong>"
+msgstr "类别 <strong>%s</strong> 下的文章"
+
+#: templates/content-header.php:9
+#, php-format
+msgid "Posts tagged <strong>%s</strong>"
+msgstr "包含标签 <strong>%s</strong> 的文章"
+
+#: templates/content-header.php:10
+#, php-format
+msgid "Posts by <strong>%s</strong>"
+msgstr "<strong>%s</strong> 发表的文章"
+
+#: templates/content-header.php:11
+#, php-format
+msgid "Archives on <strong>%s</strong>"
+msgstr "<strong>%s</strong>的文章归档"
+
+#: templates/content-header.php:12
+#: templates/content-header.php:13
+#, php-format
+msgid "Archives in <strong>%s</strong>"
+msgstr "<strong>%s</strong>的文章归档"
+
+#: templates/content-header.php:14
+msgid "Archives page"
+msgstr "归档页面"
+
+#: templates/singular.php:19
+msgid "Pages:"
+msgstr "页："
+
+#: templates/singular.php:21
+msgid "Next Page"
+msgstr "下一页"
+
+#: templates/singular.php:22
+msgid "Previous Page"
+msgstr "上一页"
+
+#: templates/singular.php:28
+msgid "NO TAGS"
+msgstr "没有标签"
+
+#: utilities/admin.php:21
+#: utilities/admin.php:48
+msgid "SimpleDark Options"
+msgstr "SimpleDark 选项"
+
+#: utilities/admin.php:23
+msgid "Check here for more information."
+msgstr "访问此处获取更多信息。"
+
+#: utilities/admin.php:55
+msgid "Changes have been saved."
+msgstr "您的修改已经被保存。"
+
+#: utilities/admin.php:65
+msgid "AJAX"
+msgstr "AJAX"
+
+#: utilities/admin.php:68
+msgid "Enable AJAX (paging, comment submission, search, etc.)"
+msgstr "启用 AJAX (翻页、评论提交和搜索等)"
+
+#: utilities/admin.php:72
+msgid "Post Tags"
+msgstr "文章标签"
+
+#: utilities/admin.php:75
+msgid "Show post tags on archive pages (home, archive, etc.)"
+msgstr "在归档页面(主页、归档页等)显示文章标签"
+
+#: utilities/admin.php:79
+msgid "Pingbacks and Trackbacks"
+msgstr "引用通告"
+
+#: utilities/admin.php:82
+msgid "Hide pingbacks and trackbacks"
+msgstr "隐藏引用通告"
+
+#: utilities/admin.php:86
+msgid "Allowed Tags"
+msgstr "允许的标签"
+
+#: utilities/admin.php:89
+msgid "Show allowed tags for comments"
+msgstr "显示在评论中允许插入的标签列表"
+
+#: utilities/admin.php:93
+msgid "Comment Images"
+msgstr "评论图片"
+
+#: utilities/admin.php:96
+msgid "Comments can include the &lt;img&gt; tag"
+msgstr "允许在评论中使用 &lt;img&gt; 标签"
+
+#: utilities/admin.php:100
+msgid "Comment Submit Shortcut"
+msgstr "评论提交快捷键"
+
+#: utilities/admin.php:103
+msgid "Use Ctrl+Enter to submit comment"
+msgstr "使用 Ctrl+Enter 键提交评论"
+
+#: utilities/admin.php:107
+msgid "Search Form Text"
+msgstr "搜索框文字"
+
+#: utilities/admin.php:108
+msgid "Default text of the search form"
+msgstr "搜索框中默认显示的文字。"
+
+#: utilities/admin.php:111
+msgid "Footer License"
+msgstr "页脚许可证"
+
+#: utilities/admin.php:114
+msgid "Show footer license"
+msgstr "在页脚处显示许可证信息"
+
+#: utilities/admin.php:118
+msgid "License Name"
+msgstr "许可证名称"
+
+#: utilities/admin.php:119
+msgid "The anchor text of the license to be displayed"
+msgstr "需要显示的许可证链接的文字"
+
+#: utilities/admin.php:122
+msgid "License URL"
+msgstr "许可证 URL"
+
+#: utilities/admin.php:123
+msgid "A link to the license details"
+msgstr "指向许可证详情的链接地址"
+
+#: utilities/admin.php:126
+msgid "Custom Footer Information"
+msgstr "自定义页脚信息"
+
+#: utilities/admin.php:129
+msgid "Show custom information in the footer"
+msgstr "在页脚处显示自定义信息"
+
+#: utilities/admin.php:133
+msgid "Custom Footer Information Code"
+msgstr "页脚自定义代码"
+
+#: utilities/admin.php:134
+msgid "Write your custom HTML code to display in the footer"
+msgstr "编辑需要在页脚显示的自定义信息的 HTML 代码"
+
+#: utilities/admin.php:139
+msgid "Save Changes"
+msgstr "保存修改"
+
+#: utilities/admin.php:157
+msgid "Search..."
+msgstr "搜索..."
+
+#: utilities/ajax-comments.php:77
+msgid "Cannot retrieve the comment."
+msgstr "无法获取该评论"
+
+#: utilities/widgets.php:5
+msgid "A search form for your blog"
+msgstr "为您的博客添加一个搜索框"
+
+#: utilities/widgets.php:6
+msgid "SimpleDark Search"
+msgstr "SimpleDark 搜索"
+
+#: utilities/widgets.php:37
+#: utilities/widgets.php:82
+msgid "Title:"
+msgstr "标题："
+
+#: utilities/widgets.php:47
+msgid "An RSS feed widget for your blog"
+msgstr "为您的博客添加 RSS 订阅小工具"
+
+#: utilities/widgets.php:48
+msgid "SimpleDark Feed"
+msgstr "SimpleDark 订阅源"
+
+#: utilities/widgets.php:53
+msgid "RSS Feed"
+msgstr "RSS 源"
+
+#: utilities/widgets.php:54
+#: utilities/widgets.php:68
+msgid "Subscribe Updates"
+msgstr "订阅更新"
+
+#: utilities/widgets.php:83
+msgid "Feed Text:"
+msgstr "订阅源文字："
+
+#: utilities/widgets.php:84
+msgid "Feed URL:"
+msgstr "订阅源地址："
+
+#~ msgid "Next page"
+#~ msgstr "下一页"
+
+#~ msgid "Previous page"
+#~ msgstr "上一页"
+
+#~ msgid "Page %1$d of %2$d"
+#~ msgstr "第%1$d页 共%2$d页"
