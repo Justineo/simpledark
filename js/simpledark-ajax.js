@@ -294,7 +294,7 @@ function loadContent(content, contentSection, fixPaginatorPlugin, callback) {
 		contentSection.html(content);
 		
 		//fix for Paginator after AJAX
-		if(fixPaginatorPlugin)
+		if(fixPaginatorPlugin && jQuery('#paginator').length > 0)
 			fixPaginator(content);
 
 		processContent();
