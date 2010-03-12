@@ -271,14 +271,14 @@ body {
 
 			.entry {
 				padding:10px;
-				color:#ccc; line-height:1.5;
+				color:#bbb; line-height:1.5;
 				overflow:hidden;
 				width:600px;
 				_zoom:1;
 			}
 
 				.entry h1, .entry h2, .entry h3, .entry h4, .entry h5, .entry h6 {
-					text-shadow:0 -1px 0 #111;
+					color:#eee; text-shadow:0 -1px 0 #111;
 				}
 
 				.entry p {

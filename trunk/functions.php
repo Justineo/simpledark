@@ -45,23 +45,15 @@ simpledark_register_sidebar();
 add_action('widgets_init', 'simpledark_load_widgets');
 
 function simpledark_scripts() {
-	global $wp_scripts;
-	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', null, '1.4.2');
-	wp_enqueue_script('scrollto', get_bloginfo('template_directory') . '/js/scrollto.min.js', 'jquery');
+	if(!is_admin()) {
+		global $wp_scripts;
+		wp_deregister_script('jquery');
+		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', null, '1.4.2');
+		wp_enqueue_script('scrollto', get_bloginfo('template_directory') . '/js/scrollto.min.js', 'jquery');
+	}
 }
 add_action('wp_print_scripts', 'simpledark_scripts');
-/*
-function simpledark_remove_scripts() {
-	global $wp_scripts;
-	if (!is_a($wp_scripts, 'WP_Scripts')) {
-		$wp_scripts = new WP_Scripts();
-	}
-	$handles = array('jquery');
-	$wp_scripts->remove( $handles );
-}
-add_action('wp_print_scripts', 'simpledark_remove_scripts', 100);
-*/
+
 // $type - 'time', 'date', 'datetime', 'day', 'month', 'year'
 function simpledark_time_format($type) {
 	$options = &$GLOBALS['simpledark_options'];
