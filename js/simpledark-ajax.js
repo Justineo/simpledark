@@ -271,7 +271,8 @@ function ajaxSearch(url) {
 	function searchSuccess(data) {
 		var content = data;
 		contentSection = jQuery('#content');
-		loadContent(content, contentSection, true);
+		if(searched)
+			loadContent(content, contentSection, true);
 	}
 
 	function searchError() {
@@ -404,6 +405,7 @@ jQuery(document).ready(function() {
 					loadContent(contentCache, jQuery('#content'), true, function() {
 						sInput.focus();
 					});
+					jQuery('#search-form span.processing').remove();
 					searched = false;
 				}
 				currentKey = s;

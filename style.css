@@ -657,6 +657,10 @@ body {
 				padding-bottom:2px;
 			}
 
+			.pagenavi .previous-page, .pagenavi .next-page {
+				font-size:12px;
+			}
+
 			.pagenavi .previous-page, .commentnavi .previous-page {
 				float:left;
 			}
