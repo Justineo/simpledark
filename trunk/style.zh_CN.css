@@ -1,7 +1,7 @@
 /*
 Theme Name: SimpleDark
 Description: You can <strong><a href="themes.php?page=SimpleDarkAdmin">configure SimpleDark here</a></strong> or visit <a href="http://lync.in/simpledark">Lync.in</a> for further support. SimpleDark was designed and developed by <a href="http://lync.in/">Justice</a> and is licensed under the <a href="http://www.opensource.org/licenses/gpl-license.php">GPL</a>.
-Version: 1.0.2
+Version: 1.0.4
 Author: Justice
 Author URI: http://lync.in/
 Tags: dark, two-columns, fixed-width, theme-options, translation-ready
@@ -113,7 +113,7 @@ img {
 
 body {
 	background:#262626 url(images/bg.png) repeat-x;
-	text-align:center; color:#ccc;
+	text-align:center; color:#bbb;
 }
 
 #page {
@@ -273,7 +273,7 @@ body {
 
 			.entry {
 				padding:10px;
-				color:#bbb; line-height:1.5;
+				line-height:1.5;
 				overflow:hidden;
 				width:600px;
 				_zoom:1;
@@ -366,6 +366,14 @@ body {
 					display:block;
 					-moz-box-shadow:0 0 5px #000;
 					-webkit-box-shadow:0 0 5px #000;
+				}
+
+				.entry del {
+					color:#777;
+				}
+
+				.entry ins {
+					color:#bcdbcd; text-decoration:none;
 				}
 
 			.post-pages {
