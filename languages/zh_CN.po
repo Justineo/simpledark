@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimpleDark v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-10 19:46+0800\n"
-"PO-Revision-Date: 2010-03-10 22:18+0800\n"
+"POT-Creation-Date: 2010-03-14 16:59+0800\n"
+"PO-Revision-Date: 2010-03-14 17:00+0800\n"
 "Last-Translator: Justice <justice360@gmail.com>\n"
 "Language-Team: lync.in\n"
 "MIME-Version: 1.0\n"
@@ -84,8 +84,8 @@ msgid "Comment submitted!"
 msgstr "评论已提交！"
 
 #: ajax-posts-load.php:18
-#: functions.php:160
-#: functions.php:161
+#: functions.php:181
+#: functions.php:182
 msgid "Sticky"
 msgstr "置顶"
 
@@ -264,27 +264,32 @@ msgstr "采用 <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a> 许可证"
 msgid "License Details"
 msgstr "许可证详情"
 
-#: functions.php:62
+#: functions.php:72
 msgid "F, Y"
 msgstr "Y年n月"
 
-#: functions.php:65
+#: functions.php:75
 msgid "Y"
 msgstr "Y年"
 
-#: functions.php:95
+#: functions.php:105
 msgid "Untitled"
 msgstr "无标题"
 
-#: functions.php:154
+#: functions.php:114
+#, php-format
+msgid "Posts by %s"
+msgstr "由 %s 发布"
+
+#: functions.php:175
 msgid "Protected"
 msgstr "密码保护"
 
-#: functions.php:156
+#: functions.php:177
 msgid "Private"
 msgstr "私人"
 
-#: functions.php:159
+#: functions.php:180
 msgid "Announcement"
 msgstr "公告"
 

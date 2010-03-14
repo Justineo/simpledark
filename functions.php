@@ -106,6 +106,17 @@ function simpledark_the_title($title) {
 }
 add_filter('the_title', 'simpledark_the_title', 10);
 
+function simpledark_get_the_author_posts_link() {
+	global $authordata;
+	$link = sprintf(
+		'<a href="%1$s" title="%2$s">%3$s</a>',
+		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
+		esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
+		get_the_author()
+	);
+	return apply_filters( 'the_author_posts_link', $link );
+}
+
 function simpledark_clear_title_format() {
 	return '%s';
 }
