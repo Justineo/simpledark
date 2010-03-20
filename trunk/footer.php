@@ -16,9 +16,10 @@
 </div>
 </div><!-- page end -->
 <div id="fixed-nav"><div class="buttons"><a class="top" href="#header"></a><?php if(is_single() || is_page()) { ?><a class="cmnts" href="#comments"></a><?php } ?><a class="bottom" href="#footer"></a></div></div>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/simpledark-base.min.js<?php simpledark_base_params(); ?>"></script>
+<?php simpledark_script_params($options['enable_ajax']); ?>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/simpledark-base.min.js"></script>
 <?php if($options['enable_ajax']) { ?>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/simpledark-ajax.min.js<?php simpledark_ajax_params(); ?>"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/simpledark-ajax.min.js"></script>
 <?php } ?>
 <?php wp_footer(); ?>
 </body>
