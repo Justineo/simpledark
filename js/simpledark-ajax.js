@@ -1,7 +1,5 @@
 /* <![CDATA[ */
 
-var ajaxParams = extractParams();
-
 /* use AJAX to submit comment */
 function ajaxSubmitComment() {
 	var form = jQuery('#comment-form');
@@ -14,7 +12,7 @@ function ajaxSubmitComment() {
 	params['comment_post_ID'] = form.find('#comment_post_ID').val();
 	params['comment_parent'] = form.find('#comment_parent').val();
 	jQuery.ajax({
-		url: baseParams['tmpldir'] + '/ajax-comments-post.php',
+		url: scriptParams['tmpldir'] + '/ajax-comments-post.php',
 		type: 'POST',
 		data: params,
 		dataType: 'html',
@@ -53,7 +51,7 @@ function ajaxSubmitComment() {
 		countspan.animate({opacity:0}, 500, function() {
 			jQuery(this).text(countspan.text() - 0 + 1).animate({opacity:1}, 500).removeAttr('style');
 		});
-		if(RCJS) { RCJS.page('http://localhost/unborn/',ajaxParams['rcparams'],0,'Loading'); }
+		if(RCJS) { RCJS.page('http://localhost/unborn/',scriptParams['rcparams'],0,'Loading'); }
 		showMessage(content[1], function() {
 			jQuery('#author, #email, #url, #comment, .entry .textbox, #submit-button').animate({ opacity: 1 }, 500).removeAttr('style').removeAttr('disabled');
 		});
@@ -61,7 +59,7 @@ function ajaxSubmitComment() {
 
 	function appendCommentToList(data) {
 		var list;
-		if(!ajaxParams['threadcmnts']) {
+		if(!scriptParams['threadcmnts']) {
 			list = jQuery('ol.comment-list').append(data);
 		} else {
 			var respond = jQuery('#respond');
@@ -93,7 +91,7 @@ function ajaxSubmitComment() {
 /* use AJAX to get comment */
 function ajaxGetComment(id, tooltip, callback) {
 	jQuery.ajax({
-		url: baseParams['blogurl'] + '?action=cget_ajax&id=' + id,
+		url: scriptParams['blogurl'] + '?action=cget_ajax&id=' + id,
 		type: 'get',
 		dataType: 'html',
 		beforeSend: commentGetting,

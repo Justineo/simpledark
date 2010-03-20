@@ -188,38 +188,41 @@ function simpledark_extra_post_meta() {
 	}
 }
 
-function simpledark_base_params() {
-	$params = '?blogurl=';
-	$params .= urlencode(get_bloginfo('url'));
-	$params .= '&amp;tmpldir=';
-	$params .= urlencode(get_bloginfo('template_directory'));
-	echo $params;
-}
-
-function simpledark_ajax_params() {
-	$params = "?";
-	if(function_exists('wp_recentcomments')) {
-		$options = get_option('widget_recentcomments');
-		$args_binding = 'limit--' . $options['number']
-					. '|length--' . $options['length']
-					. '|post--' . ($options['post'] ? 'true' : 'false')
-					. '|pingback--' . ($options['pingback'] ? 'true' : 'false')
-					. '|trackback--' . ($options['trackback'] ? 'true' : 'false')
-					. '|avatar--' . ($options['avatar'] ? 'true' : 'false')
-					. '|avatar_size--' . $options['avatarsize']
-					. '|avatar_position--' . $options['avatarposition']
-					. '|avatar_default--' . $options['avatardefault']
-					. '|navigator--' . ($options['navigator'] ? 'true' : 'false')
-					. '|administrator--' . ($options['administrator'] ? 'true' : 'false')
-					. '|smilies--' . ($options['smilies'] ? 'true' : 'false');
-		$params .= 'rcparams=' . urlencode($args_binding);
+function simpledark_script_params($ajax_enabled = true) {
+?>
+<script type="text/javascript">
+	var scriptParams = new Array();
+	scriptParams['blogurl'] = '<?php bloginfo('url'); ?>';
+	scriptParams['tmpldir'] = '<?php bloginfo('template_directory'); ?>';
+<?php
+	if($ajax_enabled) {
+		if(function_exists('wp_recentcomments')) {
+			$options = get_option('widget_recentcomments');
+			$args_binding = 'limit--' . $options['number']
+						. '|length--' . $options['length']
+						. '|post--' . ($options['post'] ? 'true' : 'false')
+						. '|pingback--' . ($options['pingback'] ? 'true' : 'false')
+						. '|trackback--' . ($options['trackback'] ? 'true' : 'false')
+						. '|avatar--' . ($options['avatar'] ? 'true' : 'false')
+						. '|avatar_size--' . $options['avatarsize']
+						. '|avatar_position--' . $options['avatarposition']
+						. '|avatar_default--' . $options['avatardefault']
+						. '|navigator--' . ($options['navigator'] ? 'true' : 'false')
+						. '|administrator--' . ($options['administrator'] ? 'true' : 'false')
+						. '|smilies--' . ($options['smilies'] ? 'true' : 'false');
+?>
+	scriptParams['rcparams'] = '<?php echo $args_binding; ?>';
+<?php
+		}
+		if(get_option('thread_comments')) {
+?>
+	scriptParams['threadcmnts'] = '1';
+<?php
+		}
 	}
-
-/*	if(get_option('thread_comments')) {
-		$params .= '&threadcmnts=1';
-	}*/
-
-	echo $params;
+?>
+</script>
+<?php
 }
 
 function fail($s) {

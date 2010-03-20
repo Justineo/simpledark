@@ -151,7 +151,6 @@ function processContent() {
 	}
 }
 
-var baseParams = extractParams();
 var commentCache = new Array();
 
 jQuery(document).ready(function() {
@@ -159,7 +158,7 @@ jQuery(document).ready(function() {
 	/******************
 	 * Preload Images *
 	 ******************/
-	loadImage(baseParams['tmpldir'] + '/images/loading.gif');
+	loadImage(scriptParams['tmpldir'] + '/images/loading.gif');
 
 	/**************************
 	 * Internal Anchor Easing *
@@ -185,7 +184,7 @@ jQuery(document).ready(function() {
 		/* Navigator Opacity Adjustment */
 		var page = jQuery('#page');
 		jQuery('body').mousemove(function(e) {
-			if(e.pageX > (nav.offset().left + nav.width()) && e.pageX > page.offset().left && e.pageX < (page.offset().left + page.width())) {
+			if(e.pageX > (nav.offset().left + nav.width()) && e.pageX > page.offset().left) {
 				nav.stop().fadeTo(100, .25);
 			} else {
 				nav.stop().fadeTo(100, 1);
