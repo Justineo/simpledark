@@ -1,16 +1,23 @@
 1.0.1
 去除一个调试时遗留的alert信息。
+Removed an alert message since debugging stage.
 
 1.0.2
 修正单篇日志搜索时的问题。(在不存在Paginator的情况下对其进行重新加载所引起)
+Fixed problems when doing AJAX search on single post.
 
 1.0.3
 重写了主题脚本加载的代码，使其不与其他插件加载的jQuery等脚本冲突。
+Rewrote the code for loading JavaScript libs to solve the conflict with the registered jQuery lib.
 
 1.0.4
 调整文字颜色，增加del和ins元素样式。
+Refined the text color and added style for <del> and <ins> elements.
 
 1.0.5
 修改了Page的metadata显示。("Author posted in Category" -> "Posted by Author")
 修改了JS参数传递的形式，原来为从JS文件的query string中传递，现改为直接使用PHP在<script>元素内写出。
 修正了鼠标移至页面右侧导致左侧固定导航按钮高亮的bug。
+Changed the display of page metadata.("Author posted in Category" -> "Posted by Author")
+Changed the way of passing parameters to JavaScript codes from appending query string to script URL, to directly writing script in HTML.
+Fixed the problem that the fixed-positioned navigator on the left side would be highlighted when mouse cursor is moved to the right of the page.
