@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimpleDark v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 16:59+0800\n"
-"PO-Revision-Date: 2010-03-14 17:00+0800\n"
+"POT-Creation-Date: 2010-03-30 15:15+0800\n"
+"PO-Revision-Date: 2010-03-30 15:16+0800\n"
 "Last-Translator: Justice <justice360@gmail.com>\n"
 "Language-Team: lync.in\n"
 "MIME-Version: 1.0\n"
@@ -279,7 +279,7 @@ msgstr "无标题"
 #: functions.php:114
 #, php-format
 msgid "Posts by %s"
-msgstr "由 %s 发布"
+msgstr "由 %s 发布的文章"
 
 #: functions.php:175
 msgid "Protected"
@@ -347,6 +347,11 @@ msgstr "<strong>%s</strong>的文章归档"
 #: templates/content-header.php:14
 msgid "Archives page"
 msgstr "归档页面"
+
+#: templates/singular.php:14
+#, php-format
+msgid "Posted by %s"
+msgstr "由 %s 发布"
 
 #: templates/singular.php:19
 msgid "Pages:"

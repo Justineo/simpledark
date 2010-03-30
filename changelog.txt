@@ -21,3 +21,7 @@ Refined the text color and added style for <del> and <ins> elements.
 Changed the display of page metadata.("Author posted in Category" -> "Posted by Author")
 Changed the way of passing parameters to JavaScript codes from appending query string to script URL, to directly writing script in HTML.
 Fixed the problem that the fixed-positioned navigator on the left side would be highlighted when mouse cursor is moved to the right of the page.
+
+1.0.6
+修正了一个多语言翻译上的错误。(singular.php中的'Posted by %s')
+Fixed a translation problem.('Posted by %s' in singular.php)
