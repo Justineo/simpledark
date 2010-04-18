@@ -46,13 +46,84 @@ add_action('widgets_init', 'simpledark_load_widgets');
 
 function simpledark_scripts() {
 	if(!is_admin()) {
-		global $wp_scripts;
 		wp_deregister_script('jquery');
 		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', null, '1.4.2');
 		wp_enqueue_script('scrollto', get_bloginfo('template_directory') . '/js/scrollto.min.js', 'jquery');
 	}
 }
 add_action('wp_print_scripts', 'simpledark_scripts');
+
+function simpledark_admin_style() {
+	wp_register_style('simpledark_admin', get_bloginfo('template_directory') . '/admin.css');
+	wp_enqueue_style('simpledark_admin');
+}
+add_action('admin_print_styles', 'simpledark_admin_style');
+
+function simpledark_feed_additional_info($content) {
+	global $authordata;
+	$options = &$GLOBALS['simpledark_options'];
+	if(is_feed()) {
+		$before = $options['custom_feed_info_before'];
+		$after = $options['custom_feed_info_after'];
+		if(!preg_match('/^\w*$/', $before))
+			$before = '<div class="feed-before" style="margin:15px 0; clear:both;">' . $options['custom_feed_info_before'] . '</div>';
+		if(!preg_match('/^\w*$/', $after))
+			$after = '<div class="feed-after" style="margin:15px 0; clear:both;">' . $options['custom_feed_info_after'] . '</div>';
+		$author_name = the_author($idmode, false);
+		$author_link = '<a href="' . get_author_link(0, $authordata->ID, $authordata->user_nicename) . '" title="' . sprintf(__("Posts by %s"), wp_specialchars(the_author($idmode, false))) . '">' . $author_name . '</a>';
+		$blog_link = '<a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a>';
+		$feed_url = get_bloginfo('rss2_url');
+		$post_url = get_permalink();
+		$before = str_replace('%AUTHOR_NAME%', $author_name, $before);
+		$before = str_replace('%AUTHOR_LINK%', $author_link, $before);
+		$before = str_replace('%BLOG_LINK%', $blog_link, $before);
+		$before = str_replace('%FEED_URL%', $feed_url, $before);
+		$before = str_replace('%POST_URL%', $post_url, $before);
+		$after = str_replace('%AUTHOR_NAME%', $author_name, $after);
+		$after = str_replace('%AUTHOR_LINK%', $author_link, $after);
+		$after = str_replace('%BLOG_LINK%', $blog_link, $after);
+		$after = str_replace('%FEED_URL%', $feed_url, $after);
+		$after = str_replace('%POST_URL%', $post_url, $after);
+	}
+	return $before . $content . $after;
+}
+add_filter('the_content', 'simpledark_feed_additional_info');
+
+function simpledark_category_menu( $args = array() ) {
+	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
+	$args = wp_parse_args( $args, $defaults );
+	$args = apply_filters( 'wp_page_menu_args', $args );
+
+	$menu = '';
+
+	$list_args = $args;
+
+	// Show Home in the menu
+	if ( isset($args['show_home']) && ! empty($args['show_home']) ) {
+		if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
+			$text = __('Home');
+		else
+			$text = $args['show_home'];
+		$class = '';
+		if ( is_front_page() && !is_paged() )
+			$class = 'class="current_page_item"';
+		$menu .= '<li ' . $class . '><a href="' . get_option('home') . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
+	}
+
+	$list_args['echo'] = false;
+	$list_args['title_li'] = '';
+	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_categories($list_args) );
+
+	if ( $menu )
+		$menu = '<ul>' . $menu . '</ul>';
+
+	$menu = '<div class="' . esc_attr($args['menu_class']) . '">' . $menu . "</div>\n";
+	$menu = apply_filters( 'wp_page_menu', $menu, $args );
+	if ( $args['echo'] )
+		echo $menu;
+	else
+		return $menu;
+}
 
 // $type - 'time', 'date', 'datetime', 'day', 'month', 'year'
 function simpledark_time_format($type) {

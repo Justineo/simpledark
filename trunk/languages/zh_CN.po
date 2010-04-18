@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimpleDark v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-30 15:15+0800\n"
-"PO-Revision-Date: 2010-03-30 15:16+0800\n"
+"POT-Creation-Date: 2010-04-18 19:25+0800\n"
+"PO-Revision-Date: 2010-04-18 21:29+0800\n"
 "Last-Translator: Justice <justice360@gmail.com>\n"
 "Language-Team: lync.in\n"
 "MIME-Version: 1.0\n"
@@ -83,79 +83,79 @@ msgstr "错误：请输入一条评论。"
 msgid "Comment submitted!"
 msgstr "评论已提交！"
 
-#: ajax-posts-load.php:18
-#: functions.php:181
-#: functions.php:182
-msgid "Sticky"
-msgstr "置顶"
-
-#: ajax-posts-load.php:20
-#: index.php:22
+#: ajax-posts-load.php:19
+#: index.php:17
 #: templates/singular.php:13
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "%s 的永久链接"
 
-#: ajax-posts-load.php:21
-#: index.php:23
+#: ajax-posts-load.php:20
+#: index.php:18
 #: templates/singular.php:14
 msgid " posted in "
 msgstr " 发表于 "
 
-#: ajax-posts-load.php:21
-#: index.php:23
+#: ajax-posts-load.php:20
+#: index.php:18
 #: templates/singular.php:14
 msgid "X Comments"
 msgstr "评论数未知"
 
-#: ajax-posts-load.php:21
-#: index.php:23
+#: ajax-posts-load.php:20
+#: index.php:18
 #: templates/singular.php:14
 msgid "No Comments"
 msgstr "尚无评论"
 
-#: ajax-posts-load.php:21
-#: index.php:23
+#: ajax-posts-load.php:20
+#: index.php:18
 #: templates/singular.php:14
 msgid "1 Comment"
 msgstr "1 条评论"
 
-#: ajax-posts-load.php:21
-#: index.php:23
+#: ajax-posts-load.php:20
+#: index.php:18
 #: templates/singular.php:14
 msgid "% Comments"
 msgstr "% 条评论"
 
-#: ajax-posts-load.php:21
-#: index.php:23
+#: ajax-posts-load.php:20
+#: index.php:18
 #: templates/singular.php:14
 msgid "Comments Off"
 msgstr "评论关闭"
 
-#: ajax-posts-load.php:21
-#: index.php:23
+#: ajax-posts-load.php:20
+#: index.php:18
 #: templates/comment.php:18
 #: templates/singular.php:14
 #: templates/thread-comment.php:18
 msgid "Edit"
 msgstr "编辑"
 
-#: ajax-posts-load.php:23
-#: index.php:25
+#: ajax-posts-load.php:22
+#: index.php:20
 msgid "Read More"
 msgstr "阅读全部"
 
-#: ajax-posts-load.php:41
-#: index.php:43
+#: ajax-posts-load.php:25
+#: index.php:23
+#: templates/singular.php:28
+msgid "NO TAGS"
+msgstr "没有标签"
+
+#: ajax-posts-load.php:40
+#: index.php:38
 msgid "Older Posts"
 msgstr "较旧的文章"
 
-#: ajax-posts-load.php:41
-#: index.php:43
+#: ajax-posts-load.php:40
+#: index.php:38
 msgid "Newer Posts"
 msgstr "较新的文章"
 
-#: ajax-posts-load.php:51
+#: ajax-posts-load.php:50
 #, php-format
 msgid "No posts found. Why not <a title=\"Go Back\" href=\"%s\">go back to the last page</a> ?"
 msgstr "没有找到符合条件的文章。建议您<a title=\"返回\" href=\"%s\">返回前一个访问过的页面</a>。"
@@ -264,36 +264,46 @@ msgstr "采用 <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a> 许可证"
 msgid "License Details"
 msgstr "许可证详情"
 
-#: functions.php:72
-msgid "F, Y"
-msgstr "Y年n月"
-
-#: functions.php:75
-msgid "Y"
-msgstr "Y年"
-
-#: functions.php:105
-msgid "Untitled"
-msgstr "无标题"
-
-#: functions.php:114
+#: functions.php:73
+#: functions.php:185
 #, php-format
 msgid "Posts by %s"
 msgstr "由 %s 发布的文章"
 
-#: functions.php:175
+#: functions.php:104
+msgid "Home"
+msgstr "主页"
+
+#: functions.php:143
+msgid "F, Y"
+msgstr "Y年n月"
+
+#: functions.php:146
+msgid "Y"
+msgstr "Y年"
+
+#: functions.php:176
+msgid "Untitled"
+msgstr "无标题"
+
+#: functions.php:246
 msgid "Protected"
 msgstr "密码保护"
 
-#: functions.php:177
+#: functions.php:248
 msgid "Private"
 msgstr "私人"
 
-#: functions.php:180
+#: functions.php:251
 msgid "Announcement"
 msgstr "公告"
 
-#: index.php:53
+#: functions.php:252
+#: functions.php:253
+msgid "Sticky"
+msgstr "置顶"
+
+#: index.php:48
 #, php-format
 msgid "No posts found. Why not <a title=\"Go Back\" href=\"%1$s\"%2$s>go back to the last page</a> ?"
 msgstr "没有找到符合条件的文章。 建议您<a title=\"返回\" href=\"%1$s\"%2$s>返回上一个页面</a>。"
@@ -365,10 +375,6 @@ msgstr "下一页"
 msgid "Previous Page"
 msgstr "上一页"
 
-#: templates/singular.php:28
-msgid "NO TAGS"
-msgstr "没有标签"
-
 #: utilities/admin.php:21
 #: utilities/admin.php:48
 msgid "SimpleDark Options"
@@ -383,106 +389,227 @@ msgid "Changes have been saved."
 msgstr "您的修改已经被保存。"
 
 #: utilities/admin.php:65
+msgid "General"
+msgstr "常规"
+
+#: utilities/admin.php:68
 msgid "AJAX"
 msgstr "AJAX"
 
-#: utilities/admin.php:68
+#: utilities/admin.php:71
 msgid "Enable AJAX (paging, comment submission, search, etc.)"
 msgstr "启用 AJAX (翻页、评论提交和搜索等)"
 
-#: utilities/admin.php:72
+#: utilities/admin.php:76
+msgid "Top Menu"
+msgstr "顶部菜单"
+
+#: utilities/admin.php:79
+msgid "Show the link of the homepage on the top menu"
+msgstr "在顶部菜单中显示主页链接"
+
+#: utilities/admin.php:84
+msgid "Top Menu Items"
+msgstr "顶部菜单项目"
+
+#: utilities/admin.php:87
+msgid "Show categories as top menu items instead of pages"
+msgstr "在顶部菜单中显示分类而非页面"
+
+#: utilities/admin.php:92
+msgid "Posts"
+msgstr "文章"
+
+#: utilities/admin.php:95
 msgid "Post Tags"
 msgstr "文章标签"
 
-#: utilities/admin.php:75
+#: utilities/admin.php:98
 msgid "Show post tags on archive pages (home, archive, etc.)"
 msgstr "在归档页面(主页、归档页等)显示文章标签"
 
-#: utilities/admin.php:79
+#: utilities/admin.php:103
+msgid "Discussion"
+msgstr "讨论"
+
+#: utilities/admin.php:106
 msgid "Pingbacks and Trackbacks"
 msgstr "引用通告"
 
-#: utilities/admin.php:82
+#: utilities/admin.php:109
 msgid "Hide pingbacks and trackbacks"
 msgstr "隐藏引用通告"
 
-#: utilities/admin.php:86
+#: utilities/admin.php:114
 msgid "Allowed Tags"
 msgstr "允许的标签"
 
-#: utilities/admin.php:89
+#: utilities/admin.php:117
 msgid "Show allowed tags for comments"
 msgstr "显示在评论中允许插入的标签列表"
 
-#: utilities/admin.php:93
+#: utilities/admin.php:122
 msgid "Comment Images"
 msgstr "评论图片"
 
-#: utilities/admin.php:96
+#: utilities/admin.php:125
 msgid "Comments can include the &lt;img&gt; tag"
 msgstr "允许在评论中使用 &lt;img&gt; 标签"
 
-#: utilities/admin.php:100
+#: utilities/admin.php:130
 msgid "Comment Submit Shortcut"
 msgstr "评论提交快捷键"
 
-#: utilities/admin.php:103
+#: utilities/admin.php:133
 msgid "Use Ctrl+Enter to submit comment"
 msgstr "使用 Ctrl+Enter 键提交评论"
 
-#: utilities/admin.php:107
+#: utilities/admin.php:138
+msgid "Sidebar"
+msgstr "侧边栏"
+
+#: utilities/admin.php:141
 msgid "Search Form Text"
 msgstr "搜索框文字"
 
-#: utilities/admin.php:108
+#: utilities/admin.php:142
 msgid "Default text of the search form"
 msgstr "搜索框中默认显示的文字。"
 
-#: utilities/admin.php:111
+#: utilities/admin.php:145
+msgid "Footer"
+msgstr "页脚"
+
+#: utilities/admin.php:148
 msgid "Footer License"
-msgstr "页脚许可证"
+msgstr "页脚许可协议"
 
-#: utilities/admin.php:114
+#: utilities/admin.php:151
 msgid "Show footer license"
-msgstr "在页脚处显示许可证信息"
+msgstr "在页脚处显示许可协议信息"
 
-#: utilities/admin.php:118
+#: utilities/admin.php:153
+msgid "You can choose a way to reserve your rights when sharing your creative works by specifying a copyright-license like <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> in your footer area."
+msgstr "您可以在页脚指定一个协议版权许可协议，例如<a href=\"http://cn.creativecommons.org/licenses/licenses_exp/\">创作共用协议</a>，来选择在您共享您的作品时保留权利的方式。"
+
+#: utilities/admin.php:157
 msgid "License Name"
-msgstr "许可证名称"
+msgstr "许可协议名称"
 
-#: utilities/admin.php:119
+#: utilities/admin.php:158
 msgid "The anchor text of the license to be displayed"
-msgstr "需要显示的许可证链接的文字"
+msgstr "需要显示的许可协议链接的文字"
 
-#: utilities/admin.php:122
+#: utilities/admin.php:161
 msgid "License URL"
-msgstr "许可证 URL"
+msgstr "许可协议 URL"
 
-#: utilities/admin.php:123
+#: utilities/admin.php:162
 msgid "A link to the license details"
-msgstr "指向许可证详情的链接地址"
+msgstr "指向许可协议详情的链接地址"
 
-#: utilities/admin.php:126
+#: utilities/admin.php:165
 msgid "Custom Footer Information"
 msgstr "自定义页脚信息"
 
-#: utilities/admin.php:129
+#: utilities/admin.php:168
 msgid "Show custom information in the footer"
 msgstr "在页脚处显示自定义信息"
 
-#: utilities/admin.php:133
+#: utilities/admin.php:173
 msgid "Custom Footer Information Code"
 msgstr "页脚自定义代码"
 
-#: utilities/admin.php:134
+#: utilities/admin.php:174
 msgid "Write your custom HTML code to display in the footer"
 msgstr "编辑需要在页脚显示的自定义信息的 HTML 代码"
 
-#: utilities/admin.php:139
+#: utilities/admin.php:177
+#: utilities/widgets.php:53
+msgid "RSS Feed"
+msgstr "RSS 源"
+
+#: utilities/admin.php:180
+msgid "Custom Feed Information Before Content"
+msgstr "自定义订阅内容开头信息"
+
+#: utilities/admin.php:181
+msgid "Write your custom HTML code to display before the content of each entry of your RSS feed"
+msgstr "编辑需要在订阅内容开头显示的自定义信息的 HTML 代码"
+
+#: utilities/admin.php:184
+msgid "Custom Feed Information After Content"
+msgstr "自定义订阅内容结尾信息"
+
+#: utilities/admin.php:186
+msgid "Write your custom HTML code to display after the content of each entry of your RSS feed"
+msgstr "编辑需要在订阅内容结尾显示的自定义信息的 HTML 代码"
+
+#: utilities/admin.php:188
+msgid "You can use these placeholders in your code:"
+msgstr "你可以在您的代码中使用下面这些占位符："
+
+#: utilities/admin.php:190
+msgid "The name of the post author without a link"
+msgstr "文章作者的名字但不包含链接"
+
+#: utilities/admin.php:191
+msgid "The link of posts by the post author"
+msgstr "指向文章作者的文章列表的链接"
+
+#: utilities/admin.php:192
+msgid "The link of your blog homepage"
+msgstr "您博客主页的链接"
+
+#: utilities/admin.php:193
+msgid "The RSS feed URL of your blog posts"
+msgstr "您博客文章的 RSS 订阅源地址"
+
+#: utilities/admin.php:194
+msgid "The URL of your post"
+msgstr "您的文章的地址"
+
+#: utilities/admin.php:196
+msgid "eg. The post is written by %AUTHOR_LINK%. To read more interesting posts, visit %BLOG_LINK% or &lt;a href=\"%FEED_URL%\"&gt;subscribe our updates&lt;/a&gt;."
+msgstr "例如：本文由 %AUTHOR_LINK% 发布。请访问 %BLOG_LINK% 或者 &lt;a href=\"%FEED_URL%\"&gt;订阅我们&lt;/a&gt; 来阅读更多有趣的文章。"
+
+#: utilities/admin.php:197
+msgid "The output will be wrapped in a &lt;DIV&gt; element."
+msgstr "输出将被包含在一个 &lt;DIV&gt; 元素中。"
+
+#: utilities/admin.php:202
+msgid "Analytics"
+msgstr "分析"
+
+#: utilities/admin.php:205
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: utilities/admin.php:208
+msgid "Enable Google Analytics"
+msgstr "启用 Google Analytics"
+
+#: utilities/admin.php:213
+msgid "Google Analytics Code"
+msgstr "Google Analytics 代码"
+
+#: utilities/admin.php:215
+msgid "Paste your Google Analytics code snippet here"
+msgstr "把您的 Google 分析代码粘贴到这里"
+
+#: utilities/admin.php:218
+msgid "Google Analytics for Administrators"
+msgstr "管理员的 Google 分析"
+
+#: utilities/admin.php:221
+msgid "Do not load Google Analytics when administrators are logged in"
+msgstr "管理员登陆的情况下不加载 Google 分析"
+
+#: utilities/admin.php:228
 msgid "Save Changes"
 msgstr "保存修改"
 
-#: utilities/admin.php:157
+#: utilities/admin.php:250
 msgid "Search..."
 msgstr "搜索..."
 
@@ -510,10 +637,6 @@ msgstr "为您的博客添加 RSS 订阅小工具"
 #: utilities/widgets.php:48
 msgid "SimpleDark Feed"
 msgstr "SimpleDark 订阅源"
-
-#: utilities/widgets.php:53
-msgid "RSS Feed"
-msgstr "RSS 源"
 
 #: utilities/widgets.php:54
 #: utilities/widgets.php:68
