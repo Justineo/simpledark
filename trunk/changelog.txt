@@ -26,7 +26,7 @@ Fixed the problem that the fixed-positioned navigator on the left side would be 
 修正了一个多语言翻译上的错误。(singular.php中的'Posted by %s')
 Fixed a translation problem.('Posted by %s' in singular.php)
 
-1.1
+1.1.0
 修正了选择了"在非单篇文章中显示标签"而没有标签时未处理多语言显示的问题。
 修正了AJAX提交评论后刷新WP-RecentComments时的错误。
 在<header>中加入了文章与评论的RSS源的<link>。
