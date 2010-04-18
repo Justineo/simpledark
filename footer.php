@@ -21,6 +21,13 @@
 <?php if($options['enable_ajax']) { ?>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/simpledark-ajax.min.js"></script>
 <?php } ?>
-<?php wp_footer(); ?>
+<?php
+	wp_footer();
+	if($options['enable_google_analytics']) {
+		if(!$options['exclude_admin_analytics'] || !current_user_can('manage_options')) {
+			echo $options['google_analytics_code'];
+		}
+	}
+?>
 </body>
 </html>

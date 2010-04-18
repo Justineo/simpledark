@@ -94,7 +94,8 @@ img {
 }
 
 .aligncenter {
-	display:block; margin-right:auto; margin-left:auto;
+	display:block;
+	margin:10px auto 0 auto;
 }
 
 .alignleft {
@@ -240,6 +241,10 @@ body {
 			padding-bottom:5px; margin-bottom:20px;
 			background:url(images/hsep.png) repeat-x 0 bottom;
 			_background:url(images/hsep2.png) repeat-x 0 bottom;
+		}
+
+		#content div.post:last-child, #content div.page:last-child {
+			background:none;
 		}
 
 			.post-title {
@@ -724,6 +729,10 @@ body {
 		padding-bottom:20px; margin-bottom:10px;
 		background:url(images/hsep.png) repeat-x 0 bottom;
 		_background:url(images/hsep2.png) repeat-x 0 bottom;
+	}
+
+	#sidebar .widget:last-child {
+		background:none;
 	}
 
 		#sidebar .widget h4 {

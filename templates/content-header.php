@@ -1,5 +1,5 @@
 <?php
-if(!(is_single() || is_page())) {
+if(!(is_single() || is_home() || is_page())) {
 ?>
 	<div class="content-header">
 <?php

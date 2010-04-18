@@ -4,12 +4,7 @@ if(!$_GET['action']) { get_header(); }
 else { defined('DOING_AJAX') || define('DOING_AJAX', true); }
 ?>
 <?php
-// if not home page, output some description on the top of the content
-if(!is_home()) {
-	simpledark_content_header();
-}
-
-// main loop
+simpledark_content_header();
 if(have_posts()) {
 while(have_posts()) {
 	the_post();
@@ -25,7 +20,7 @@ while(have_posts()) {
 <?php the_content('&raquo;' . __('Read More', THEME_NAME)); ?>
 			</div>
 <?php if($GLOBALS['simpledark_options']['show_tags_on_archive_pages']) { // show post tags according to theme option ?>
-			<div class="post-info"><?php if(get_the_tags()) { the_tags('&lt; ', ', ', ' &gt;'); } else { echo('&lt; NO TAGS &gt;'); } ?></div>
+			<div class="post-info"><?php if(get_the_tags()) { the_tags('&lt; ', ', ', ' &gt;'); } else { echo('&lt; ' . __('NO TAGS', THEME_NAME) . ' &gt;'); } ?></div>
 <?php } ?>
 		</div>
 <?php

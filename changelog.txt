@@ -12,7 +12,7 @@ Rewrote the code for loading JavaScript libs to solve the conflict with the regi
 
 1.0.4
 调整文字颜色，增加del和ins元素样式。
-Refined the text color and added style for <del> and <ins> elements.
+Adjusted the text color and added style for <del> and <ins> elements.
 
 1.0.5
 修改了Page的metadata显示。("Author posted in Category" -> "Posted by Author")
@@ -25,3 +25,27 @@ Fixed the problem that the fixed-positioned navigator on the left side would be 
 1.0.6
 修正了一个多语言翻译上的错误。(singular.php中的'Posted by %s')
 Fixed a translation problem.('Posted by %s' in singular.php)
+
+1.1
+修正了选择了"在非单篇文章中显示标签"而没有标签时未处理多语言显示的问题。
+修正了AJAX提交评论后刷新WP-RecentComments时的错误。
+在<header>中加入了文章与评论的RSS源的<link>。
+在images/PSD目录下添加了标题图片的.psd源文件。
+用JS调整了在评论中嵌入宽图片时图片的大小，以防其超出评论显示范围而被遮盖。
+去掉了最后一个列表项的水平分隔线(仅对支持CSS3选择器的浏览器有效)。
+调整了后台选项的样式，且将选项进行了分组。
+增加了后台选项中对许可协议的说明。
+增加了一些主题选项，用来设置顶部导航。
+增加了一些主题选项，用来设置文章Feed中输出的额外信息。
+增加了一些主题选项，用来设置Google Analytics代码，并选择是否不跟踪已登录的管理员的访问信息。
+Fixed a translation problem on a post without tags when the theme option "Show post tags on archive pages" is checked.
+Fixed the problem caused by refreshing the WP-RecentComments widget on AJAX comment submission.
+Added <link> elements for entries feed and comments feed in the <header>.
+Added .psd file of blog title image in the directory "images/PSD" for customization use.
+Fixed the problem that large images will exceed the comment body when they are inserted into comments.
+Removed the horizontal separator below last list items.(Only works under browsers supporting CSS3 selectors)
+Adjusted the styles of the theme options page and grouped the options.
+Added some explanation for the license in the theme options page.
+Added some theme options to configure the top menu.
+Added some theme options to configure additional information output in feed contents.
+Added some theme options to configure Google Analytics, and to set whether to exclude Google Analytics for logged-in administrators or not.

@@ -117,6 +117,7 @@ function fadingSlideDown(performer, callback) {
 }
 
 var contentWidth = 596;
+var commentWidth = 520;
 function processContent() {
 	/* Image Width Restriction */
 	jQuery('.entry img').each(function() {
@@ -125,6 +126,14 @@ function processContent() {
 		var r = w / h;
 		if(w > contentWidth) {
 			jQuery(this).width(contentWidth).height(contentWidth / r);
+		}
+	});
+	jQuery('.comment-body img').each(function() {
+		var w = jQuery(this).width();
+		var h = jQuery(this).height();
+		var r = w / h;
+		if(w > commentWidth) {
+			jQuery(this).width(commentWidth).height(commentWidth / r);
 		}
 	});
 	jQuery('.entry .wp-caption').removeAttr('style'); // Fix the width of images with wp-caption wrapper
