@@ -49,6 +49,7 @@ function simpledark_scripts() {
 		wp_deregister_script('jquery');
 		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', null, '1.4.2');
 		wp_enqueue_script('scrollto', get_bloginfo('template_directory') . '/js/scrollto.min.js', 'jquery');
+		wp_enqueue_script('autoresize', get_bloginfo('template_directory') . '/js/autoresize.min.js', 'jquery');
 	}
 }
 add_action('wp_print_scripts', 'simpledark_scripts');
@@ -112,7 +113,7 @@ function simpledark_category_menu( $args = array() ) {
 
 	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
-	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_categories($list_args) );
+	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_categories($list_args) . wp_list_pages($list_args) );
 
 	if ( $menu )
 		$menu = '<ul>' . $menu . '</ul>';

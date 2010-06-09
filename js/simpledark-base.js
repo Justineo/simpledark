@@ -284,10 +284,16 @@ jQuery(document).ready(function() {
 	}).live('mouseout', function() {
 		jQuery('.tooltip').stop().fadeTo(200, 0, function() {
 			jQuery(this).detach();
+			
 		});
 	});
 
 //	jQuery('#cancel-comment-reply').fadeTo(0, 0).find('#cancel-comment-reply-link').removeAttr('style');
+
+	/* Auto Resize for Comment Form */
+	jQuery('#comment').autoResize({
+		extraSpace : 0
+	});
 
 	/* Use Ctrl+Enter to Submit Comment */
 	jQuery('#comment.quick-submit').keydown(function(e) {

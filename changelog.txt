@@ -49,3 +49,11 @@ Added some explanation for the license in the theme options page.
 Added some theme options to configure the top menu.
 Added some theme options to configure additional information output in feed contents.
 Added some theme options to configure Google Analytics, and to set whether to exclude Google Analytics for logged-in administrators or not.
+
+1.1.1
+修正了评论表单无法用tab依次聚焦的问题。(thanks to Sparanoid)
+修复了IE6下输入评论后评论框变宽的问题(为评论框设定了固定宽度)。
+使用jQuery插件autoResize来自动调整用户输入文字以后的评论框高度。
+Fixed the problem of focusing comment form using tab.
+Fixed the problem that the comment form will grow wider after inputing some text under IE 6(set fixed with for it).
+Used the jQuery plugin 'autoResize' to automatically adjust the height of the comment form after user input.
