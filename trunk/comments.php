@@ -87,10 +87,10 @@
 		}
 ?>
 				<p id="comment-wrapper">
-					<textarea id="comment" name="comment"<?php if($options['ctrl_enter_submit_comment']) { echo ' class="quick-submit"'; } ?>></textarea>
+					<textarea id="comment" name="comment" tabindex="4"<?php if($options['ctrl_enter_submit_comment']) { echo ' class="quick-submit"'; } ?>></textarea>
 				</p>
 				<p>
-					<input id="submit-button" type="submit" name="submit" value="<?php _e('Submit Comment', THEME_NAME); if($options['ctrl_enter_submit_comment']) { echo ' (Ctrl+Enter)'; } ?>" />
+					<input id="submit-button" type="submit" name="submit" tabindex="5" value="<?php _e('Submit Comment', THEME_NAME); if($options['ctrl_enter_submit_comment']) { echo ' (Ctrl+Enter)'; } ?>" />
 				</p>
 <?php
 		comment_id_fields();
