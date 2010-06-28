@@ -50,11 +50,9 @@ class SimpleDark_Widget_Feed extends WP_Widget {
 
     function widget($args, $instance) {
 		extract($args);
-		$title = empty($title)? __('RSS Feed', THEME_NAME) : apply_filters('widget_title', $instance['title']);
+		$title = apply_filters('widget_title', $instance['title']);
 		$feed_text = empty($instance['feed_text'])? __('Subscribe Updates') : $instance['feed_text'];
 		$feed_url = empty($instance['feed_url'])? get_bloginfo('rss2_url') : (substr(strtoupper($options['feed_url']), 0, 7) == 'HTTP://'? $instance['feed_url'] : 'http://' . $instance['feed_url']);
-		
-		$options = &$GLOBALS['simpledark_options'];
 ?>
 			<?php echo $before_widget; ?>
 				<?php if($title) echo $before_title . $title . $after_title; ?>
