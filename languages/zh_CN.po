@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimpleDark v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-18 19:25+0800\n"
-"PO-Revision-Date: 2010-04-18 21:29+0800\n"
+"POT-Creation-Date: 2010-06-29 20:19+0800\n"
+"PO-Revision-Date: 2010-06-29 20:20+0800\n"
 "Last-Translator: Justice <justice360@gmail.com>\n"
 "Language-Team: lync.in\n"
 "MIME-Version: 1.0\n"
@@ -264,44 +264,54 @@ msgstr "采用 <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a> 许可证"
 msgid "License Details"
 msgstr "许可证详情"
 
-#: functions.php:73
-#: functions.php:185
+#: functions.php:74
+#: functions.php:186
 #, php-format
 msgid "Posts by %s"
 msgstr "由 %s 发布的文章"
 
-#: functions.php:104
+#: functions.php:105
 msgid "Home"
 msgstr "主页"
 
-#: functions.php:143
+#: functions.php:144
 msgid "F, Y"
 msgstr "Y年n月"
 
-#: functions.php:146
+#: functions.php:147
 msgid "Y"
 msgstr "Y年"
 
-#: functions.php:176
+#: functions.php:177
 msgid "Untitled"
 msgstr "无标题"
 
-#: functions.php:246
+#: functions.php:247
 msgid "Protected"
 msgstr "密码保护"
 
-#: functions.php:248
+#: functions.php:249
 msgid "Private"
 msgstr "私人"
 
-#: functions.php:251
+#: functions.php:252
 msgid "Announcement"
 msgstr "公告"
 
-#: functions.php:252
 #: functions.php:253
+#: functions.php:254
 msgid "Sticky"
 msgstr "置顶"
+
+#: header.php:8
+#, php-format
+msgid "%s Entries RSS Feed"
+msgstr "%s 的文章 RSS 源"
+
+#: header.php:9
+#, php-format
+msgid "%s Comments RSS Feed"
+msgstr "%s 的评论 RSS 源"
 
 #: index.php:48
 #, php-format
@@ -525,7 +535,6 @@ msgid "Write your custom HTML code to display in the footer"
 msgstr "编辑需要在页脚显示的自定义信息的 HTML 代码"
 
 #: utilities/admin.php:177
-#: utilities/widgets.php:53
 msgid "RSS Feed"
 msgstr "RSS 源"
 
@@ -626,7 +635,7 @@ msgid "SimpleDark Search"
 msgstr "SimpleDark 搜索"
 
 #: utilities/widgets.php:37
-#: utilities/widgets.php:82
+#: utilities/widgets.php:80
 msgid "Title:"
 msgstr "标题："
 
@@ -639,15 +648,15 @@ msgid "SimpleDark Feed"
 msgstr "SimpleDark 订阅源"
 
 #: utilities/widgets.php:54
-#: utilities/widgets.php:68
+#: utilities/widgets.php:66
 msgid "Subscribe Updates"
 msgstr "订阅更新"
 
-#: utilities/widgets.php:83
+#: utilities/widgets.php:81
 msgid "Feed Text:"
 msgstr "订阅源文字："
 
-#: utilities/widgets.php:84
+#: utilities/widgets.php:82
 msgid "Feed URL:"
 msgstr "订阅源地址："
 
