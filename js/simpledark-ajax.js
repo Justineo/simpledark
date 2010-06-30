@@ -51,7 +51,7 @@ function ajaxSubmitComment() {
 		countspan.animate({opacity:0}, 500, function() {
 			jQuery(this).text(countspan.text() - 0 + 1).animate({opacity:1}, 500).removeAttr('style');
 		});
-		if(RCJS) { RCJS.page(scriptParams['blogurl'],scriptParams['rcparams'],0,'Loading'); }
+		if(window.RCJS.page) { RCJS.page(scriptParams['blogurl'],scriptParams['rcparams'],0,'Loading'); }
 		showMessage(content[1], function() {
 			jQuery('#author, #email, #url, #comment, .entry .textbox, #submit-button').animate({ opacity: 1 }, 500).removeAttr('style').removeAttr('disabled');
 		});
