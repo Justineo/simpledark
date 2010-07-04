@@ -67,5 +67,15 @@ Fixed the problem of failing to modify the title of the SimpleDark RSS feed widg
 Modified the hard coded title attribute in RSS link element. Now the titles are changed to "[Blog Title] Entries RSS Feed" and "[Blog Title] Comments RSS Feed".
 
 1.1.4
-修正了在没有启用插件WP-RecentComments时，提交评论后不能恢复评论框状态的问题。(thans to blueandhack)
+修正了在没有启用插件WP-RecentComments时，提交评论后不能恢复评论框状态的问题。(thanks to blueandhack)
 Fixed the problem of failing to recover the comment form from submitting state after a comment is submitted without activating the plugin WP-RecentComments.
+
+1.1.5
+修改上个版本中的一个错误，现在已经可以成功恢复评论框状态。
+增加了在文章摘要和评论中显示WP-Syntax代码块语言类型的功能。
+修改了页面尾部处脚本文件的加载方式。
+使主题选项页面的<textarea>可以自适应高度。(thanks to blueandhack for the suggestion)
+Fixed a problem in the last update and now the comment form state recovery works fine.
+Added support for displaying code language in excerpts and comments when formatting code using WP-Syntax.
+Changed the way how footer scripts are loaded.
+Enabled auto height adjustment for textareas in the theme options page.
