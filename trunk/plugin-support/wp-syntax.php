@@ -40,6 +40,7 @@ function simpledark_display_code_language($content) {
 	return preg_replace('/(<div class="wp_syntax">)([\s\S]*?<pre class=")([^"]+)/i', '\\1<span class="wp_syntax_lang">\\3</span>\\2', $content);
 }
 add_filter('the_content', simpledark_display_code_language, 100);
-
+add_filter('the_excerpt', simpledark_display_code_language, 100);
+add_filter('comment_text', simpledark_display_code_language, 100);
 }
 ?>
