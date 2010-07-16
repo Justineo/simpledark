@@ -79,3 +79,7 @@ Fixed a problem in the last update and now the comment form state recovery works
 Added support for displaying code language in excerpts and comments when formatting code using WP-Syntax.
 Changed the way how footer scripts are loaded.
 Enabled auto height adjustment for textareas in the theme options page.
+
+1.1.6
+修正了上一个版本中的一个错误，去除了在后台管理页面重新加载jQuery 1.4的代码，导致JS加载顺序出现问题。
+Fixed a problem in the last update by removing code that reload jQuery 1.4 for admin pages which causes problem in the order of loading JS files.
