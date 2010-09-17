@@ -6,7 +6,7 @@ Author: Justice
 Author URI: http://lync.in/
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: dark, two-columns, fixed-width, theme-options, translation-ready
+Tags: dark, two-columns, fixed-width, theme-options, translation-ready, threaded-comments, editor- style, right-sidebar, custom-menu
 */
 
 
@@ -254,6 +254,7 @@ body {
 				z-index:999;
 				-moz-box-shadow:0 3px 3px #000;
 				-webkit-box-shadow:0 3px 3px #000;
+				-khtml-box-shadow:0 3px 3px #000;
 				box-shadow:0 3px 3px #000;
 			}
 
@@ -395,6 +396,7 @@ body {
 					margin:5px;
 					-moz-box-shadow:0 0 5px #000;
 					-webkit-box-shadow:0 0 5px #000;
+					-khtml-box-shadow:0 0 5px #000;1
 					box-shadow:0 0 5px #000;
 				}
 
@@ -411,6 +413,7 @@ body {
 					border:none;
 					-moz-box-shadow:none;
 					-webkit-box-shadow:none;
+					-khtml-box-shadow:none;
 					box-shadow:none;
 				}
 
@@ -522,6 +525,7 @@ body {
 					display:block;
 					-moz-box-shadow:0 0 5px #000;
 					-webkit-box-shadow:0 0 5px #000;
+					-khtml-box-shadow:0 0 5px #000;
 					box-shadow:0 0 5px #000;
 				}
 
@@ -603,6 +607,7 @@ body {
 						border-color:#4d4d4d;
 						-moz-box-shadow:0 0 5px #111;
 						-webkit-box-shadow:0 0 5px #111;
+						-khtml-box-shadow:0 0 5px #111;
 						box-shadow:0 0 5px #111;
 						z-index:999;
 					}
@@ -631,6 +636,7 @@ body {
 						border-color:#999;
 						-moz-box-shadow:0 0 5px #999;
 						-webkit-box-shadow:0 0 5px #999;
+						-khtml-box-shadow:0 0 5px #999;
 						box-shadow:0 0 5px #999;
 					}
 
@@ -638,6 +644,7 @@ body {
 							border-color:#404040;
 							-moz-box-shadow:0 0 5px #111;
 							-webkit-box-shadow:0 0 5px #111;
+							-khtml-box-shadow:0 0 5px #111;
 							box-shadow:0 0 5px #111;
 						}
 
@@ -645,6 +652,7 @@ body {
 							border-color:#4d4d4d;
 							-moz-box-shadow:0 0 5px #111;
 							-webkit-box-shadow:0 0 5px #111;
+							-khtml-box-shadow:0 0 5px #111;
 							box-shadow:0 0 5px #111;
 						}
 
@@ -652,6 +660,7 @@ body {
 							border-color:#aaa;
 							-moz-box-shadow:0 0 5px #aaa;
 							-webkit-box-shadow:0 0 5px #aaa;
+							-khtml-box-shadow:0 0 5px #aaa;
 							box-shadow:0 0 5px #aaa;
 						}
 
@@ -690,6 +699,7 @@ body {
 							border-color:#fff;
 							-moz-box-shadow:0 0 8px #fff;
 							-webkit-box-shadow:0 0 6px #fff;
+							-khtml-box-shadow:0 0 8px #fff;
 							box-shadow:0 0 5px #fff;
 						}
 
@@ -709,6 +719,7 @@ body {
 							border:1px solid #aaa;
 							-moz-box-shadow:none;
 							-webkit-box-shadow:none;
+							-khtml-box-shadow:none;
 							box-shadow:none;
 						}
 
@@ -799,6 +810,7 @@ body {
 					color:#ccc;
 					-moz-box-shadow:inset 0 0 3px  #161616;
 					-webkit-box-shadow:inset 0 0 3px  #161616;
+					-khtml-box-shadow:inset 0 0 3px  #161616;
 					box-shadow:inset 0 0 3px  #161616;
 				}
 
@@ -846,6 +858,7 @@ body {
 					color:#fff; text-shadow:0 -1px 0 #111; font-weight:700; font-size:11px;
 					-moz-box-shadow:0 0 3px #111;
 					-webkit-box-shadow:0 0 3px #111;
+					-khtml-box-shadow:0 0 3px #111;
 					box-shadow:0 0 3px #111;
 					overflow:visible;
 				}
@@ -866,6 +879,7 @@ body {
 					color:#444; text-shadow:0 1px 0 #999;
 					-moz-box-shadow:0 0 3px #666;
 					-webkit-box-shadow:0 0 3px #666;
+					-khtml-box-shadow:0 0 3px #666;
 					box-shadow:0 0 3px #666;
 				}
 
@@ -1022,6 +1036,7 @@ body {
 			border:1px solid #181818;
 			color:#ccc;
 			-moz-box-shadow:inset 0 0 3px #000;
+			-khtml-box-shadow:inset 0 0 3px #000;
 			-webkit-box-shadow:inset 0 0 3px #000;
 			box-shadow:inset 0 0 3px #000;
 		}
@@ -1157,6 +1172,7 @@ body {
 	background:#333;
 	-moz-box-shadow:0 0 5px #000;
 	-webkit-box-shadow:0 0 5px #000;
+	-khtml-box-shadow:0 0 5px #000;
 	box-shadow:0 0 5px #000;
 }
 
