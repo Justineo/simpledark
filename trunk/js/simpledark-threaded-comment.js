@@ -2,9 +2,12 @@ addComment={
 	moveForm : function(parentCommentElementId,parentCommentId,respondElementId,postId) {
 		var m = this;
 		parentCommentElement = $('#' + parentCommentElementId);
+		if(parentCommentElement.children('#respond').length > 0) {
+			$('#comment').focus();
+			return false;
+		}
 		m.respondId=respondElementId;
 		respondElement = $('#' + respondElementId);
-		cancelLinkDiv = $('#cancel-comment-reply');
 		cancelLinkElement = $("#cancel-comment-reply-link");
 		parentInput = $("#comment_parent");
 		postIdInput = $("#comment_post_ID");
@@ -32,12 +35,11 @@ addComment={
 			postIdInput.val(postId);
 		}
 		parentInput.val(parentCommentId);
-		fadingSlideDown(cancelLinkDiv);
-		cancelLinkElement.click(cancelCommentReply);
+		cancelLinkElement.fadeIn(200).click(cancelCommentReply);
 		respondElement.animate({opacity:0, height:0}, 200, function() {
-			parentCommentElement.after(respondElement);
+			parentCommentElement.children('.comment-body').after(respondElement);
 			fadingSlideDown($(this), function() {
-				parentCommentElement.parent().ScrollTo(300);
+				parentCommentElement.ScrollTo(300);
 				$('#comment').focus();
 			});
 		});
@@ -45,7 +47,7 @@ addComment={
 	}
 };
 
-function cancelCommentReply(callback) {
+function cancelCommentReply() {
 	var n = addComment, tempFormDiv = $('#wp-temp-form-div'), respondElementB = $('#' + n.respondId);
 	if(tempFormDiv.length == 0 || respondElementB.length ==0) {
 		return;
@@ -56,10 +58,8 @@ function cancelCommentReply(callback) {
 		tempFormDiv.remove();
 		fadingSlideDown($(this));
 	});
-	cancelLinkDiv.animate({opacity:0, height:0}, 200, function() {
-		if(callback && typeof(callback) == 'function')
-			callback();
-	});
+	cancelLinkElement.fadeOut(200);
 	$(this).unbind('click');
+	$('#comment').val('');
 	return false;
 }

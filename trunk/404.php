@@ -6,8 +6,10 @@
 <title><?php if ( is_singular() || is_archive() ) { wp_title(''); } else { bloginfo('name'); } ?></title>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); _e('/style.css', THEME_NAME); ?>" media="screen" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/404.css" media="screen" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
+<?php $options = &$GLOBALS['simpledark_options']; ?>
 <div id="window-wrapper">
 	<div id="window">
 		<h3><?php _e('Sorry, the page you are looking for cannot be found.', THEME_NAME); ?></h3>
@@ -19,9 +21,46 @@
 				<li><a href="<?php echo 'javascript:history.go(-1);' ?>"><?php _e('Go back to last page', THEME_NAME); ?></a></li>
 				<li><a href="<?php bloginfo('url'); ?>"><?php printf(__('Go to the home page of %s', THEME_NAME), get_bloginfo('name')); ?></a></li>
 			</ul>
+			<p><?php _e('Or you can search for the content you need:', THEME_NAME); ?></p>
+			<div id="search-wrapper">
+				<form id="search-form" action="<?php bloginfo('url'); ?>" method="get">
+					<div>
+						<label for="s" id="s-msg"><?php echo $options['search_form_text']; ?></label>
+						<input type="text" class="textbox" id="s" name="s" value="" />
+						<input type="submit" id="search-submit" value="" />
+					</div>
+				</form>
+			</div>
 
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	var searchBox = jQuery('#s');
+	var msgBox = jQuery('#s-msg');
+
+	if(searchBox.val() != '')
+		msgBox.fadeTo(0, 0);
+	searchBox.focus(function() {
+		if(searchBox.val() == '')
+			msgBox.stop().fadeTo(200, .25);
+		else
+			msgBox.stop().fadeTo(200, 0, function() {
+				jQuery(this).hide();
+			});
+	}).blur(function() {
+		if(searchBox.val() == '')
+			msgBox.stop().fadeTo(200, 1);
+	}).keyup(function() {
+		if(searchBox.val() == '')
+			msgBox.stop().fadeTo(200, .25);
+		else
+			msgBox.stop().fadeTo(200, 0, function() {
+				jQuery(this).hide();
+			});
+	});
+});
+</script>
 </body>
 </html>

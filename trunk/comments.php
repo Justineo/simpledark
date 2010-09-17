@@ -5,7 +5,7 @@
 	$options = &$GLOBALS['simpledark_options'];
 ?>
 			<div id="comments" class="section">
-			<h4><?php _e('Comments', THEME_NAME); ?> (<span class="comment-count"><?php echo post_password_required()? __('X', THEME_NAME) : $comment_count; ?></span>)</h4>
+			<h3><?php _e('Comments', THEME_NAME); ?> (<span class="comment-count"><?php echo post_password_required()? __('X', THEME_NAME) : $comment_count; ?></span>)</h3>
 <?php
 	if(post_password_required()) {
 ?>
@@ -16,7 +16,7 @@
 		if($comment_count > 0) {
 ?>
 			<ol class="comment-list">
-<?php wp_list_comments('type=comment&callback=simpledark_comment'); ?>
+<?php wp_list_comments('type=comment&callback=simpledark_comment&max_depth=5'); ?>
 			</ol>
 <?php
 		} else {
@@ -36,81 +36,28 @@
 		}
 ?>
 			</div>
-			<div id="respond" class="section">
-			<h4><?php comment_form_title(__('Leave a Reply', THEME_NAME), __('Leave a Reply to %s', THEME_NAME)); ?></h4>
 <?php
-		if(comments_open()) {
-?>
-<?php
-			if(get_option('comment_registration') && !is_user_logged_in()) {
-?>
-			<p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', THEME_NAME), wp_login_url(get_permalink())); ?></p>
-<?php
-			} else {
-?>
-			<form id="comment-form" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="POST">
-<!--				<div id="cancel-comment-reply" style="display:none; height:0;"><?php cancel_comment_reply_link() ?></div>-->
-<?php
-				if(is_user_logged_in()) {
-?>
-				<p class="message">&rsaquo; <?php printf(__('Logged in as %s.', THEME_NAME), '<a title="' . __('Manage Profile', THEME_NAME) . '" href="' . get_option('siteurl') . '/wp-admin/profile.php">' . $user_identity . '</a>'); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Logout', THEME_NAME); ?>"><?php _e('Logout', THEME_NAME); ?> &raquo;</a></p>
-<?php
-	}
-				else if($comment_author) {
-?>
-				<p class="message">&rsaquo; <?php printf(__('Welcome back, %s.', THEME_NAME), $comment_author); ?> <a href="#" id="toggle-info"><?php _e('Change', THEME_NAME); ?> &raquo;</a></p>
-<?php
-				}
-?>
-				<div id="comment-author-info"<?php if(is_user_logged_in() || $comment_author) echo ' style="display:none"'; ?>>
-					<p>
-						<input id="author" name="author" tabindex="1" type="text" size="24" value="<?php echo $comment_author; ?>" />
-						<label for="author"><?php _e('Name', THEME_NAME); ?> (*)</label>
-					</p>
-					<p>
-						<input id="email" name="email" tabindex="2" type="text" size="24" value="<?php echo $comment_author_email; ?>" />
-						<label for="email"><?php _e('Email', THEME_NAME); ?> (*)</label>
-					</p>
-					<p>
-						<input id="url" name="url" tabindex="3" type="text" size="24" value="<?php echo $comment_author_url; ?>" />
-						<label for="url"><?php _e('Website', THEME_NAME); ?></label>
-					</p>
-				</div>
-<?php
-		if($options['show_allowed_tags']) {
-?>
-				<div class="allowed-tags">
-					<p><?php _e('<strong>Allowed Tags</strong> - You may use these tags in your comment.', THEME_NAME); ?></p>
-					<p><code><?php echo allowed_tags(); ?></code></p>
-				</div>
-<?php
-		}
-?>
-				<p id="comment-wrapper">
-					<textarea id="comment" name="comment" tabindex="4"<?php if($options['ctrl_enter_submit_comment']) { echo ' class="quick-submit"'; } ?>></textarea>
-				</p>
-				<p>
-					<input id="submit-button" type="submit" name="submit" tabindex="5" value="<?php _e('Submit Comment', THEME_NAME); if($options['ctrl_enter_submit_comment']) { echo ' (Ctrl+Enter)'; } ?>" />
-				</p>
-<?php
-		comment_id_fields();
-?>
-			</form>
-<?php
-			}
-		} else {
-?>
-			<p class="message">&rsaquo; <?php _e('Comments are closed.', THEME_NAME); ?></p>
-<?php
-		}
-?>
-			</div>
-<?php
+		$aria_req = ( $req ? " aria-required='true'" : '' );
+		$comment_form_args = array(
+			'fields'				=> apply_filters('comment_form_default_fields', array(
+				'before_fields'		=> ($comment_author? '<p class="comment-notes">&rsaquo; ' . sprintf(__('Welcome back, %s.', THEME_NAME), $comment_author) . ' <a href="#" id="toggle-info">' . __('Change', THEME_NAME) . ' &raquo;</a></p>' : '') . '<div id="comment-author-info"' . ($comment_author? ' style="display:none"' : '') . '>',
+				'author'			=> '<p class="comment-form-author"><input id="author" name="author" tabindex="1" type="text" size="24" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' /> <label for="author">' . __( 'Name' ) . ($req ? ' (*)' : '') . '</label></p>',
+				'email'				=> '<p class="comment-form-email"><input id="email" name="email" tabindex="2" type="text" size="24" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . ' /> <label for="email">' . __( 'Email' ) . ($req ? ' (*)' : '') . '</label></p>',
+				'url'				=> '<p class="comment-form-url"><input id="url" name="url" tabindex="3" type="text" size="24" value="' . esc_attr( $commenter['comment_author_url'] ) . '" /> <label for="url">' . __( 'Website' ) . '</label></p>',
+				'after_fields'		=> '</div>'
+			)),
+			'comment_field'			=> '<p id="comment-wrapper"><textarea id="comment" name="comment" rows="5" cols="70" tabindex="4" aria-required="true"' . ($options['ctrl_enter_submit_comment'] ? ' class="quick-submit"' : '') . '></textarea></p>',
+			'must_log_in'			=> '<p class="must-log-in">&rsaquo; ' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', THEME_NAME ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+			'logged_in_as'			=> '<p class="logged-in-as">&rsaquo; ' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>', THEME_NAME ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+			'label_submit'			=> __( 'Post Comment', THEME_NAME ) . ($options['ctrl_enter_submit_comment']? ' (Ctrl+Enter)' : ''),
+			'comment_notes_before'	=> '',
+			'comment_notes_after'	=> ''
+		);
+		comment_form($comment_form_args);
 		if(!$options['hide_pingbacks']) {
-//		if(pings_open()) {
 ?>
 			<div id="pings" class="section">
-			<h4><?php _e('Pingbacks', THEME_NAME); ?> (<?php echo post_password_required()? __('X', THEME_NAME) : $ping_count; ?>)</h4>
+			<h3><?php _e('Pingbacks', THEME_NAME); ?> (<?php echo post_password_required()? __('X', THEME_NAME) : $ping_count; ?>)</h3>
 <?php
 			if($ping_count > 0) {
 ?>
@@ -134,7 +81,6 @@
 ?>
 			</div>
 <?php
-//		}
 		}
 	}
 	if(post_password_required()) {

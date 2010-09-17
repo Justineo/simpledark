@@ -122,6 +122,10 @@ $comment_author       = ( isset($_POST['author']) )  ? trim(strip_tags($_POST['a
 $comment_author_email = ( isset($_POST['email']) )   ? trim($_POST['email']) : null;
 $comment_author_url   = ( isset($_POST['url']) )     ? trim($_POST['url']) : null;
 $comment_content      = ( isset($_POST['comment']) ) ? trim($_POST['comment']) : null;
+if(get_option('thread_comments')) {
+	$comment_alt	  = ( isset($_POST['comment_alt']) )     ? intval($_POST['comment_alt']) : null;
+	$comment_thread_alt = ( isset($_POST['comment_alt']) )     ? intval($_POST['comment_alt']) : null;
+}
 
 // If the user is logged in
 $user = wp_get_current_user();
@@ -173,13 +177,18 @@ if ( !$user->ID ) {
 }
 
 $GLOBALS['comment'] = $comment;
-$options = &$GLOBALS['SIMPLEDARK_OPTIONS'];
-if(!$options['strict_comment'] && $comment->comment_author_email == get_the_author_email()) {
-	$classes = get_comment_class('bypostauthor');
-} else {
-	$classes = get_comment_class();
+
+if ( get_option('thread_comments') ) {
+	$comment_depth = 1;
+	$ancestor = $comment;
+	while($ancestor->comment_parent != 0){
+		$comment_depth++;
+		$ancestor = get_comment($ancestor->comment_parent);
+	}
+	$depth = $comment_depth;
+	$args = array( 'max_depth' => 5 );
 }
-$comment_class = 'class="' . join(' ', $classes) . '"';
+
 include(SIMPLEDARK_TEMPLATES . '/comment.php');
 ?>
 <!-- AJAX Comment Data Separator --><?php _e('Comment submitted!', THEME_NAME); ?>

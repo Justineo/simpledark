@@ -6,7 +6,24 @@ define('SIMPLEDARK_UTILITIES', TEMPLATEPATH . '/utilities');
 define('SIMPLEDARK_TEMPLATES', TEMPLATEPATH . '/templates');
 define('SIMPLEDARK_PLUGIN_SUPPORT', TEMPLATEPATH . '/plugin-support');
 
+// Make theme available for translation
+// Translations can be filed in the /languages/ directory
 load_theme_textdomain(THEME_NAME, TEMPLATEPATH . '/languages');
+
+// This theme styles the visual editor with editor-style.css to match the theme style.
+add_editor_style();
+
+// This theme uses post thumbnails
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 200, 150, true );
+
+// Add default posts and comments RSS feed links to head
+add_theme_support( 'automatic-feed-links' );
+
+
+if ( ! isset( $content_width ) ) {
+	$content_width = 586;
+}
 
 function simpledark_include_all($dir){
 	$dir = realpath($dir);
@@ -39,13 +56,24 @@ function simpledark_register_sidebar() {
 		));
 	}
 }
-
-simpledark_register_sidebar();
+add_action('init', 'simpledark_register_sidebar');
 
 add_action('widgets_init', 'simpledark_load_widgets');
 
+function simpledark_register_nav_menu() {
+	if(function_exists('register_nav_menu')) {
+		register_nav_menu('top-nav', __('Top Navigation Menu', THEME_NAME));
+	}
+}
+
+add_action('init', 'simpledark_register_nav_menu');
+
 function simpledark_scripts() {
 	if(!is_admin()) {
+		if ( is_singular() && get_option( 'thread_comments' ) ) {
+			wp_deregister_script( 'comment-reply' );
+			wp_enqueue_script( 'comment-reply', get_bloginfo('template_directory') . '/js/simpledark-threaded-comment.min.js', 'jquery');
+		}
 		$options = &$GLOBALS['simpledark_options'];
 		wp_deregister_script('jquery');
 		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', null, '1.4.2');
@@ -74,6 +102,8 @@ add_action('admin_print_styles', 'simpledark_admin_style');
 function simpledark_feed_additional_info($content) {
 	global $authordata;
 	$options = &$GLOBALS['simpledark_options'];
+	$before = '';
+	$after = '';
 	if(is_feed()) {
 		$before = $options['custom_feed_info_before'];
 		$after = $options['custom_feed_info_after'];
@@ -101,10 +131,12 @@ function simpledark_feed_additional_info($content) {
 }
 add_filter('the_content', 'simpledark_feed_additional_info');
 
-function simpledark_category_menu( $args = array() ) {
-	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
+function simpledark_menu( $args = array(), $show_type = 0 ) {
+	$options = &$GLOBALS['simpledark_options'];
+	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'top-menu-window', 'echo' => true, 'link_before' => '', 'link_after' => '');
 	$args = wp_parse_args( $args, $defaults );
 	$args = apply_filters( 'wp_page_menu_args', $args );
+	$args['menu_class'] = 'top-menu-window';
 
 	$menu = '';
 
@@ -124,12 +156,11 @@ function simpledark_category_menu( $args = array() ) {
 
 	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
-	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_categories($list_args) . wp_list_pages($list_args) );
+	$menu .= str_replace( array( "\r", "\n", "\t" ), '', $options['top_category_menu']? wp_list_categories($list_args) : wp_list_pages($list_args) );
 
 	if ( $menu )
-		$menu = '<ul>' . $menu . '</ul>';
+		$menu = '<div class="' . esc_attr($args['menu_class']) . '">' . '<ul>' . $menu . '</ul>' . '</div>';
 
-	$menu = '<div class="' . esc_attr($args['menu_class']) . '">' . $menu . "</div>\n";
 	$menu = apply_filters( 'wp_page_menu', $menu, $args );
 	if ( $args['echo'] )
 		echo $menu;
@@ -225,17 +256,22 @@ function simpledark_filter_more_link($link) {
 }
 add_filter('the_content_more_link', 'simpledark_filter_more_link');
 
-function simpledark_filter_cancel_comment_reply_link($link) {
-	return preg_replace('/href="([^"]+)/', 'href="#', $link);
-}
-add_filter('cancel_comment_reply_link', 'simpledark_filter_cancel_comment_reply_link');
-
 function simpledark_allowed_tags() {
 	global $allowedtags;
 	if($GLOBALS['simpledark_options']['enable_comment_images'])
 		$allowedtags['img'] = array('src' => array(), 'alt' => array());
 }
 add_action('init', 'simpledark_allowed_tags');
+
+function simpledark_show_allowed_tags() {
+	$options = &$GLOBALS['simpledark_options'];
+	if($options['show_allowed_tags']) {
+		echo '<div class="allowed-tags"><p class="form-allowed-tags">' . __('<strong>Allowed Tags</strong> - You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes in your comment.', THEME_NAME) . '</p><p><code>' . allowed_tags() . '</code></p></div>';
+	}
+}
+add_action('comment_form_must_log_in_after', 'simpledark_show_allowed_tags');
+add_action('comment_form_logged_in_after', 'simpledark_show_allowed_tags');
+add_action('comment_form_after_fields', 'simpledark_show_allowed_tags');
 
 // comment count from iNove
 function simpledark_comment_count( $commentcount ) {
@@ -254,16 +290,20 @@ function simpledark_comment($comment, $args, $depth) {
 function simpledark_extra_post_meta() {
 	global $post;
 	$extra = array();
-	if(!empty($post->post_password)) {
-		$extra[] = __('Protected', THEME_NAME);
-	} else if (isset($post->post_status) && 'private' == $post->post_status) {
-		$extra[] = __('Private', THEME_NAME);
+	if(!is_attachment()) {
+		if(!empty($post->post_password)) {
+			$extra[] = __('Protected', THEME_NAME);
+		} else if (isset($post->post_status) && 'private' == $post->post_status) {
+			$extra[] = __('Private', THEME_NAME);
+		}
+		if(function_exists('is_stickied')) { // WP-Sticky is activated
+			if(is_announcement()) { $extra[] = __('Announcement', THEME_NAME); }
+			else if(is_stickied() || is_sticky()) { $extra[] = __('Sticky', THEME_NAME); }
+		} else if (is_sticky()) { $extra[] = __('Sticky', THEME_NAME); }
+		$extra_string = join(' / ', $extra);
+	} else {
+		$extra_string = __('Attachment', THEME_NAME);
 	}
-	if(function_exists('is_stickied')) { // WP-Sticky is activated
-		if(is_announcement()) { $extra[] = __('Announcement', THEME_NAME); }
-		else if(is_stickied() || is_sticky()) { $extra[] = __('Sticky', THEME_NAME); }
-	} else if (is_sticky()) { $extra[] = __('Sticky', THEME_NAME); }
-	$extra_string = join(' / ', $extra);
 	if('' != $extra_string) {
 ?>
 			<p class="extra-meta">[<?php echo $extra_string; ?>]</p>
@@ -271,13 +311,69 @@ function simpledark_extra_post_meta() {
 	}
 }
 
+function simpledark_get_attachment_link($id = 0, $size = 'full', $permalink = false, $icon = false, $before, $after) {
+	$id = intval($id);
+	$_post = & get_post( $id );
+	 
+	if ( ('attachment' != $_post->post_type) || !$url = wp_get_attachment_url($_post->ID) )
+	return __('Missing Attachment');
+
+	if ( $permalink )
+	$url = get_attachment_link($_post->ID);
+
+	$post_title = attribute_escape($_post->post_title);
+
+	$link_text = $before . $_post->post_title . $after;
+
+	return "<a href='$url' title='$post_title'>$link_text</a>";
+}
+
+function simpledark_adjacent_image_link($prev = true) {
+	global $post;
+	$post = get_post($post);
+	$attachments = array_values(get_children("post_parent=$post->post_parent&post_type=attachment&post_mime_type=image&orderby=menu_order ASC, ID ASC"));
+
+	foreach ( $attachments as $k => $attachment )
+		if ( $attachment->ID == $post->ID )
+			break;
+
+	$k = $prev ? $k - 1 : $k + 1;
+	$before = $prev ? '&laquo; ' : '';
+	$after = $prev ? '' : ' &raquo;';
+	
+	if ( isset($attachments[$k]) )
+		echo simpledark_get_attachment_link($attachments[$k]->ID, array(120, 90), true, true, $before, $after);
+}
+
+function simpledark_previous_image_link() {
+	simpledark_adjacent_image_link(true);
+}
+
+function simpledark_next_image_link() {
+	simpledark_adjacent_image_link(false);
+}
+
 function simpledark_script_params($ajax_enabled = true) {
+	$options = &$GLOBALS['simpledark_options'];
 ?>
 <script type="text/javascript">
 	var scriptParams = new Array();
 	scriptParams['blogurl'] = '<?php bloginfo('url'); ?>';
 	scriptParams['tmpldir'] = '<?php bloginfo('template_directory'); ?>';
 <?php
+	if($options['hide_borders_for_small_images']) {
+?>
+	scriptParams['hidesmallimgbdr'] = true;
+	scriptParams['smallimgwidth'] = <?php echo $options[small_image_width]; ?>;
+	scriptParams['smallimgheight'] = <?php echo $options[small_image_height]; ?>;
+	scriptParams['smallimglogic'] = '<?php echo $options[small_image_size_logic]; ?>';
+<?php
+	}
+	if(get_option('thread_comments')) {
+?>
+	scriptParams['threadcmnts'] = true;
+<?php
+	}
 	if($ajax_enabled) {
 		if(function_exists('wp_recentcomments')) {
 			$options = get_option('widget_recentcomments');
@@ -297,11 +393,19 @@ function simpledark_script_params($ajax_enabled = true) {
 	scriptParams['rcparams'] = '<?php echo $args_binding; ?>';
 <?php
 		}
-		if(get_option('thread_comments')) {
 ?>
-	scriptParams['threadcmnts'] = '1';
+	var ajaxParams = new Array();
+	ajaxParams['cmntpost'] = <?php echo $options['enable_ajax_commemt_post'] ? 'true' : 'false'; ?>;
+	ajaxParams['cmntpagenav'] = <?php echo $options['enable_ajax_commemt_pagenav'] ? 'true' : 'false'; ?>;
+	ajaxParams['postcntntpagnav'] = <?php echo $options['enable_ajax_post_content_pagenav'] ? 'true' : 'false'; ?>;
+	ajaxParams['postpagenav'] = <?php echo $options['enable_ajax_post_pagenav'] ? 'true' : 'false'; ?>;
+	ajaxParams['search'] = <?php echo $options['enable_ajax_search'] ? 'true' : 'false'; ?>;
+	ajaxParams['cmntinfotxt'] = {
+		'zero'	: '<?php _e('No Comments', THEME_NAME); ?>',
+		'one'	: '<?php _e('1 Comment', THEME_NAME); ?>',
+		'more'	: '<?php _e('% Comments', THEME_NAME); ?>'
+	}
 <?php
-		}
 	}
 ?>
 </script>

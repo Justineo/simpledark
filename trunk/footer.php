@@ -1,7 +1,7 @@
 	</div><!-- content end -->
 <?php get_sidebar(); ?>
 </div><!-- main end -->
-<div id="footer"><?php printf(__('Powered by %s', THEME_NAME), '<a href="http://wordpress.org/">WordPress</a>'); ?> / <?php printf(__('Theme %1$s by %2$s', THEME_NAME), '<a href="http://lync.in/">SimpleDark</a>', '<a href="http://lync.in/">Justice</a>'); ?>
+<div id="footer"><?php printf(__('Powered by %s', THEME_NAME), '<a href="http://wordpress.org/">WordPress</a>'); ?> / <?php printf(__('Theme %1$s by %2$s', THEME_NAME), '<a href="http://lync.in/">SimpleDark</a>', 'Justice'); ?>
 <?php
 	$info = '';
 	$options = &$GLOBALS['simpledark_options'];

@@ -83,3 +83,45 @@ Enabled auto height adjustment for textareas in the theme options page.
 1.1.6
 修正了上一个版本中的一个错误，去除了在后台管理页面重新加载jQuery 1.4的代码，导致JS加载顺序出现问题。
 Fixed a problem in the last update by removing code that reload jQuery 1.4 for admin pages which causes problem in the order of loading JS files.
+
+1.2.0
+适用WordPress版本调整为3.0及以上。
+调整了部分代码以减少debug模式下的notice。
+修改了顶部菜单，使其支持WordPress3.0的自定义菜单，并支持多菜单项的横向滚动以及一级下拉菜单。
+增加、调整了多处正文内容的CSS样式。
+增加了一个主题选项，可以自定义小于某尺寸的图片不显示边框效果。
+增加了在日志编辑器中导入editor-style.css的功能，使编辑日志时看到的效果尽量接近于实际效果。
+去除了页面底部的一个作者链接。
+修正了单篇日志AJAX分页导航总显示第一页的错误。
+增加了模板attachment.php。
+通过add_theme_support('post-thumbnails')来添加文章缩略图功能。
+通过add_theme_support('automatic-feed-links')来添加RSS<link>元素。
+修正了带Caption的图片在各个定位方式下可能产生的问题。
+修改了评论表单的输出方式，使用新增的comment_form()进行输出。
+增加了控制AJAX子功能开启/关闭的多个主题选项。
+修改了对WP-Syntax的插件支持，更好地显示代码语言。
+修正了通过AJAX读取搜索结果后导航菜单及左侧固定导航按钮可能显示不正确提示的问题。
+添加了对WordPress原生嵌套评论的支持，最多支持5层嵌套。
+取消了allowed tags区域的展开效果，改为始终显示。
+根据评论层级对评论中图片的显示大小作出调整，修正了悬浮显示@评论原评论时大图片溢出的问题。
+修正了搜索结果列表中页面说明信息中的一个文字错误。
+WordPress version requirement has been changed to 3.0 and above.
+Made some fixes to reduce notices under debug mode.
+Remade the top navigation menu which now supports custom menus in WordPress 3.0 and with support to horizontal scrolling for numerous menu items and 1-level dropdown.
+Added and changed lots of CSS settings for post content.
+Added a theme option to enable border removal for images smaller than a size which can be set.
+Added support to import editor-style.css which makes editing posts looks more similar to published ones.
+Removed an author link in the footer.
+Fixed the problem that the first page always appears while doing page navigation within a single paged post.
+Added a template attachment.php for attachment pages.
+Added support for post thumbnails by using add_theme_support('post-thumbnails').
+Changed the way to output <link> elements for RSS feeds to using add_theme_support('automatic-feed-links').
+Fixed the alignment problems for images with captions.
+Changed the way to output comment form by using the newly added comment_form().
+Added theme options to turn on/off each AJAX functionality.
+Changed theme support for the plugin WP-Syntax to display language name more friendly.
+Fixed the problem that navigation cues indicate wrongly after doing AJAX search.
+Added support for WordPress native thread comments with the thread level limit of 5.
+Removed the scrolling down effect for displaying allowed tags in comments. Now it always displays.
+Added dynamic adjustment for comment image sizes according to comment depth and fixed the problem that large images used to overflow tooltip area when mouse over @reply link.
+Fixed a literal mistake in page information displayed in search result list.

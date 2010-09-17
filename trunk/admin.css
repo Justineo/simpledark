@@ -16,7 +16,9 @@ textarea.mid-text {
 	border:1px solid #E3E3E3;
 	font-family:font-size:14px; font-weight:700; line-height:18px; color:#464646; text-shadow:#fff 0 1px 0;
 	-moz-border-radius:6px;
+	-khtml-border-radius:6px;
 	-webkit-border-radius:6px;
+	border-radius:6px;
 }
 
 .form-table td .info {
@@ -26,5 +28,7 @@ textarea.mid-text {
 	border:1px solid #e3e3e3;
 	font-size:12px; color:#666;
 	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
+	border-radius:4px;
 }
