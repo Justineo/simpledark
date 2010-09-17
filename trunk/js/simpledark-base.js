@@ -450,6 +450,9 @@ $(document).ready(function() {
 		$('.allowed-tags').slideDown(500);
 	}).focus(textAreaFixCursorPosition);
 	/* Allowed Tags Display End */
+
+	/* Move Insertion Point to the End of the Textarea */
+	$('#comment').focus(textAreaFixCursorPosition);
 	
 	/* Reply Button Behaviour */
 	$('.comment-reply-link').live('click', function() {
