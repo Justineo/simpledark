@@ -7,7 +7,7 @@ body {
 #window-wrapper {
 	position:absolute;
 	top:50%; left:50%;
-	width:600px; height:300px;
+	width:600px; height:320px;
 }
 
 #window {
@@ -47,6 +47,10 @@ body {
 			border-bottom-style:solid;
 		}
 
+		#error-info ul {
+			margin-left:15px;
+		}
+
 		#error-info li {
 			padding:3px 2px 3px 12px;
 			background:transparent url(images/dot.gif) no-repeat scroll -4px 4px;
@@ -60,4 +64,30 @@ body {
 		position:absolute;
 		bottom:0;
 		text-align:center;
+	}
+
+	#search-form {
+		margin-top:10px;
+	}
+
+	#search-wrapper {
+		text-align:left;
+		line-height:1;
+		margin-left:15px;
+		width:50%;
+	}
+
+	#s-msg {
+		width:96%;
+	}
+
+	#s:focus {
+		background-color:#1d1d1d;
+		border-color:#505050;
+	}
+
+	#s {
+		width:96%;
+		background-color:#181818;
+		border-color:#3c3c3c;
 	}

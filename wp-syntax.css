@@ -1,3 +1,9 @@
+.wp_syntax_wrapper {
+  position: relative;
+  margin-top:20px;
+  width: 600px;
+}
+
 .wp_syntax {
   position:relative;
   color: #100;
@@ -13,10 +19,11 @@
   right:0;
   padding:1px 10px 3px;
   color:#ddd; font-size:9px; font-weight:700;
-  text-transform:uppercase;
   -moz-border-radius-bottomleft:5px;
+  -khtml-border-radius-bottomleft:5px;
   -webkit-border-bottom-left-radius:5px;
   border-radius-bottomleft:5px;
+  z-index:1;
 }
 
 .wp_syntax table, .wp_syntax td, .wp_syntax th {
@@ -28,7 +35,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: expression(this.scrollWidth > this.offsetWidth ? 15 : 0);
-  width: 99%;
+  width: 598px;
 }
 
 .wp_syntax table {

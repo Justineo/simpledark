@@ -3,7 +3,7 @@ function simpledark_ajax_singular_pager() {
 
 	defined('DOING_AJAX') || define('DOING_AJAX', true);
 
-	if ($_GET['action'] == 'spage_ajax') {
+	if (isset($_GET['action']) && $_GET['action'] == 'spage_ajax') {
 		nocache_headers();
 		if(have_posts()) {
 			the_post();

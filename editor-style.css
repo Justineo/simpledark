@@ -1,0 +1,310 @@
+/* -------------- KISSY CSS Reset by lifesinger & ragecarrier (modified by Justice) ------------- */
+
+/* clearing margins and paddings */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements */
+dl, dt, dd, ul, ol, li, /* list elements */
+pre, /* text formatting elements */
+fieldset, lengend, button, input, textarea, /* form elements */
+th, td { /* table elements */
+    margin: 0;
+    padding: 0;
+}
+
+/* setting default fonts */
+body,
+button, input, select, textarea { /* for ie */
+    font: 12px/1 Verdana, sans-serif;
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4 { font-size: 13px; }
+h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* clearing italic font settings */
+code, kbd, pre, samp, tt { font-family: Consolas, "Courier New", Courier, monospace; } /* setting monospace fonts */
+
+/* reset list elements */
+ul, ol { list-style: none; }
+
+/* reset text decorations */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+abbr[title], acronym[title] { /* IE6 does not support <abbr> and attribute selectors */
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* reset form elements */
+legend { color: #000; } /* for IE6 */
+fieldset, img { border: none; } /* clear image borders within anchors by the way */
+/* ineffective for optgroup */
+button, input, select, textarea {
+    font-size: 100%; /* make form font sizes inherent */
+}
+
+/* reset table elements */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* reset hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* ----------------------------------- end of Kissy CSS Reset ----------------------------------- */
+
+
+html {
+	background-color:#262626;
+}
+
+a, a:link, a:visited {
+	color:#eee; text-decoration:none;
+	outline:none;
+	border-bottom:1px dotted #666;
+}
+
+a:hover, a:active {
+	color:#fff;	text-decoration:none;
+	border-bottom-style:solid;
+}
+
+img {
+	-ms-interpolation-mode:bicubic;
+}
+
+.hide {
+	display:none;
+}
+
+body.mceContentBody {
+	background-color:#262626;
+	color:#bbb;
+	padding:10px;
+	font: 12px/1.6 Verdana, sans-serif;
+}
+
+.aligncenter {
+	display:block;
+	margin:10px auto;
+	text-align:center;
+}
+
+.aligncenter a, .aligncenter img {
+	margin-right:auto; margin-left:auto;
+}
+
+.alignleft {
+	float:left;
+	margin:10px 15px 10px 5px;
+}
+
+.alignright {
+	float:right;
+	margin:10px 5px 10px 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:#eee; text-shadow:0 -1px 0 #111;
+}
+
+h3 {
+	margin-top:10px; padding:2px 8px;
+	background-color:#333;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+p {
+	padding:10px 0;
+}
+
+img {
+	border:2px solid #CFCFCF;
+	margin:5px;
+	-moz-box-shadow:0 0 5px #000;
+	-webkit-box-shadow:0 0 5px #000;
+	box-shadow:0 0 5px #000;
+}
+
+a img {
+	display:block;
+}
+
+.wp-caption {
+	background-color:#2e2e2e;
+	padding:10px 10px 1px;
+	-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:none;
+}
+
+.wp-caption img {
+	border:2px solid #CFCFCF;
+	margin:3px;
+}
+
+.wp-caption-text {
+	text-align:center; color:#999;
+}
+
+table {
+	border:2px solid #3c3c3c;
+}
+
+caption {
+	font-weight:700; color:#eee; text-shadow:0 -1px 0 #111;
+	padding:3px 0;
+}
+
+tr:nth-child(even) {
+	background-color:#2c2c2c;
+}
+
+tr.even td {
+	background-color:#2c2c2c;
+}
+
+td, th {
+	padding:4px 8px;
+	border:1px solid #3c3c3c;
+}
+
+th {
+	background-color:#3c3c3c;
+	color:#eee; text-shadow:0 -1px 0 #111;
+}
+
+tfoot {
+	background-color:#3c3c3c;
+}
+
+ul, dl {
+	margin-bottom:10px;
+	margin-left:10px;
+}
+
+.gallery dl {
+	margin-bottom:0; margin-left:0;
+}
+
+dt {
+	font-weight:700;
+}
+
+dd {
+	background:url(images/tri.gif) no-repeat -4px 4px;
+	padding:2px 2px 3px 12px;
+}
+
+.gallery dd, .wp-caption-dd {
+	background:none;
+	padding:0;
+}
+
+.wp-caption-dt {
+	font-weight:400;
+}
+
+.wp-caption-dd {
+	padding-bottom:10px;
+}
+
+ol {
+	margin-bottom:10px;
+	margin-left:20px;
+	padding-left:10px;
+}
+
+li ul, li ol {
+	margin:0;
+}
+
+li ol {
+	margin-left:10px;
+}
+
+ul li {
+	padding:3px 2px 3px 12px;
+	background:url(images/dot.gif) no-repeat -4px 4px;
+	line-height:1.6;
+}
+
+ol li {
+	list-style-type:decimal; list-style-position:outside;
+	padding:3px 0;
+	line-height:1.5;
+}
+
+ul ol li {
+	padding:3px 2px;
+	background:none;
+}
+
+blockquote {
+	padding:5px 20px; margin:0 5px;
+	border:1px solid #3c3c3c; border-left:8px solid #3c3c3c;
+	background-color:#2c2c2c;
+	overflow:auto;
+}
+
+q {
+	font-style:italic;
+}
+
+object {
+	border:3px solid #cfcfcf;
+	display:block;
+	-moz-box-shadow:0 0 5px #000;
+	-webkit-box-shadow:0 0 5px #000;
+	box-shadow:0 0 5px #000;
+}
+
+del, strike {
+	color:#777;
+}
+
+ins {
+	color:#bcdbcd; text-decoration:none;
+}
+
+address, cite, q, var {
+	font-style:italic;
+}
+
+var {
+	font-family:Georgia,'Times New Roman',Times,serif;
+}
+
+em {
+	font-weight:700;
+}
+
+.gallery-icon {
+	text-align:center;
+}
+
+.gallery-caption {
+	margin:5px 0;
+	font-size:10px;
+}
+
+.attachment-thumbnail {
+	margin:auto;
+}
+
+.gallery a {
+	border:none;
+}

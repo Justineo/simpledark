@@ -31,16 +31,168 @@ function simpledark_custom_geshi_styles(&$geshi)
 }
 add_action('wp_syntax_init_geshi', 'simpledark_custom_geshi_styles');
 
-function simpledark_replce_tab($content) {
+function simpledark_replace_tab($content) {
 	return str_replace('	', '  ', $content);
 }
-add_filter('the_content', simpledark_replce_tab, 100);
+add_filter('the_content', 'simpledark_replace_tab', 100);
 
 function simpledark_display_code_language($content) {
-	return preg_replace('/(<div class="wp_syntax">)([\s\S]*?<pre class=")([^"]+)/i', '\\1<span class="wp_syntax_lang">\\3</span>\\2', $content);
+	return preg_replace_callback('|(<div class="wp_syntax">[\s\S]*?<pre class=\")([^\"]+)([\s\S]*?<\/div>)|i', 'refine_code', $content);
 }
-add_filter('the_content', simpledark_display_code_language, 100);
-add_filter('the_excerpt', simpledark_display_code_language, 100);
-add_filter('comment_text', simpledark_display_code_language, 100);
+function refine_code($matches) {
+	return '<div class="wp_syntax_wrapper"><span class="wp_syntax_lang">' . get_display_lang_name($matches[2]) . '</span>' . $matches[0] . '</div>';
+}
+add_filter('the_content', 'simpledark_display_code_language', 100);
+add_filter('the_excerpt', 'simpledark_display_code_language', 100);
+add_filter('comment_text', 'simpledark_display_code_language', 100);
+
+function get_display_lang_name($lang) {
+	$name_map = array(
+		'abap'			=> 'ABAP',
+		'actionscript3'	=> 'ActionScript 3',
+		'actionscript'	=> 'ActionScript',
+		'ada'			=> 'Ada',
+		'apache'		=> 'Apache configuration',
+		'applescript'	=> 'AppleScript',
+		'apt_sources'	=> 'APT sources',
+		'asm'			=> 'ASM',
+		'asp'			=> 'ASP',
+		'autoit'		=> 'AutoIt',
+		'avisynth'		=> 'AviSynth',
+		'bash'			=> 'Bash',
+		'basic4gl'		=> 'Basic4GL',
+		'bf'			=> 'Brainfuck',
+		'bibtex'		=> 'BibTeX',
+		'blitzbasic'	=> 'Blitz Basic',
+		'bnf'			=> 'BNF',
+		'boo'			=> 'Boo',
+		'c'				=> 'C',
+		'c_mac'			=> 'C (Mac)',
+		'caddcl'		=> 'CAD DCL',
+		'cadlisp'		=> 'CAD Lisp',
+		'cfdg'			=> 'CFDG',
+		'cfm'			=> 'ColdFusion',
+		'cil'			=> 'CIL',
+		'cmake'			=> 'CMake',
+		'cobol'			=> 'COBOL',
+		'cpp'			=> 'C++',
+		'cpp-qt'		=> 'C++ (QT)',
+		'csharp'		=> 'C#',
+		'css'			=> 'CSS',
+		'd'				=> 'D',
+		'dcs'			=> 'DCS',
+		'delphi'		=> 'Delphi',
+		'diff'			=> 'diff output',
+		'div'			=> 'DIV',
+		'dos'			=> 'DOS',
+		'dot'			=> 'DOT',
+		'eiffel'		=> 'Eiffel',
+		'email'			=> 'mbox',
+		'erlang'		=> 'Erlang',
+		'fo'			=> 'FO',
+		'fortran'		=> 'Fortran',
+		'freebasic'		=> 'FreeBASIC',
+		'genero'		=> 'Genero',
+		'gettext'		=> 'GNU Gettext',
+		'glsl'			=> 'GLSL',
+		'gml'			=> 'GML',
+		'gnuplot'		=> 'gnuplot',
+		'groovy'		=> 'Groovy',
+		'haskell'		=> 'Haskell',
+		'hq9plus'		=> 'HQ9+',
+		'html4strict'	=> 'HTML',
+		'idl'			=> 'IDL',
+		'ini'			=> 'INI',
+		'inno'			=> 'Inno',
+		'intercal'		=> 'INTERCAL',
+		'io'			=> 'Io',
+		'java5'			=> 'Java',
+		'java'			=> 'Java',
+		'javascript'	=> 'JavaScript',
+		'kixtart'		=> 'KiXtart',
+		'klonec'		=> 'KLone C',
+		'klonecpp'		=> 'KLone C++',
+		'latex'			=> 'LaTeX',
+		'lisp'			=> 'Lisp',
+		'locobasic'		=> 'Locomotive Basic',
+		'lolcode'		=> 'LOLCODE',
+		'lotusformulas'	=> '@Formula',
+		'lotusscript'	=> 'LotusScript',
+		'lscript'		=> 'LScript',
+		'lsl2'			=> 'LSL2',
+		'lua'			=> 'Lua',
+		'm68k'			=> 'Motorola 68000 Assembler',
+		'make'			=> 'GNU make',
+		'matlab'		=> 'Matlab M',
+		'mirc'			=> 'mIRC scripting',
+		'modula3'		=> 'Modula-3',
+		'mpasm'			=> 'Microchip Assembly',
+		'mxml'			=> 'MXML',
+		'mysql'			=> 'MySQL SQL',
+		'nsis'			=> 'NSIS',
+		'oberon2'		=> 'Oberon-2',
+		'objc'			=> 'Objective-C',
+		'ocaml'			=> 'OCaml',
+		'ocaml-brief'	=> 'OCaml',
+		'oobas'			=> 'OpenOffice.org Basic',
+		'oracle8'		=> 'Oracle 8 SQL',
+		'oracle11'		=> 'Oracle 11 SQL',
+		'pascal'		=> 'Pascal',
+		'per'			=> 'per',
+		'perl'			=> 'Perl',
+		'php'			=> 'PHP',
+		'php-brief'		=> 'PHP',
+		'pic16'			=> 'PIC16',
+		'pixelblender'	=> 'Pixel Blender',
+		'plsql'			=> 'PL/SQL',
+		'povray'		=> 'POV-Ray',
+		'powershell'	=> 'PowerShell',
+		'progress'		=> 'Progress',
+		'prolog'		=> 'Prolog',
+		'properties'	=> 'Properties',
+		'providex'		=> 'ProvideX',
+		'python'		=> 'Python',
+		'qbasic'		=> 'QuickBASIC',
+		'rails'			=> 'Rails',
+		'rebol'			=> 'REBOL',
+		'reg'			=> 'Microsoft Registry',
+		'robots'		=> 'robots.txt',
+		'ruby'			=> 'Ruby',
+		'sas'			=> 'SAS',
+		'scala'			=> 'Scala',
+		'scheme'		=> 'Scheme',
+		'scilab'		=> 'Scilab',
+		'sdlbasic'		=> 'sdlBasic',
+		'smalltalk'		=> 'Smalltalk',
+		'smarty'		=> 'Smarty',
+		'sql'			=> 'SQL',
+		'tcl'			=> 'Tcl',
+		'teraterm'		=> 'Tera Term Macro',
+		'text'			=> 'Text',
+		'thinbasic'		=> 'thinBasic',
+		'tsql'			=> 'T-SQL',
+		'typoscript'	=> 'TypoScript',
+		'vb'			=> 'VB',
+		'vbnet'			=> 'VB.NET',
+		'verilog'		=> 'Verilog',
+		'vhdl'			=> 'VHDL',
+		'vim'			=> 'Vimscript',
+		'visualfoxpro'	=> 'Visual Fox Pro',
+		'visualprolog'	=> 'Visual Prolog',
+		'whitespace'	=> 'Whitespace',
+		'whois'			=> 'RPSL (whois response)',
+		'winbatch'		=> 'WinBatch',
+		'xml'			=> 'XML',
+		'xorg_conf'		=> 'Xorg configuration',
+		'xpp'			=> 'X++',
+		'z80'			=> 'ZiLOG Z80 Assembler'
+	);
+	if(isset($name_map[$lang])) {
+		return $name_map[$lang];
+	} else {
+		return strtoupper($lang);
+	}
+}
+
 }
 ?>

@@ -1,9 +1,11 @@
 <?php
-defined('DOING_AJAX') || define('DOING_AJAX', true);
 $comment = get_comment($_GET['id']);
 
 function simpledark_ajax_comment_pager() {
-	if ($_GET['action'] == 'cpage_ajax') {
+	if (isset($_GET['action']) && $_GET['action'] == 'cpage_ajax') {
+
+		defined('DOING_AJAX') || define('DOING_AJAX', true);
+
 		nocache_headers();
 		// global variables
 		global $wp_query, $wpdb, $authordata, $comment, $user_ID, $wp_rewrite;
@@ -70,7 +72,10 @@ function simpledark_ajax_comment_pager() {
 add_action('init', 'simpledark_ajax_comment_pager');
 
 function simpledark_ajax_comment_getter() {
-	if ($_GET['action'] == 'cget_ajax' && $_GET['id'] != '') {
+	if (isset($_GET['action']) && $_GET['action'] == 'cget_ajax' && $_GET['id'] != '') {
+		
+		defined('DOING_AJAX') || define('DOING_AJAX', true);
+
 		nocache_headers();
 		$comment = get_comment($_GET['id']);
 		if(!$comment) {

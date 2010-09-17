@@ -15,7 +15,7 @@ class SimpleDark_Widget_Search extends WP_Widget {
 				<?php if($title) echo $before_title . $title . $after_title; ?>
 				<div id="search-wrapper">
 					<form id="search-form" action="<?php bloginfo('url'); ?>" method="get">
-						<div><label for="s" id="s-msg"><?php echo $options['search_form_text']; ?></label><input type="text" class="textbox" id="s" name="s" value="" /><?php if(!$options['enable_ajax']) { ?><input type="submit" id="search-submit" value="" /><?php } ?></div>
+						<div><label for="s" id="s-msg"><?php echo $options['search_form_text']; ?></label><input type="text" class="textbox" id="s" name="s" value="" /><?php if(!$options['enable_ajax'] || !$options['enable_ajax_search']) { ?><input type="submit" id="search-submit" value="" /><?php } ?></div>
 					</form>
 				</div>
 			<?php echo $after_widget; ?>
@@ -51,7 +51,7 @@ class SimpleDark_Widget_Feed extends WP_Widget {
     function widget($args, $instance) {
 		extract($args);
 		$title = apply_filters('widget_title', $instance['title']);
-		$feed_text = empty($instance['feed_text'])? __('Subscribe Updates') : $instance['feed_text'];
+		$feed_text = empty($instance['feed_text'])? __('Subscribe Updates', THEME_NAME) : $instance['feed_text'];
 		$feed_url = empty($instance['feed_url'])? get_bloginfo('rss2_url') : (substr(strtoupper($options['feed_url']), 0, 7) == 'HTTP://'? $instance['feed_url'] : 'http://' . $instance['feed_url']);
 ?>
 			<?php echo $before_widget; ?>
@@ -63,7 +63,7 @@ class SimpleDark_Widget_Feed extends WP_Widget {
 	
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$new_instance = wp_parse_args((array) $new_instance, array( 'title' => '', 'feed_text' => __('Subscribe Updates') ));
+		$new_instance = wp_parse_args((array) $new_instance, array( 'title' => '', 'feed_text' => __('Subscribe Updates', THEME_NAME)));
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['feed_text'] = strip_tags($new_instance['feed_text']);
 		$instance['feed_url'] = strip_tags($new_instance['feed_url']);
@@ -71,7 +71,7 @@ class SimpleDark_Widget_Feed extends WP_Widget {
     }
 
 	function form($instance) {
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '') );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => __('RSS Feed', THEME_NAME) ) );
 		$title = $instance['title'];
 		$feed_text = $instance['feed_text'];
 		$feed_url = $instance['feed_url'];
