@@ -1,43 +1,43 @@
 1.0.1
-È¥³ıÒ»¸öµ÷ÊÔÊ±ÒÅÁôµÄalertĞÅÏ¢¡£
+å»é™¤ä¸€ä¸ªè°ƒè¯•æ—¶é—ç•™çš„alertä¿¡æ¯ã€‚
 Removed an alert message since debugging stage.
 
 1.0.2
-ĞŞÕıµ¥ÆªÈÕÖ¾ËÑË÷Ê±µÄÎÊÌâ¡£(ÔÚ²»´æÔÚPaginatorµÄÇé¿öÏÂ¶ÔÆä½øĞĞÖØĞÂ¼ÓÔØËùÒıÆğ)
+ä¿®æ­£å•ç¯‡æ—¥å¿—æœç´¢æ—¶çš„é—®é¢˜ã€‚(åœ¨ä¸å­˜åœ¨Paginatorçš„æƒ…å†µä¸‹å¯¹å…¶è¿›è¡Œé‡æ–°åŠ è½½æ‰€å¼•èµ·)
 Fixed problems when doing AJAX search on single post.
 
 1.0.3
-ÖØĞ´ÁËÖ÷Ìâ½Å±¾¼ÓÔØµÄ´úÂë£¬Ê¹Æä²»ÓëÆäËû²å¼ş¼ÓÔØµÄjQueryµÈ½Å±¾³åÍ»¡£
+é‡å†™äº†ä¸»é¢˜è„šæœ¬åŠ è½½çš„ä»£ç ï¼Œä½¿å…¶ä¸ä¸å…¶ä»–æ’ä»¶åŠ è½½çš„jQueryç­‰è„šæœ¬å†²çªã€‚
 Rewrote the code for loading JavaScript libs to solve the conflict with the registered jQuery lib.
 
 1.0.4
-µ÷ÕûÎÄ×ÖÑÕÉ«£¬Ôö¼ÓdelºÍinsÔªËØÑùÊ½¡£
+è°ƒæ•´æ–‡å­—é¢œè‰²ï¼Œå¢åŠ delå’Œinså…ƒç´ æ ·å¼ã€‚
 Adjusted the text color and added style for <del> and <ins> elements.
 
 1.0.5
-ĞŞ¸ÄÁËPageµÄmetadataÏÔÊ¾¡£("Author posted in Category" -> "Posted by Author")
-ĞŞ¸ÄÁËJS²ÎÊı´«µİµÄĞÎÊ½£¬Ô­À´Îª´ÓJSÎÄ¼şµÄquery stringÖĞ´«µİ£¬ÏÖ¸ÄÎªÖ±½ÓÊ¹ÓÃPHPÔÚ<script>ÔªËØÄÚĞ´³ö¡£
-ĞŞÕıÁËÊó±êÒÆÖÁÒ³ÃæÓÒ²àµ¼ÖÂ×ó²à¹Ì¶¨µ¼º½°´Å¥¸ßÁÁµÄbug¡£
+ä¿®æ”¹äº†Pageçš„metadataæ˜¾ç¤ºã€‚("Author posted in Category" -> "Posted by Author")
+ä¿®æ”¹äº†JSå‚æ•°ä¼ é€’çš„å½¢å¼ï¼ŒåŸæ¥ä¸ºä»JSæ–‡ä»¶çš„query stringä¸­ä¼ é€’ï¼Œç°æ”¹ä¸ºç›´æ¥ä½¿ç”¨PHPåœ¨<script>å…ƒç´ å†…å†™å‡ºã€‚
+ä¿®æ­£äº†é¼ æ ‡ç§»è‡³é¡µé¢å³ä¾§å¯¼è‡´å·¦ä¾§å›ºå®šå¯¼èˆªæŒ‰é’®é«˜äº®çš„bugã€‚
 Changed the display of page metadata.("Author posted in Category" -> "Posted by Author")
 Changed the way of passing parameters to JavaScript codes from appending query string to script URL, to directly writing script in HTML.
 Fixed the problem that the fixed-positioned navigator on the left side would be highlighted when mouse cursor is moved to the right of the page.
 
 1.0.6
-ĞŞÕıÁËÒ»¸ö¶àÓïÑÔ·­ÒëÉÏµÄ´íÎó¡£(singular.phpÖĞµÄ'Posted by %s')
+ä¿®æ­£äº†ä¸€ä¸ªå¤šè¯­è¨€ç¿»è¯‘ä¸Šçš„é”™è¯¯ã€‚(singular.phpä¸­çš„'Posted by %s')
 Fixed a translation problem.('Posted by %s' in singular.php)
 
 1.1.0
-ĞŞÕıÁËÑ¡ÔñÁË"ÔÚ·Çµ¥ÆªÎÄÕÂÖĞÏÔÊ¾±êÇ©"¶øÃ»ÓĞ±êÇ©Ê±Î´´¦Àí¶àÓïÑÔÏÔÊ¾µÄÎÊÌâ¡£
-ĞŞÕıÁËAJAXÌá½»ÆÀÂÛºóË¢ĞÂWP-RecentCommentsÊ±µÄ´íÎó¡£
-ÔÚ<header>ÖĞ¼ÓÈëÁËÎÄÕÂÓëÆÀÂÛµÄRSSÔ´µÄ<link>¡£
-ÔÚimages/PSDÄ¿Â¼ÏÂÌí¼ÓÁË±êÌâÍ¼Æ¬µÄ.psdÔ´ÎÄ¼ş¡£
-ÓÃJSµ÷ÕûÁËÔÚÆÀÂÛÖĞÇ¶Èë¿íÍ¼Æ¬Ê±Í¼Æ¬µÄ´óĞ¡£¬ÒÔ·ÀÆä³¬³öÆÀÂÛÏÔÊ¾·¶Î§¶ø±»ÕÚ¸Ç¡£
-È¥µôÁË×îºóÒ»¸öÁĞ±íÏîµÄË®Æ½·Ö¸ôÏß(½ö¶ÔÖ§³ÖCSS3Ñ¡ÔñÆ÷µÄä¯ÀÀÆ÷ÓĞĞ§)¡£
-µ÷ÕûÁËºóÌ¨Ñ¡ÏîµÄÑùÊ½£¬ÇÒ½«Ñ¡Ïî½øĞĞÁË·Ö×é¡£
-Ôö¼ÓÁËºóÌ¨Ñ¡ÏîÖĞ¶ÔĞí¿ÉĞ­ÒéµÄËµÃ÷¡£
-Ôö¼ÓÁËÒ»Ğ©Ö÷ÌâÑ¡Ïî£¬ÓÃÀ´ÉèÖÃ¶¥²¿µ¼º½¡£
-Ôö¼ÓÁËÒ»Ğ©Ö÷ÌâÑ¡Ïî£¬ÓÃÀ´ÉèÖÃÎÄÕÂFeedÖĞÊä³öµÄ¶îÍâĞÅÏ¢¡£
-Ôö¼ÓÁËÒ»Ğ©Ö÷ÌâÑ¡Ïî£¬ÓÃÀ´ÉèÖÃGoogle Analytics´úÂë£¬²¢Ñ¡ÔñÊÇ·ñ²»¸ú×ÙÒÑµÇÂ¼µÄ¹ÜÀíÔ±µÄ·ÃÎÊĞÅÏ¢¡£
+ä¿®æ­£äº†é€‰æ‹©äº†"åœ¨éå•ç¯‡æ–‡ç« ä¸­æ˜¾ç¤ºæ ‡ç­¾"è€Œæ²¡æœ‰æ ‡ç­¾æ—¶æœªå¤„ç†å¤šè¯­è¨€æ˜¾ç¤ºçš„é—®é¢˜ã€‚
+ä¿®æ­£äº†AJAXæäº¤è¯„è®ºååˆ·æ–°WP-RecentCommentsæ—¶çš„é”™è¯¯ã€‚
+åœ¨<header>ä¸­åŠ å…¥äº†æ–‡ç« ä¸è¯„è®ºçš„RSSæºçš„<link>ã€‚
+åœ¨images/PSDç›®å½•ä¸‹æ·»åŠ äº†æ ‡é¢˜å›¾ç‰‡çš„.psdæºæ–‡ä»¶ã€‚
+ç”¨JSè°ƒæ•´äº†åœ¨è¯„è®ºä¸­åµŒå…¥å®½å›¾ç‰‡æ—¶å›¾ç‰‡çš„å¤§å°ï¼Œä»¥é˜²å…¶è¶…å‡ºè¯„è®ºæ˜¾ç¤ºèŒƒå›´è€Œè¢«é®ç›–ã€‚
+å»æ‰äº†æœ€åä¸€ä¸ªåˆ—è¡¨é¡¹çš„æ°´å¹³åˆ†éš”çº¿(ä»…å¯¹æ”¯æŒCSS3é€‰æ‹©å™¨çš„æµè§ˆå™¨æœ‰æ•ˆ)ã€‚
+è°ƒæ•´äº†åå°é€‰é¡¹çš„æ ·å¼ï¼Œä¸”å°†é€‰é¡¹è¿›è¡Œäº†åˆ†ç»„ã€‚
+å¢åŠ äº†åå°é€‰é¡¹ä¸­å¯¹è®¸å¯åè®®çš„è¯´æ˜ã€‚
+å¢åŠ äº†ä¸€äº›ä¸»é¢˜é€‰é¡¹ï¼Œç”¨æ¥è®¾ç½®é¡¶éƒ¨å¯¼èˆªã€‚
+å¢åŠ äº†ä¸€äº›ä¸»é¢˜é€‰é¡¹ï¼Œç”¨æ¥è®¾ç½®æ–‡ç« Feedä¸­è¾“å‡ºçš„é¢å¤–ä¿¡æ¯ã€‚
+å¢åŠ äº†ä¸€äº›ä¸»é¢˜é€‰é¡¹ï¼Œç”¨æ¥è®¾ç½®Google Analyticsä»£ç ï¼Œå¹¶é€‰æ‹©æ˜¯å¦ä¸è·Ÿè¸ªå·²ç™»å½•çš„ç®¡ç†å‘˜çš„è®¿é—®ä¿¡æ¯ã€‚
 Fixed a translation problem on a post without tags when the theme option "Show post tags on archive pages" is checked.
 Fixed the problem caused by refreshing the WP-RecentComments widget on AJAX comment submission.
 Added <link> elements for entries feed and comments feed in the <header>.
@@ -51,60 +51,60 @@ Added some theme options to configure additional information output in feed cont
 Added some theme options to configure Google Analytics, and to set whether to exclude Google Analytics for logged-in administrators or not.
 
 1.1.1
-ĞŞÕıÁËÆÀÂÛ±íµ¥ÎŞ·¨ÓÃtabÒÀ´Î¾Û½¹µÄÎÊÌâ¡£(thanks to Sparanoid)
-ĞŞ¸´ÁËIE6ÏÂÊäÈëÆÀÂÛºóÆÀÂÛ¿ò±ä¿íµÄÎÊÌâ(ÎªÆÀÂÛ¿òÉè¶¨ÁË¹Ì¶¨¿í¶È)¡£
-Ê¹ÓÃjQuery²å¼şautoResizeÀ´×Ô¶¯µ÷ÕûÓÃ»§ÊäÈëÎÄ×ÖÒÔºóµÄÆÀÂÛ¿ò¸ß¶È¡£
+ä¿®æ­£äº†è¯„è®ºè¡¨å•æ— æ³•ç”¨tabä¾æ¬¡èšç„¦çš„é—®é¢˜ã€‚(thanks to Sparanoid)
+ä¿®å¤äº†IE6ä¸‹è¾“å…¥è¯„è®ºåè¯„è®ºæ¡†å˜å®½çš„é—®é¢˜(ä¸ºè¯„è®ºæ¡†è®¾å®šäº†å›ºå®šå®½åº¦)ã€‚
+ä½¿ç”¨jQueryæ’ä»¶autoResizeæ¥è‡ªåŠ¨è°ƒæ•´ç”¨æˆ·è¾“å…¥æ–‡å­—ä»¥åçš„è¯„è®ºæ¡†é«˜åº¦ã€‚
 Fixed the problem of focusing comment form using tab.
 Fixed the problem that the comment form will grow wider after inputing some text under IE 6(set fixed with for it).
 Used the jQuery plugin 'autoResize' to automatically adjust the height of the comment form after user input.
 
 1.1.2
-ĞŞÕıÁË²à±ßÀ¸ RSS Ô´Ä£¿é²»ÄÜĞŞ¸Ä±êÌâµÄÎÊÌâ¡£(thanks to ±¡ÈË)
+ä¿®æ­£äº†ä¾§è¾¹æ  RSS æºæ¨¡å—ä¸èƒ½ä¿®æ”¹æ ‡é¢˜çš„é—®é¢˜ã€‚(thanks to è–„äºº)
 Fixed the problem of failing to modify the title of the SimpleDark RSS feed widget.
 
 1.1.3
-ĞŞ¸ÄÁË¶©ÔÄÔ´µÄlink±êÇ©ÖĞÓ²±àÂëµÄtitleÊôĞÔ£¬ÏÖÔÚÊä³ö"[²©¿Í±êÌâ] µÄÎÄÕÂ RSS Ô´"Óë"[²©¿Í±êÌâ] µÄÆÀÂÛ RSS Ô´"¡£(thanks to ±¡ÈË)
+ä¿®æ”¹äº†è®¢é˜…æºçš„linkæ ‡ç­¾ä¸­ç¡¬ç¼–ç çš„titleå±æ€§ï¼Œç°åœ¨è¾“å‡º"[åšå®¢æ ‡é¢˜] çš„æ–‡ç«  RSS æº"ä¸"[åšå®¢æ ‡é¢˜] çš„è¯„è®º RSS æº"ã€‚(thanks to è–„äºº)
 Modified the hard coded title attribute in RSS link element. Now the titles are changed to "[Blog Title] Entries RSS Feed" and "[Blog Title] Comments RSS Feed".
 
 1.1.4
-ĞŞÕıÁËÔÚÃ»ÓĞÆôÓÃ²å¼şWP-RecentCommentsÊ±£¬Ìá½»ÆÀÂÛºó²»ÄÜ»Ö¸´ÆÀÂÛ¿ò×´Ì¬µÄÎÊÌâ¡£(thanks to blueandhack)
+ä¿®æ­£äº†åœ¨æ²¡æœ‰å¯ç”¨æ’ä»¶WP-RecentCommentsæ—¶ï¼Œæäº¤è¯„è®ºåä¸èƒ½æ¢å¤è¯„è®ºæ¡†çŠ¶æ€çš„é—®é¢˜ã€‚(thanks to blueandhack)
 Fixed the problem of failing to recover the comment form from submitting state after a comment is submitted without activating the plugin WP-RecentComments.
 
 1.1.5
-ĞŞ¸ÄÉÏ¸ö°æ±¾ÖĞµÄÒ»¸ö´íÎó£¬ÏÖÔÚÒÑ¾­¿ÉÒÔ³É¹¦»Ö¸´ÆÀÂÛ¿ò×´Ì¬¡£
-Ôö¼ÓÁËÔÚÎÄÕÂÕªÒªºÍÆÀÂÛÖĞÏÔÊ¾WP-Syntax´úÂë¿éÓïÑÔÀàĞÍµÄ¹¦ÄÜ¡£
-ĞŞ¸ÄÁËÒ³ÃæÎ²²¿´¦½Å±¾ÎÄ¼şµÄ¼ÓÔØ·½Ê½¡£
-Ê¹Ö÷ÌâÑ¡ÏîÒ³ÃæµÄ<textarea>¿ÉÒÔ×ÔÊÊÓ¦¸ß¶È¡£(thanks to blueandhack for the suggestion)
+ä¿®æ”¹ä¸Šä¸ªç‰ˆæœ¬ä¸­çš„ä¸€ä¸ªé”™è¯¯ï¼Œç°åœ¨å·²ç»å¯ä»¥æˆåŠŸæ¢å¤è¯„è®ºæ¡†çŠ¶æ€ã€‚
+å¢åŠ äº†åœ¨æ–‡ç« æ‘˜è¦å’Œè¯„è®ºä¸­æ˜¾ç¤ºWP-Syntaxä»£ç å—è¯­è¨€ç±»å‹çš„åŠŸèƒ½ã€‚
+ä¿®æ”¹äº†é¡µé¢å°¾éƒ¨å¤„è„šæœ¬æ–‡ä»¶çš„åŠ è½½æ–¹å¼ã€‚
+ä½¿ä¸»é¢˜é€‰é¡¹é¡µé¢çš„<textarea>å¯ä»¥è‡ªé€‚åº”é«˜åº¦ã€‚(thanks to blueandhack for the suggestion)
 Fixed a problem in the last update and now the comment form state recovery works fine.
 Added support for displaying code language in excerpts and comments when formatting code using WP-Syntax.
 Changed the way how footer scripts are loaded.
 Enabled auto height adjustment for textareas in the theme options page.
 
 1.1.6
-ĞŞÕıÁËÉÏÒ»¸ö°æ±¾ÖĞµÄÒ»¸ö´íÎó£¬È¥³ıÁËÔÚºóÌ¨¹ÜÀíÒ³ÃæÖØĞÂ¼ÓÔØjQuery 1.4µÄ´úÂë£¬µ¼ÖÂJS¼ÓÔØË³Ğò³öÏÖÎÊÌâ¡£
+ä¿®æ­£äº†ä¸Šä¸€ä¸ªç‰ˆæœ¬ä¸­çš„ä¸€ä¸ªé”™è¯¯ï¼Œå»é™¤äº†åœ¨åå°ç®¡ç†é¡µé¢é‡æ–°åŠ è½½jQuery 1.4çš„ä»£ç ï¼Œå¯¼è‡´JSåŠ è½½é¡ºåºå‡ºç°é—®é¢˜ã€‚
 Fixed a problem in the last update by removing code that reload jQuery 1.4 for admin pages which causes problem in the order of loading JS files.
 
 1.2.0
-ÊÊÓÃWordPress°æ±¾µ÷ÕûÎª3.0¼°ÒÔÉÏ¡£
-µ÷ÕûÁË²¿·Ö´úÂëÒÔ¼õÉÙdebugÄ£Ê½ÏÂµÄnotice¡£
-ĞŞ¸ÄÁË¶¥²¿²Ëµ¥£¬Ê¹ÆäÖ§³ÖWordPress3.0µÄ×Ô¶¨Òå²Ëµ¥£¬²¢Ö§³Ö¶à²Ëµ¥ÏîµÄºáÏò¹ö¶¯ÒÔ¼°Ò»¼¶ÏÂÀ­²Ëµ¥¡£
-Ôö¼Ó¡¢µ÷ÕûÁË¶à´¦ÕıÎÄÄÚÈİµÄCSSÑùÊ½¡£
-Ôö¼ÓÁËÒ»¸öÖ÷ÌâÑ¡Ïî£¬¿ÉÒÔ×Ô¶¨ÒåĞ¡ÓÚÄ³³ß´çµÄÍ¼Æ¬²»ÏÔÊ¾±ß¿òĞ§¹û¡£
-Ôö¼ÓÁËÔÚÈÕÖ¾±à¼­Æ÷ÖĞµ¼Èëeditor-style.cssµÄ¹¦ÄÜ£¬Ê¹±à¼­ÈÕÖ¾Ê±¿´µ½µÄĞ§¹û¾¡Á¿½Ó½üÓÚÊµ¼ÊĞ§¹û¡£
-È¥³ıÁËÒ³Ãæµ×²¿µÄÒ»¸ö×÷ÕßÁ´½Ó¡£
-ĞŞÕıÁËµ¥ÆªÈÕÖ¾AJAX·ÖÒ³µ¼º½×ÜÏÔÊ¾µÚÒ»Ò³µÄ´íÎó¡£
-Ôö¼ÓÁËÄ£°åattachment.php¡£
-Í¨¹ıadd_theme_support('post-thumbnails')À´Ìí¼ÓÎÄÕÂËõÂÔÍ¼¹¦ÄÜ¡£
-Í¨¹ıadd_theme_support('automatic-feed-links')À´Ìí¼ÓRSS<link>ÔªËØ¡£
-ĞŞÕıÁË´øCaptionµÄÍ¼Æ¬ÔÚ¸÷¸ö¶¨Î»·½Ê½ÏÂ¿ÉÄÜ²úÉúµÄÎÊÌâ¡£
-ĞŞ¸ÄÁËÆÀÂÛ±íµ¥µÄÊä³ö·½Ê½£¬Ê¹ÓÃĞÂÔöµÄcomment_form()½øĞĞÊä³ö¡£
-Ôö¼ÓÁË¿ØÖÆAJAX×Ó¹¦ÄÜ¿ªÆô/¹Ø±ÕµÄ¶à¸öÖ÷ÌâÑ¡Ïî¡£
-ĞŞ¸ÄÁË¶ÔWP-SyntaxµÄ²å¼şÖ§³Ö£¬¸üºÃµØÏÔÊ¾´úÂëÓïÑÔ¡£
-ĞŞÕıÁËÍ¨¹ıAJAX¶ÁÈ¡ËÑË÷½á¹ûºóµ¼º½²Ëµ¥¼°×ó²à¹Ì¶¨µ¼º½°´Å¥¿ÉÄÜÏÔÊ¾²»ÕıÈ·ÌáÊ¾µÄÎÊÌâ¡£
-Ìí¼ÓÁË¶ÔWordPressÔ­ÉúÇ¶Ì×ÆÀÂÛµÄÖ§³Ö£¬×î¶àÖ§³Ö5²ãÇ¶Ì×¡£
-È¡ÏûÁËallowed tagsÇøÓòµÄÕ¹¿ªĞ§¹û£¬¸ÄÎªÊ¼ÖÕÏÔÊ¾¡£
-¸ù¾İÆÀÂÛ²ã¼¶¶ÔÆÀÂÛÖĞÍ¼Æ¬µÄÏÔÊ¾´óĞ¡×÷³öµ÷Õû£¬ĞŞÕıÁËĞü¸¡ÏÔÊ¾@ÆÀÂÛÔ­ÆÀÂÛÊ±´óÍ¼Æ¬Òç³öµÄÎÊÌâ¡£
-ĞŞÕıÁËËÑË÷½á¹ûÁĞ±íÖĞÒ³ÃæËµÃ÷ĞÅÏ¢ÖĞµÄÒ»¸öÎÄ×Ö´íÎó¡£
+é€‚ç”¨WordPressç‰ˆæœ¬è°ƒæ•´ä¸º3.0åŠä»¥ä¸Šã€‚
+è°ƒæ•´äº†éƒ¨åˆ†ä»£ç ä»¥å‡å°‘debugæ¨¡å¼ä¸‹çš„noticeã€‚
+ä¿®æ”¹äº†é¡¶éƒ¨èœå•ï¼Œä½¿å…¶æ”¯æŒWordPress3.0çš„è‡ªå®šä¹‰èœå•ï¼Œå¹¶æ”¯æŒå¤šèœå•é¡¹çš„æ¨ªå‘æ»šåŠ¨ä»¥åŠä¸€çº§ä¸‹æ‹‰èœå•ã€‚
+å¢åŠ ã€è°ƒæ•´äº†å¤šå¤„æ­£æ–‡å†…å®¹çš„CSSæ ·å¼ã€‚
+å¢åŠ äº†ä¸€ä¸ªä¸»é¢˜é€‰é¡¹ï¼Œå¯ä»¥è‡ªå®šä¹‰å°äºæŸå°ºå¯¸çš„å›¾ç‰‡ä¸æ˜¾ç¤ºè¾¹æ¡†æ•ˆæœã€‚
+å¢åŠ äº†åœ¨æ—¥å¿—ç¼–è¾‘å™¨ä¸­å¯¼å…¥editor-style.cssçš„åŠŸèƒ½ï¼Œä½¿ç¼–è¾‘æ—¥å¿—æ—¶çœ‹åˆ°çš„æ•ˆæœå°½é‡æ¥è¿‘äºå®é™…æ•ˆæœã€‚
+å»é™¤äº†é¡µé¢åº•éƒ¨çš„ä¸€ä¸ªä½œè€…é“¾æ¥ã€‚
+ä¿®æ­£äº†å•ç¯‡æ—¥å¿—AJAXåˆ†é¡µå¯¼èˆªæ€»æ˜¾ç¤ºç¬¬ä¸€é¡µçš„é”™è¯¯ã€‚
+å¢åŠ äº†æ¨¡æ¿attachment.phpã€‚
+é€šè¿‡add_theme_support('post-thumbnails')æ¥æ·»åŠ æ–‡ç« ç¼©ç•¥å›¾åŠŸèƒ½ã€‚
+é€šè¿‡add_theme_support('automatic-feed-links')æ¥æ·»åŠ RSS<link>å…ƒç´ ã€‚
+ä¿®æ­£äº†å¸¦Captionçš„å›¾ç‰‡åœ¨å„ä¸ªå®šä½æ–¹å¼ä¸‹å¯èƒ½äº§ç”Ÿçš„é—®é¢˜ã€‚
+ä¿®æ”¹äº†è¯„è®ºè¡¨å•çš„è¾“å‡ºæ–¹å¼ï¼Œä½¿ç”¨æ–°å¢çš„comment_form()è¿›è¡Œè¾“å‡ºã€‚
+å¢åŠ äº†æ§åˆ¶AJAXå­åŠŸèƒ½å¼€å¯/å…³é—­çš„å¤šä¸ªä¸»é¢˜é€‰é¡¹ã€‚
+ä¿®æ”¹äº†å¯¹WP-Syntaxçš„æ’ä»¶æ”¯æŒï¼Œæ›´å¥½åœ°æ˜¾ç¤ºä»£ç è¯­è¨€ã€‚
+ä¿®æ­£äº†é€šè¿‡AJAXè¯»å–æœç´¢ç»“æœåå¯¼èˆªèœå•åŠå·¦ä¾§å›ºå®šå¯¼èˆªæŒ‰é’®å¯èƒ½æ˜¾ç¤ºä¸æ­£ç¡®æç¤ºçš„é—®é¢˜ã€‚
+æ·»åŠ äº†å¯¹WordPressåŸç”ŸåµŒå¥—è¯„è®ºçš„æ”¯æŒï¼Œæœ€å¤šæ”¯æŒ5å±‚åµŒå¥—ã€‚
+å–æ¶ˆäº†allowed tagsåŒºåŸŸçš„å±•å¼€æ•ˆæœï¼Œæ”¹ä¸ºå§‹ç»ˆæ˜¾ç¤ºã€‚
+æ ¹æ®è¯„è®ºå±‚çº§å¯¹è¯„è®ºä¸­å›¾ç‰‡çš„æ˜¾ç¤ºå¤§å°ä½œå‡ºè°ƒæ•´ï¼Œä¿®æ­£äº†æ‚¬æµ®æ˜¾ç¤º@è¯„è®ºåŸè¯„è®ºæ—¶å¤§å›¾ç‰‡æº¢å‡ºçš„é—®é¢˜ã€‚
+ä¿®æ­£äº†æœç´¢ç»“æœåˆ—è¡¨ä¸­é¡µé¢è¯´æ˜ä¿¡æ¯ä¸­çš„ä¸€ä¸ªæ–‡å­—é”™è¯¯ã€‚
 WordPress version requirement has been changed to 3.0 and above.
 Made some fixes to reduce notices under debug mode.
 Remade the top navigation menu which now supports custom menus in WordPress 3.0 and with support to horizontal scrolling for numerous menu items and 1-level dropdown.
