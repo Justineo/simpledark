@@ -112,7 +112,7 @@ function simpledark_feed_additional_info($content) {
 		if(!preg_match('/^\w*$/', $after))
 			$after = '<div class="feed-after" style="margin:15px 0; clear:both;">' . $options['custom_feed_info_after'] . '</div>';
 		$author_name = the_author($idmode, false);
-		$author_link = '<a href="' . get_author_link(0, $authordata->ID, $authordata->user_nicename) . '" title="' . sprintf(__("Posts by %s"), wp_specialchars(the_author($idmode, false))) . '">' . $author_name . '</a>';
+		$author_link = '<a href="' . get_author_posts_url(0, $authordata->ID, $authordata->user_nicename) . '" title="' . sprintf(__("Posts by %s"), esc_html(the_author($idmode, false))) . '">' . $author_name . '</a>';
 		$blog_link = '<a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a>';
 		$feed_url = get_bloginfo('rss2_url');
 		$post_url = get_permalink();
@@ -321,7 +321,7 @@ function simpledark_get_attachment_link($id = 0, $size = 'full', $permalink = fa
 	if ( $permalink )
 	$url = get_attachment_link($_post->ID);
 
-	$post_title = attribute_escape($_post->post_title);
+	$post_title = esc_attr($_post->post_title);
 
 	$link_text = $before . $_post->post_title . $after;
 
@@ -364,9 +364,9 @@ function simpledark_script_params($ajax_enabled = true) {
 	if($options['hide_borders_for_small_images']) {
 ?>
 	scriptParams['hidesmallimgbdr'] = true;
-	scriptParams['smallimgwidth'] = <?php echo $options[small_image_width]; ?>;
-	scriptParams['smallimgheight'] = <?php echo $options[small_image_height]; ?>;
-	scriptParams['smallimglogic'] = '<?php echo $options[small_image_size_logic]; ?>';
+	scriptParams['smallimgwidth'] = <?php echo $options['small_image_width']; ?>;
+	scriptParams['smallimgheight'] = <?php echo $options['small_image_height']; ?>;
+	scriptParams['smallimglogic'] = '<?php echo $options['small_image_size_logic']; ?>';
 <?php
 	}
 	if(get_option('thread_comments')) {
