@@ -32,14 +32,14 @@ function simpledark_ajax_comment_pager() {
 		if (isset($_COOKIE['comment_author_'.COOKIEHASH])) {
 			$comment_author = apply_filters('pre_comment_author_name', $_COOKIE['comment_author_'.COOKIEHASH]);
 			$comment_author = stripslashes($comment_author);
-			$comment_author = esc attr($comment_author);
+			$comment_author = esc_attr($comment_author);
 		}
 
 		// comment author email
 		if (isset($_COOKIE['comment_author_email_'.COOKIEHASH])) {
 			$comment_author_email = apply_filters('pre_comment_author_email', $_COOKIE['comment_author_email_'.COOKIEHASH]);
 			$comment_author_email = stripslashes($comment_author_email);
-			$comment_author_email = esc attr($comment_author_email);
+			$comment_author_email = esc_attr($comment_author_email);
 		}
 
 		// comments
