@@ -47,8 +47,8 @@
 				'after_fields'		=> '</div>'
 			)),
 			'comment_field'			=> '<p id="comment-wrapper"><textarea id="comment" name="comment" rows="5" cols="70" tabindex="4" aria-required="true"' . ($options['ctrl_enter_submit_comment'] ? ' class="quick-submit"' : '') . '></textarea></p>',
-			'must_log_in'			=> '<p class="must-log-in">&rsaquo; ' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', THEME_NAME ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-			'logged_in_as'			=> '<p class="logged-in-as">&rsaquo; ' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>', THEME_NAME ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+			'must_log_in'			=> '<p class="must-log-in">&rsaquo; ' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', THEME_NAME ), wp_login_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ) . '</p>',
+			'logged_in_as'			=> '<p class="logged-in-as">&rsaquo; ' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out &raquo;</a>', THEME_NAME ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ) ) ) ) . '</p>',
 			'label_submit'			=> __( 'Post Comment', THEME_NAME ) . ($options['ctrl_enter_submit_comment']? ' (Ctrl+Enter)' : ''),
 			'comment_notes_before'	=> '',
 			'comment_notes_after'	=> ''
