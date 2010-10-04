@@ -125,3 +125,9 @@ Added support for WordPress native thread comments with the thread level limit o
 Removed the scrolling down effect for displaying allowed tags in comments. Now it always displays.
 Added dynamic adjustment for comment image sizes according to comment depth and fixed the problem that large images used to overflow tooltip area when mouse over @reply link.
 Fixed a literal mistake in page information displayed in search result list.
+
+1.2.1
+修改了多处过时方法调用。
+修正了细微的错误。
+Changed a few calls to deprecated functions.
+Fixed a few minor errors.
