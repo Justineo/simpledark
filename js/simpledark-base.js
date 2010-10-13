@@ -121,7 +121,7 @@ function fadingSlideDown(performer, callback) {
 var contentWidth = 580;
 function processContent() {
 	/* Image Width Restriction */
-	$('.entry img').each(function() {
+	$('.entry img').load(function() {
 		var w = $(this).width();
 		var h = $(this).height();
 		var r = w / h;
@@ -141,7 +141,7 @@ function processContent() {
 
 	/* Clearing Borders for Small Images */
 	if(scriptParams['hidesmallimgbdr']) {
-		$('.entry img').each(function() {
+		$('.entry img').load(function() {
 			var image = $(this);
 			var w = image.width();
 			var h = image.height();
@@ -167,10 +167,16 @@ function processContent() {
 				image.addClass('no-border');
 			}
 		});
-		$('img.no-border').parents('.wp-caption').each(function() {
-			$(this).width($(this).width() - 4);
+		$('img.no-border').load(function() {
+			var cap = $(this).parents('.wp-caption');
+			cap.width(cap.width() - 4);
 		});
 	}
+	
+	$('.entry img').each(function() {
+		if(this.complete || ($.browser.msie && parseInt($.browser.version) == 6))
+			$(this).trigger('load');
+	});
 
 	/* Video Width Restriction */
 	$('.entry object').each(function() {
@@ -196,7 +202,7 @@ function processContent() {
 
 var commentWidth = [378, 516, 490, 456, 422, 388];
 function processComments() {
-	$('.comment-body img').each(function() {
+	$('.comment-body img').load(function() {
 		var w = $(this).width();
 		var h = $(this).height();
 		var r = w / h;
@@ -209,6 +215,10 @@ function processComments() {
 		if(w > commentWidth[depth]) {
 			resizeToFit($(this), commentWidth[depth], r);
 		}
+	});
+	$('.entry img').each(function() {
+		if(this.complete || ($.browser.msie && parseInt($.browser.version) == 6))
+			$(this).trigger('load');
 	});
 }
 function processTooltip(tooltip) {
