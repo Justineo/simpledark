@@ -131,3 +131,9 @@ Fixed a literal mistake in page information displayed in search result list.
 修正了细微的错误。
 Changed a few calls to deprecated functions.
 Fixed a few minor errors.
+
+1.2.2
+修正了去除小图片边框时JS参数的错误。
+在图片加载完毕后才修正图片尺寸。
+Fixed a JS parameter problem when removing borders for small images.
+Now adjust image size only after images are loaded.

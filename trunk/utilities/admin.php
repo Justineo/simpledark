@@ -350,6 +350,8 @@ if(is_admin()){
 		'enable_google_analytics'				=> 0,
 		'exclude_admin_analytics'				=> 1,
 		'small_image_size_logic'				=> 'and',
+		'small_image_width'						=> 128,
+		'small_image_height'					=> 128,
 		'search_form_text'						=> __('Search...', THEME_NAME)
 	);
 	new SimpleDarkAdmin($simpledark_default_option_types, $options_default);
