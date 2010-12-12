@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title><?php if ( is_singular() || is_archive() ) { wp_title(''); } else { bloginfo('name'); } ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); _e('/style.css', THEME_NAME); ?>" media="screen" />
-<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css" media="screen" /><![endif]-->
+<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/ie.css" media="screen" /><![endif]-->
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
