@@ -4,7 +4,7 @@
 		$email = get_the_author_meta('user_email', $post->post_author);
 	}
 	else {
-		$email = get_the_author_email();
+		$email = get_the_author_meta('email');
 	}
 	if(!$options['strict_comment'] && $comment->comment_author_email == $email) {
 		$classes = get_comment_class('bypostauthor');

@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title><?php if ( is_singular() || is_archive() ) { wp_title(''); } else { bloginfo('name'); } ?></title>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); _e('/style.css', THEME_NAME); ?>" media="screen" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/404.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); _e('/style.css', THEME_NAME); ?>" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/404.css" media="screen" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
@@ -19,11 +19,11 @@
 			<p><?php _e('We suggest you to try these links:', THEME_NAME); ?></p>
 			<ul>
 				<li><a href="<?php echo 'javascript:history.go(-1);' ?>"><?php _e('Go back to last page', THEME_NAME); ?></a></li>
-				<li><a href="<?php bloginfo('url'); ?>"><?php printf(__('Go to the home page of %s', THEME_NAME), get_bloginfo('name')); ?></a></li>
+				<li><a href="<?php echo home_url(); ?>"><?php printf(__('Go to the home page of %s', THEME_NAME), get_bloginfo('name')); ?></a></li>
 			</ul>
 			<p><?php _e('Or you can search for the content you need:', THEME_NAME); ?></p>
 			<div id="search-wrapper">
-				<form id="search-form" action="<?php bloginfo('url'); ?>" method="get">
+				<form id="search-form" action="<?php echo home_url(); ?>" method="get">
 					<div>
 						<label for="s" id="s-msg"><?php echo $options['search_form_text']; ?></label>
 						<input type="text" class="textbox" id="s" name="s" value="" />
