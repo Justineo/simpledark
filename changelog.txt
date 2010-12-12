@@ -137,3 +137,22 @@ Fixed a few minor errors.
 在图片加载完毕后才修正图片尺寸。
 Fixed a JS parameter problem when removing borders for small images.
 Now adjust image size only after images are loaded.
+
+1.2.3
+添加了意大利语支持。(thanks to Gianni Diurno)
+修改了主题元数据。
+修改了博客描述区的大小以显示更长的描述文字而不与导航栏重叠。
+页内滚动现在可以滚动到带有name属性的锚点。(thanks to Mark Amgine)
+next_post_link / previous_post_link(thanks to Mark Amgine)
+修复了导致AJAX设置可能无效的问题。(thanks to Sc千寻)
+修正了CSS文件中的一个语法错误。
+修正了Ctrl+Enter提交评论无效的问题。(thanks to 白手)
+修正了IE6下视频宽度限制可能无效的问题。(thanks to Freell)
+Added Italian language support.
+Changed theme meta information.
+Adjusted the size of blog description area which better displays long description, preventing it from overlapping with menu area.
+Scroll easing for anchors with name attributes is now available.
+Fixed a problem which will make AJAX settings uneffective.
+Fixed a syntax error in the CSS file.
+Fixed the problem when submitting comment using Ctrl+Enter.
+Fixed the problem that video width restriction might fail under IE6.

@@ -37,6 +37,26 @@ function textAreaFixCursorPosition() {
 	}
 }
 
+function showMessage(msg, callback) {
+	$('#commentform .fade').remove();
+	$('#submit').after('<span class="fade ajax-comment-msg">' + msg + '</span>');
+	$('#commentform .fade').delay(2000).fadeOut(500, function() {
+		$(this).remove();
+		if(callback && typeof(callback) == 'function')
+			callback();
+	});
+}
+
+function showError(msg, callback) {
+	$('#commentform .fade').remove();
+	$('#submit').after('<span class="fade ajax-comment-error">' + msg + '</span>');
+	$('#commentform .fade').delay(2000).fadeOut(500, function() {
+		$(this).remove();
+		if(callback && typeof(callback) == 'function')
+			callback();
+	});
+}
+
 /*
  * Reply comment using '@'
  * refined from mg12's code
@@ -183,6 +203,10 @@ function processContent() {
 		var embed = $(this).find('embed');
 		var w = embed.width();
 		var h = embed.height();
+		if(!w || !h) {
+			w = $(this).width();
+			h = $(this).height();
+		}
 		var r = w / h;
 		if(w > contentWidth) {
 			resizeToFit($(this), contentWidth, r);
@@ -385,8 +409,9 @@ $(document).ready(function() {
 		if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && location.search == this.search) {
 			var target = $(this).attr('href');
 			target = target.substring(target.indexOf('#'));
-			if(target != '#')
-				$(target).ScrollTo(300);
+			if(target != '#') {
+				$('[name="' + target.substring(1) + '"], ' + target).ScrollTo(300);
+			}
 			return false;
 		}
 		return true;
@@ -521,16 +546,18 @@ $(document).ready(function() {
 	});
 
 	/* Use Ctrl+Enter to Submit Comment */
-	$('#comment.quick-submit').keydown(function(e) {
-		var ev;
-		if(window.event) {
-			ev = window.event;
-		} else {
-			ev = e;
-		}
-		if(ev != null && ev.ctrlKey && ev.keyCode == 13)
-			$('#commentform').submit();
-	});
+	if(scriptParams['quicksubmit']) {
+		$('#comment').keydown(function(e) {
+			var ev;
+			if(window.event) {
+				ev = window.event;
+			} else {
+				ev = e;
+			}
+			if(ev != null && ev.ctrlKey && ev.keyCode == 13)
+				$('#commentform').submit();
+		});
+	}
 
 	/**************
 	 * Search Box *

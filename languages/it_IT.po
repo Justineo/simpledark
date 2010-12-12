@@ -1,0 +1,759 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SimpleDark in italiano\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-22 11:28+0100\n"
+"PO-Revision-Date: 2010-10-23 19:58+0100\n"
+"Last-Translator: Gianni Diurno (aka gidibao) <gidibao[at]gmail[dot]com>\n"
+"Language-Team: Gianni Diurno | Gidibao.net <gidibao[at]gmail[dot]com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:7
+#: header.php:7
+msgid "/style.css"
+msgstr "/style.css"
+
+#: 404.php:15
+msgid "Sorry, the page you are looking for cannot be found."
+msgstr "Non é stato possibile trovare la pagina che stavi cercando."
+
+#: 404.php:17
+#, php-format
+msgid "The requested URL <code>%s</code> was not found on this server."
+msgstr "L'URL <code>%s</code> da te richiesto non é stato trovato in questo server."
+
+#: 404.php:18
+msgid "It is possible that the address is incorrect, or that the page no longer exists."
+msgstr "E' probabile che l'indirizzo non sia corretto oppure che la pagina non esista più."
+
+#: 404.php:19
+msgid "We suggest you to try these links:"
+msgstr "Prova con questi link:"
+
+#: 404.php:21
+msgid "Go back to last page"
+msgstr "ritorna all'ultima pagina"
+
+#: 404.php:22
+#, php-format
+msgid "Go to the home page of %s"
+msgstr "Vai alla home page di %s"
+
+#: 404.php:24
+msgid "Or you can search for the content you need:"
+msgstr "Oppure effettua una ricerca in merito:"
+
+#: ajax-comments-post.php:66
+msgid "Please don't send duplicate comment."
+msgstr "Non inviare dei commenti duplicati."
+
+#: ajax-comments-post.php:95
+msgid "You are posting comments too quickly."
+msgstr "Rallenta! Stai inviando i commenti con troppa fretta."
+
+#: ajax-comments-post.php:108
+msgid "Error: comment ID not found."
+msgstr "Errore: ID commento non trovata."
+
+#: ajax-comments-post.php:113
+msgid "Sorry, comments are closed for this item."
+msgstr "Non é più possibile aggiungere dei commenti."
+
+#: ajax-comments-post.php:147
+msgid "Sorry, you must be logged in to post a comment."
+msgstr "Devi accedere al tuo account per poter inserire un commento."
+
+#: ajax-comments-post.php:155
+msgid "Error: please fill the required fields (name, email)."
+msgstr "Errore: compila i campi obbligatori (nome, email)."
+
+#: ajax-comments-post.php:158
+msgid "Error: please enter a valid email address."
+msgstr "Errore: inserisci un indirizzo email valido."
+
+#: ajax-comments-post.php:163
+msgid "Error: please type a comment."
+msgstr "Errore: inserisci un commento."
+
+#: ajax-comments-post.php:194
+msgid "Comment submitted!"
+msgstr "Il commento é stato inviato!"
+
+#: ajax-posts-load.php:19
+#: attachment.php:12
+#: index.php:17
+#: templates/singular.php:13
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Permalink a %s"
+
+#: ajax-posts-load.php:20
+#: index.php:18
+#: templates/singular.php:14
+msgid " posted in "
+msgstr " pubblicato sotto "
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: index.php:18
+#: templates/singular.php:14
+msgid "X Comments"
+msgstr "X Commenti"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: functions.php:404
+#: index.php:18
+#: templates/singular.php:14
+msgid "No Comments"
+msgstr "Nessun commento"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: functions.php:405
+#: index.php:18
+#: templates/singular.php:14
+msgid "1 Comment"
+msgstr "1 commento"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: functions.php:406
+#: index.php:18
+#: templates/singular.php:14
+msgid "% Comments"
+msgstr "% commenti"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: index.php:18
+#: templates/singular.php:14
+msgid "Comments Off"
+msgstr "Commenti non attivi"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: index.php:18
+#: templates/comment.php:26
+#: templates/singular.php:14
+msgid "Edit"
+msgstr "Modifica"
+
+#: ajax-posts-load.php:22
+#: index.php:21
+msgid "Read More"
+msgstr "Prosegui la lettura"
+
+#: ajax-posts-load.php:25
+#: index.php:33
+#: templates/singular.php:28
+msgid "NO TAGS"
+msgstr "NESSUN TAG"
+
+#: ajax-posts-load.php:40
+#: index.php:48
+msgid "Older Posts"
+msgstr "Articoli precedenti"
+
+#: ajax-posts-load.php:40
+#: index.php:48
+msgid "Newer Posts"
+msgstr "Articoli recenti"
+
+#: ajax-posts-load.php:50
+#, php-format
+msgid "No posts found. Why not <a title=\"Go Back\" href=\"%s\">go back to the last page</a> ?"
+msgstr "Nessun articolo trovato. Perché non <a title=\"Ritorna\" href=\"%s\">ritornare all'ultima pagina visitata</a> ?"
+
+#: attachment.php:13
+#, php-format
+msgid "Uploaded by %s"
+msgstr "Caricato da %s"
+
+#: attachment.php:41
+#, php-format
+msgid "Permalink: %s"
+msgstr "Permalink: %s"
+
+#: attachment.php:48
+#, php-format
+msgid "Full size: %s"
+msgstr "Dimensione intera: %s"
+
+#: attachment.php:50
+msgid "Link to full-size image"
+msgstr "Link alla immagine originale"
+
+#: attachment.php:57
+#, php-format
+msgid "MIME Type: %s"
+msgstr "MIME Type: %s"
+
+#: attachment.php:62
+#, php-format
+msgid "Caption: %s"
+msgstr "Didascalia: %s"
+
+#: attachment.php:68
+#, php-format
+msgid "Description: %s"
+msgstr "Descrizione: %s"
+
+#: comments.php:8
+msgid "Comments"
+msgstr "Commenti"
+
+#: comments.php:8
+#: comments.php:60
+msgid "X"
+msgstr "X"
+
+#: comments.php:12
+msgid "You must enter the password to view the comments."
+msgstr "Questi commenti sono stati pretetti con una password. Inserisci la password per leggere i commenti."
+
+#: comments.php:24
+msgid "No comments yet."
+msgstr "Nessun commento ancora."
+
+#: comments.php:43
+#, php-format
+msgid "Welcome back, %s."
+msgstr "Bentornato <strong>%s</strong>."
+
+#: comments.php:43
+msgid "Change"
+msgstr "Cambia"
+
+#: comments.php:44
+msgid "Name"
+msgstr "Nome"
+
+#: comments.php:45
+msgid "Email"
+msgstr "Email"
+
+#: comments.php:46
+msgid "Website"
+msgstr "Sito web"
+
+#: comments.php:50
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "E' necessario che tu sia <a href=\"%s\">collegato</a> per potere inviare un commento."
+
+#: comments.php:51
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
+msgstr "Collegato a nome <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Esci da questo account\">Esci &raquo;</a>"
+
+#: comments.php:52
+msgid "Post Comment"
+msgstr "Lascia un commento"
+
+#: comments.php:60
+msgid "Pingbacks"
+msgstr "Pingback"
+
+#: comments.php:78
+msgid "No pingbacks yet."
+msgstr "Nessun pingback ancora."
+
+#: footer.php:4
+#, php-format
+msgid "Powered by %s"
+msgstr "Fornito da %s"
+
+#: footer.php:4
+#, php-format
+msgid "Theme %1$s by %2$s"
+msgstr "Tema %1$s di %2$s"
+
+#: footer.php:9
+#, php-format
+msgid "Licensed under a <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a>"
+msgstr "Licenza sotto <a rel=\"licenza\" href=\"%s\" title=\"%s\">%s</a>"
+
+#: footer.php:9
+msgid "License Details"
+msgstr "Dettagli licenza"
+
+#: functions.php:65
+msgid "Top Navigation Menu"
+msgstr "Navigazione menu principale"
+
+#: functions.php:115
+#: functions.php:228
+#, php-format
+msgid "Posts by %s"
+msgstr "Pubblicato da %s"
+
+#: functions.php:148
+msgid "Home"
+msgstr "Home"
+
+#: functions.php:186
+msgid "F, Y"
+msgstr "j F Y"
+
+#: functions.php:189
+msgid "Y"
+msgstr "Y"
+
+#: functions.php:219
+msgid "Untitled"
+msgstr "Senza Titolo"
+
+#: functions.php:269
+msgid "<strong>Allowed Tags</strong> - You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes in your comment."
+msgstr "<strong>Tag disponibili</strong> - Puoi utilizzare nel tuo commento questi tag ed attributi <abbr title=\"HyperText Markup Language\">HTML</abbr>."
+
+#: functions.php:295
+msgid "Protected"
+msgstr "Protetto"
+
+#: functions.php:297
+msgid "Private"
+msgstr "Privato"
+
+#: functions.php:300
+msgid "Announcement"
+msgstr "Annuncio"
+
+#: functions.php:301
+#: functions.php:302
+msgid "Sticky"
+msgstr "Sticky"
+
+#: functions.php:305
+msgid "Attachment"
+msgstr "Allegato"
+
+#: functions.php:319
+msgid "Missing Attachment"
+msgstr "Allegato mancante"
+
+#: index.php:18
+#: templates/singular.php:14
+#, php-format
+msgid "Posted by %s"
+msgstr "Pubblicato da %s"
+
+#: index.php:24
+#: templates/singular.php:19
+msgid "Pages:"
+msgstr "Pagine:"
+
+#: index.php:26
+#: templates/singular.php:21
+msgid "Next Page"
+msgstr "Pagina successiva"
+
+#: index.php:27
+#: templates/singular.php:22
+msgid "Previous Page"
+msgstr "Pagina precedente"
+
+#: index.php:58
+#, php-format
+msgid "No posts found. Why not <a title=\"Go Back\" href=\"%1$s\"%2$s>go back to the last page</a> ?"
+msgstr "Nessun articolo trovato. Perché non <a title=\"Ritorna\" href=\"%1$s\"%2$s>ritornare all'ultima pagina visitata</a> ?"
+
+#: sidebar.php:14
+msgid "RSS Feed"
+msgstr "Feed RSS"
+
+#: sidebar.php:15
+msgid "Subscribe Updates"
+msgstr "Abbonamento aggiornamenti"
+
+#: templates/comment.php:20
+msgid "Reply to this comment"
+msgstr "Rispondi a questo commento"
+
+#: templates/comment.php:20
+msgid "Reply"
+msgstr "Rispondi"
+
+#: templates/comment.php:28
+msgid "Your comment is awaiting moderation."
+msgstr "Il tuo commento é in attesa di moderazione."
+
+#: templates/content-header.php:7
+#, php-format
+msgid "Search results for <strong>&ldquo;%s&rdquo;</strong>"
+msgstr "Risultati della ricerca per <strong>&ldquo;%s&rdquo;</strong>"
+
+#: templates/content-header.php:8
+#, php-format
+msgid "Posts under <strong>%s</strong>"
+msgstr "Articoli sotto <strong>%s</strong>"
+
+#: templates/content-header.php:9
+#, php-format
+msgid "Posts tagged <strong>%s</strong>"
+msgstr "Articoli con tag <strong>%s</strong>"
+
+#: templates/content-header.php:10
+#, php-format
+msgid "Posts by <strong>%s</strong>"
+msgstr "Articoli di <strong>%s</strong>"
+
+#: templates/content-header.php:11
+#, php-format
+msgid "Archives on <strong>%s</strong>"
+msgstr "Archivi per <strong>%s</strong>"
+
+#: templates/content-header.php:12
+#: templates/content-header.php:13
+#, php-format
+msgid "Archives in <strong>%s</strong>"
+msgstr "Archivi in <strong>%s</strong>"
+
+#: templates/content-header.php:14
+msgid "Archives page"
+msgstr "Pagina archivi"
+
+#: utilities/admin.php:23
+#: utilities/admin.php:49
+msgid "SimpleDark Options"
+msgstr "Opzioni SimpleDark"
+
+#: utilities/admin.php:25
+msgid "Check here for more information."
+msgstr "Clicca qui per ulteriori informazioni."
+
+#: utilities/admin.php:56
+msgid "Changes have been saved."
+msgstr "Le modifiche sono state salvate."
+
+#: utilities/admin.php:66
+msgid "AJAX"
+msgstr "AJAX"
+
+#: utilities/admin.php:69
+msgid "Global"
+msgstr "Globale"
+
+#: utilities/admin.php:72
+msgid "Enable AJAX functionalities (page navigation, comment post, search, etc. The following settings will not work if this option is off.)"
+msgstr "Attiva funzioni AJAX (solo a funzione attiva: navigazione pagina, commento articolo, ricerca, etc.)"
+
+#: utilities/admin.php:77
+msgid "Comment Post"
+msgstr "Commento articolo"
+
+#: utilities/admin.php:80
+msgid "Enable AJAX comment post"
+msgstr "Attiva commento articolo (AJAX)"
+
+#: utilities/admin.php:85
+msgid "Comment Page Navigation"
+msgstr "Navigazione pagina commento"
+
+#: utilities/admin.php:88
+msgid "Enable AJAX comment page navigation"
+msgstr "Attiva navigazione pagina commento (AJAX)"
+
+#: utilities/admin.php:93
+msgid "Post Page Navigation"
+msgstr "Navigazione pagina articolo"
+
+#: utilities/admin.php:96
+msgid "Enable AJAX post page navigation"
+msgstr "Attiva navigazione pagina commento (AJAX)"
+
+#: utilities/admin.php:101
+msgid "Post Content Page Navigation"
+msgstr "Navigazione pagina contenuto articolo"
+
+#: utilities/admin.php:104
+msgid "Enable AJAX post content page navigation"
+msgstr "Attiva navigazione pagina contenuto articolo (AJAX)"
+
+#: utilities/admin.php:109
+msgid "Search"
+msgstr "Ricerca"
+
+#: utilities/admin.php:112
+msgid "Enable AJAX search"
+msgstr "Attiva ricerca AJAX"
+
+#: utilities/admin.php:117
+msgid "Navigation Menu"
+msgstr "Menu navigazione"
+
+#: utilities/admin.php:121
+msgid "Settings in this section will be overriden by your settings in Appearance &raquo; Menus."
+msgstr "Le impostazioni per questa sezione saranno sovrascritte dalle tue impostazioni sotto Aspetto &raquo; Menu."
+
+#: utilities/admin.php:125
+msgid "Show Homepage Link"
+msgstr "Mostra il link alla homepage"
+
+#: utilities/admin.php:128
+msgid "Show the link of the homepage on the top menu"
+msgstr "Mostra nel menu principale il link alla homepage"
+
+#: utilities/admin.php:133
+msgid "Menu Items"
+msgstr "Elementi menu"
+
+#: utilities/admin.php:136
+msgid "Show categories as top menu items instead of pages"
+msgstr "Mostra nel menu principale le categorie al posto delle pagine"
+
+#: utilities/admin.php:141
+msgid "Posts"
+msgstr "Articoli"
+
+#: utilities/admin.php:144
+msgid "Post Tags"
+msgstr "Tag articolo"
+
+#: utilities/admin.php:147
+msgid "Show post tags on archive pages (home, archive, etc.)"
+msgstr "Mostra i tag dell'articolo nelle pagine archivio (home, archivio, etc.)"
+
+#: utilities/admin.php:158
+msgid "Image Borders"
+msgstr "Bordi immagine"
+
+#: utilities/admin.php:161
+#, php-format
+msgid "Hide borders for images with width less than or equal to %1$spx %2$s height less than or equal to %3$spx"
+msgstr " Nascondi i bordi delle immagini aventi una larghezza inferiore o pari a %1$spx %2$s ed una altezza inferiore o pari a  %3$spx"
+
+#: utilities/admin.php:161
+msgid "and"
+msgstr "e"
+
+#: utilities/admin.php:161
+msgid "or"
+msgstr "o"
+
+#: utilities/admin.php:162
+msgid "Set the value to 0 or just leave it blank to ignore width or height restriction. If both restrictions are set to 0, all image borders will be removed."
+msgstr "Imposta a 0 il valore oppure lascia in bianco per ignorare la restrizione per l'altezza e la larghezza. Qualora entrambe le restrizioni fossro state impostate a 0, tutti i bordi delle immagini saranno rimossi."
+
+#: utilities/admin.php:166
+msgid "Discussion"
+msgstr "Discussione"
+
+#: utilities/admin.php:169
+msgid "Pingbacks and Trackbacks"
+msgstr "Trackback e Pingback"
+
+#: utilities/admin.php:172
+msgid "Hide pingbacks and trackbacks"
+msgstr "Nascondi pingback e trackback"
+
+#: utilities/admin.php:177
+msgid "Allowed Tags"
+msgstr "Tag permessi"
+
+#: utilities/admin.php:180
+msgid "Show allowed tags for comments"
+msgstr "Mostra i tag disponibili per i commenti"
+
+#: utilities/admin.php:185
+msgid "Comment Images"
+msgstr "Immagini nei commenti"
+
+#: utilities/admin.php:188
+msgid "Comments can include the &lt;img&gt; tag"
+msgstr "I commenti possono contenere il tag &lt;img&gt;"
+
+#: utilities/admin.php:193
+msgid "Comment Submit Shortcut"
+msgstr "Scorciatoia invio commento"
+
+#: utilities/admin.php:196
+msgid "Use Ctrl+Enter to submit comment"
+msgstr "Usa Ctrl+Invio per inviare il commento"
+
+#: utilities/admin.php:201
+msgid "Sidebar"
+msgstr "Barra laterale"
+
+#: utilities/admin.php:204
+msgid "Search Form Text"
+msgstr "Testo modulo ricerca"
+
+#: utilities/admin.php:205
+msgid "Default text of the search form"
+msgstr "Testo predefinito modulo ricerca"
+
+#: utilities/admin.php:208
+msgid "Footer"
+msgstr "Footer"
+
+#: utilities/admin.php:211
+msgid "Footer License"
+msgstr "Licenza nel footer"
+
+#: utilities/admin.php:214
+msgid "Show footer license"
+msgstr "Mostra licenza nel footer"
+
+#: utilities/admin.php:216
+msgid "You can choose a way to reserve your rights when sharing your creative works by specifying a copyright-license like <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> in your footer area."
+msgstr "Scegli un modo per proteggere il tuo lavoro (diritti di autore) specificando il copyright di tua preferenza: ad esempio, inserendo il link a <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> nell'area del footer."
+
+#: utilities/admin.php:220
+msgid "License Name"
+msgstr "Nome licenza"
+
+#: utilities/admin.php:221
+msgid "The anchor text of the license to be displayed"
+msgstr "L'anchor text da mostrare associato alla licenza"
+
+#: utilities/admin.php:224
+msgid "License URL"
+msgstr "URL licenza"
+
+#: utilities/admin.php:225
+msgid "A link to the license details"
+msgstr "Un link ai termini della licenza"
+
+#: utilities/admin.php:228
+msgid "Custom Footer Information"
+msgstr "Informazione personalizzata nel footer"
+
+#: utilities/admin.php:231
+msgid "Show custom information in the footer"
+msgstr "Mostra nel footer l'informazione personalizzata"
+
+#: utilities/admin.php:236
+msgid "Custom Footer Information Code"
+msgstr "Codice informativo footer personalizzato"
+
+#: utilities/admin.php:237
+msgid "Write your custom HTML code to display in the footer"
+msgstr "Inserisci il tuo codice HTML personalizzato da mostrare nel footer"
+
+#: utilities/admin.php:243
+msgid "Custom Feed Information Before Content"
+msgstr "Informazioni feed personalizzate prima del contenuto"
+
+#: utilities/admin.php:244
+msgid "Write your custom HTML code to display before the content of each entry of your RSS feed"
+msgstr "Inserisci il tuo codice HTML personalizzato da mostrare prima del contenuto di ogni pubblicazione presente nel tuo feed RSS"
+
+#: utilities/admin.php:247
+msgid "Custom Feed Information After Content"
+msgstr "Informazioni feed personalizzate in coda al contenuto"
+
+#: utilities/admin.php:249
+msgid "Write your custom HTML code to display after the content of each entry of your RSS feed"
+msgstr "Inserisci il tuo codice HTML personalizzato da mostrare in coda al contenuto di ogni pubblicazione presente nel tuo feed RSS"
+
+#: utilities/admin.php:251
+msgid "You can use these placeholders in your code:"
+msgstr "Puoi usare nel tuo codice i seguenti placeholder:"
+
+#: utilities/admin.php:253
+msgid "The name of the post author without a link"
+msgstr "Il nome (senza il link) dell'autore dell'articolo"
+
+#: utilities/admin.php:254
+msgid "The link of posts by the post author"
+msgstr "I link degli articoli per autore"
+
+#: utilities/admin.php:255
+msgid "The link of your blog homepage"
+msgstr "Il link alla homepage del tuo blog"
+
+#: utilities/admin.php:256
+msgid "The RSS feed URL of your blog posts"
+msgstr "L'URL del feed RSS per gli articoli del tuo blog"
+
+#: utilities/admin.php:257
+msgid "The URL of your post"
+msgstr "URL del tuo articolo"
+
+#: utilities/admin.php:259
+msgid "eg. The post is written by %AUTHOR_LINK%. To read more interesting posts, visit %BLOG_LINK% or &lt;a href=\"%FEED_URL%\"&gt;subscribe our updates&lt;/a&gt;."
+msgstr "ad esempio: Questo articolo é stato scritto da %AUTHOR_LINK%. Per potere leggere degli altri articoli interessanti, visita %BLOG_LINK% oppure &lt;a href=\"%FEED_URL%\"&gt;abbonati&lt;/a&gt;."
+
+#: utilities/admin.php:260
+msgid "The output will be wrapped in a &lt;DIV&gt; element."
+msgstr "L'output sarà avvolto con un elemento &lt;DIV&gt;."
+
+#: utilities/admin.php:265
+msgid "Analytics"
+msgstr "Analytics"
+
+#: utilities/admin.php:268
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: utilities/admin.php:271
+msgid "Enable Google Analytics"
+msgstr "Attiva Google Analytics"
+
+#: utilities/admin.php:276
+msgid "Google Analytics Code"
+msgstr "Codice Google Analytics"
+
+#: utilities/admin.php:278
+msgid "Paste your Google Analytics code snippet here"
+msgstr "Aggiungi qui il tuo codice Google Analytics"
+
+#: utilities/admin.php:281
+msgid "Google Analytics for Administrators"
+msgstr "Google Analytics per gli amministratori"
+
+#: utilities/admin.php:284
+msgid "Do not load Google Analytics when administrators are logged in"
+msgstr "Non caricare Google Analytics quando gli amministratori sono collegati"
+
+#: utilities/admin.php:291
+msgid "Save Changes"
+msgstr "Salva le modifiche"
+
+#: utilities/admin.php:353
+msgid "Search..."
+msgstr "Cerca..."
+
+#: utilities/ajax-comments.php:82
+msgid "Cannot retrieve the comment."
+msgstr "Non é possibile recuperare il commento."
+
+#: utilities/widgets.php:5
+msgid "A search form for your blog"
+msgstr "Un modulo di ricerca per il tuo blog"
+
+#: utilities/widgets.php:6
+msgid "SimpleDark Search"
+msgstr "SimpleDark Search"
+
+#: utilities/widgets.php:37
+#: utilities/widgets.php:80
+msgid "Title:"
+msgstr "Titolo:"
+
+#: utilities/widgets.php:47
+msgid "An RSS feed widget for your blog"
+msgstr "Un widget feed RSS per il tuo blog"
+
+#: utilities/widgets.php:48
+msgid "SimpleDark Feed"
+msgstr "Feed SimpleDark"
+
+#: utilities/widgets.php:81
+msgid "Feed Text:"
+msgstr "Testo feed:"
+
+#: utilities/widgets.php:82
+msgid "Feed URL:"
+msgstr "URL feed :"
+
