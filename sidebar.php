@@ -5,7 +5,7 @@
 ?>
 				<div class="widget widget_search" id="search">
 					<div id="search-wrapper">
-						<form id="search-form" action="<?php bloginfo('url'); ?>" method="get">
+						<form id="search-form" action="<?php echo home_url(); ?>" method="get">
 							<div><label for="s" id="s-msg"><?php echo $options['search_form_text']; ?></label><input type="text" class="textbox" id="s" name="s" value="" /><?php if(!$options['enable_ajax'] || !$options['enable_ajax_search']) { ?><input type="submit" id="search-submit" value="" /><?php } ?></div>
 						</form>
 					</div>

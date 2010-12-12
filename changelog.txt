@@ -156,3 +156,7 @@ Fixed a problem which will make AJAX settings uneffective.
 Fixed a syntax error in the CSS file.
 Fixed the problem when submitting comment using Ctrl+Enter.
 Fixed the problem that video width restriction might fail under IE6.
+
+1.2.4
+根据官方主题自动扫描结果更新了一些WordPress模板标签。
+Updated some WordPress template tags according to the result of automated theme scanning on WordPress.org.

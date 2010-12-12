@@ -72,7 +72,7 @@ function simpledark_scripts() {
 	if(!is_admin()) {
 		if ( is_singular() && get_option( 'thread_comments' ) ) {
 			wp_deregister_script( 'comment-reply' );
-			wp_enqueue_script( 'comment-reply', get_bloginfo('template_directory') . '/js/simpledark-threaded-comment.min.js', 'jquery');
+			wp_enqueue_script( 'comment-reply', get_template_directory_uri() . '/js/simpledark-threaded-comment.min.js', 'jquery');
 		}
 		$options = &$GLOBALS['simpledark_options'];
 		wp_deregister_script('jquery');
@@ -151,7 +151,7 @@ function simpledark_menu( $args = array(), $show_type = 0 ) {
 		$class = '';
 		if ( is_front_page() && !is_paged() )
 			$class = 'class="current_page_item"';
-		$menu .= '<li ' . $class . '><a href="' . get_option('home') . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
+		$menu .= '<li ' . $class . '><a href="' . home_url() . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
 	}
 
 	$list_args['echo'] = false;
@@ -358,8 +358,8 @@ function simpledark_script_params() {
 ?>
 <script type="text/javascript">
 	var scriptParams = new Array();
-	scriptParams['blogurl'] = '<?php bloginfo('url'); ?>';
-	scriptParams['tmpldir'] = '<?php bloginfo('template_directory'); ?>';
+	scriptParams['blogurl'] = '<?php echo home_url(); ?>';
+	scriptParams['tmpldir'] = '<?php echo get_template_directory_uri(); ?>';
 <?php
 	if($options['hide_borders_for_small_images']) {
 ?>

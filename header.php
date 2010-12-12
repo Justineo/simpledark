@@ -4,14 +4,14 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title><?php if ( is_singular() || is_archive() ) { wp_title(''); } else { bloginfo('name'); } ?></title>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); _e('/style.css', THEME_NAME); ?>" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); _e('/style.css', THEME_NAME); ?>" media="screen" />
 <!--[if IE]><link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/ie.css" media="screen" /><![endif]-->
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div id="page">
 <div id="header">
-	<h1 id="blog-name"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+	<h1 id="blog-name"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
 	<div id="blog-description"><?php bloginfo('description'); ?></div>
 	<div class="top-menu">
 <?php
