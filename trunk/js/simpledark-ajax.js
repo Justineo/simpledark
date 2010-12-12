@@ -89,12 +89,16 @@ function ajaxSubmitComment() {
 				$(this).removeAttr('style');
 			});
 		});
-		if(window.RCJS) { RCJS.page(scriptParams['blogurl'],scriptParams['rcparams'],0,'Loading'); }
 		showMessage(content[1], function() {
 			$('#author, #email, #url, #comment, .entry .textbox, #submit').removeAttr('disabled').animate({ opacity: 1 }, 500, function() {
 				$(this).removeAttr('style');
 			});
 		});
+		if(window.RCJS) { // for older versions of WP-RecentComments
+			RCJS.page(scriptParams['blogurl'],scriptParams['rcparams'],0,'Loading');
+		} else if(window.RecentComment) { // version 2.0 and above
+			// refreshment is now unavailable to be invoked from external, discussed with mg12 and now waiting for updated versions.
+		}
 	}
 
 	function appendCommentToList(data) {
@@ -354,26 +358,6 @@ function fixPaginator(content) {
 			eval(src.match(/(pag = new.+\);)/i)[1]);
 		}
 	}
-}
-
-function showMessage(msg, callback) {
-	$('#commentform .fade').remove();
-	$('#submit').after('<span class="fade ajax-comment-msg">' + msg + '</span>');
-	$('#commentform .fade').delay(2000).fadeOut(500, function() {
-		$(this).remove();
-		if(callback && typeof(callback) == 'function')
-			callback();
-	});
-}
-
-function showError(msg, callback) {
-	$('#commentform .fade').remove();
-	$('#submit').after('<span class="fade ajax-comment-error">' + msg + '</span>');
-	$('#commentform .fade').delay(2000).fadeOut(500, function() {
-		$(this).remove();
-		if(callback && typeof(callback) == 'function')
-			callback();
-	});
 }
 
 var contentCache, searched = false;

@@ -16,7 +16,7 @@
 </div>
 </div><!-- page end -->
 <div id="fixed-nav"><div class="buttons"><a class="top" href="#header"></a><?php if(is_single() || is_page()) { ?><a class="cmnts" href="#comments"></a><?php } ?><a class="bottom" href="#footer"></a></div></div>
-<?php simpledark_script_params($options['enable_ajax']); ?>
+<?php simpledark_script_params(); ?>
 <?php
 	wp_footer();
 	if($options['enable_google_analytics']) {

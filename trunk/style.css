@@ -1,7 +1,8 @@
 /*
 Theme Name: SimpleDark
-Description: You can <strong><a href="themes.php?page=SimpleDarkAdmin">configure SimpleDark here</a></strong> or visit <a href="http://lync.in/simpledark/">Lync.in</a> for further support. SimpleDark was designed and developed by <a href="http://lync.in/">Justice</a> and is licensed under the <a href="http://www.opensource.org/licenses/gpl-license.php">GPL</a>.
-Version: 1.2.2
+Theme URI: http://wordpress.org/extend/themes/simpledark/
+Description: A simple, dark 2-column WordPress theme with support for widgets, custom menu and threaded comments. It includes quite a few AJAX features with flexible configurations. Compatible with WordPress 3.0 and above.
+Version: 1.2.3
 Author: Justice
 Author URI: http://lync.in/
 License: GNU General Public License v2.0
@@ -165,8 +166,9 @@ body {
 
 	#blog-description {
 		position:absolute;
-		top:70px; left:45px;
-		font-size:10px; font-weight:700; line-height:15px; text-shadow:0 0 5px #aaa;
+		top:75px; left:30px;
+		font-size:10px; font-weight:700; line-height:1; text-shadow:0 0 5px #aaa;
+		width:300px;
 	}
 
 		.top-menu {
@@ -396,7 +398,7 @@ body {
 					margin:5px;
 					-moz-box-shadow:0 0 5px #000;
 					-webkit-box-shadow:0 0 5px #000;
-					-khtml-box-shadow:0 0 5px #000;1
+					-khtml-box-shadow:0 0 5px #000;
 					box-shadow:0 0 5px #000;
 				}
 
@@ -916,7 +918,7 @@ body {
 
 		.commentnavi {
 			margin-top:10px;
-			font-size:10px; text-align:center; font-weight:700; line-height:1.2;
+			font-size:10px; text-align:center; font-weight:700; line-height:1.8;
 			overflow:hidden;
 		}
 

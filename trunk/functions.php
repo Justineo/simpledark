@@ -353,7 +353,7 @@ function simpledark_next_image_link() {
 	simpledark_adjacent_image_link(false);
 }
 
-function simpledark_script_params($ajax_enabled = true) {
+function simpledark_script_params() {
 	$options = &$GLOBALS['simpledark_options'];
 ?>
 <script type="text/javascript">
@@ -367,6 +367,7 @@ function simpledark_script_params($ajax_enabled = true) {
 	scriptParams['smallimgwidth'] = <?php echo empty($options['small_image_width']) ? '0' : $options['small_image_width']; ?>;
 	scriptParams['smallimgheight'] = <?php echo empty($options['small_image_height']) ? '0' : $options['small_image_height']; ?>;
 	scriptParams['smallimglogic'] = '<?php echo $options['small_image_size_logic']; ?>';
+	scriptParams['quicksubmit'] = <?php echo $options['ctrl_enter_submit_comment'] ? 'true' : 'false'; ?>;
 <?php
 	}
 	if(get_option('thread_comments')) {
@@ -374,21 +375,21 @@ function simpledark_script_params($ajax_enabled = true) {
 	scriptParams['threadcmnts'] = true;
 <?php
 	}
-	if($ajax_enabled) {
-		if(function_exists('wp_recentcomments')) {
-			$options = get_option('widget_recentcomments');
-			$args_binding = 'limit--' . $options['number']
-						. '|length--' . $options['length']
-						. '|post--' . ($options['post'] ? 'true' : 'false')
-						. '|pingback--' . ($options['pingback'] ? 'true' : 'false')
-						. '|trackback--' . ($options['trackback'] ? 'true' : 'false')
-						. '|avatar--' . ($options['avatar'] ? 'true' : 'false')
-						. '|avatar_size--' . $options['avatarsize']
-						. '|avatar_position--' . $options['avatarposition']
-						. '|avatar_default--' . $options['avatardefault']
-						. '|navigator--' . ($options['navigator'] ? 'true' : 'false')
-						. '|administrator--' . ($options['administrator'] ? 'true' : 'false')
-						. '|smilies--' . ($options['smilies'] ? 'true' : 'false');
+	if($options['enable_ajax']) {
+		if(function_exists('wp_recentcomments') && !function_exists('get_wp_recentcomments')) {
+			$rc_options = get_option('widget_recentcomments');
+			$args_binding = 'limit--' . $rc_options['number']
+						. '|length--' . $rc_options['length']
+						. '|post--' . ($rc_options['post'] ? 'true' : 'false')
+						. '|pingback--' . ($rc_options['pingback'] ? 'true' : 'false')
+						. '|trackback--' . ($rc_options['trackback'] ? 'true' : 'false')
+						. '|avatar--' . ($rc_options['avatar'] ? 'true' : 'false')
+						. '|avatar_size--' . $rc_options['avatarsize']
+						. '|avatar_position--' . $rc_options['avatarposition']
+						. '|avatar_default--' . $rc_options['avatardefault']
+						. '|navigator--' . ($rc_options['navigator'] ? 'true' : 'false')
+						. '|administrator--' . ($rc_options['administrator'] ? 'true' : 'false')
+						. '|smilies--' . ($rc_options['smilies'] ? 'true' : 'false');
 ?>
 	scriptParams['rcparams'] = '<?php echo $args_binding; ?>';
 <?php

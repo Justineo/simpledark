@@ -30,7 +30,7 @@ if(have_posts()) {
 		</div>
 <?php if(is_single()) { ?>
 		<div class="pagenavi">
-			<span class="previous-page"><?php next_post_link('%link', '&laquo; %title'); ?></span><span class="next-page"><?php previous_post_link('%link', '%title &raquo;'); ?></span>
+			<span class="previous-page"><?php previous_post_link('%link', '&laquo; %title'); ?></span><span class="next-page"><?php next_post_link('%link', '%title &raquo;'); ?></span>
 		</div>
 <?php } ?>
 		<div id="reaction">
