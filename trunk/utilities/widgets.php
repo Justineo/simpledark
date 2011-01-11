@@ -15,7 +15,7 @@ class SimpleDark_Widget_Search extends WP_Widget {
 				<?php if($title) echo $before_title . $title . $after_title; ?>
 				<div id="search-wrapper">
 					<form id="search-form" action="<?php echo home_url(); ?>" method="get">
-						<div><label for="s" id="s-msg"><?php echo $options['search_form_text']; ?></label><input type="text" class="textbox" id="s" name="s" value="" /><?php if(!$options['enable_ajax'] || !$options['enable_ajax_search']) { ?><input type="submit" id="search-submit" value="" /><?php } ?></div>
+						<label for="s" id="s-msg"><?php echo $options['search_form_text']; ?></label><input type="text" class="textbox" id="s" name="s" value="" /><?php if(!$options['enable_ajax'] || !$options['enable_ajax_search']) { ?><input type="submit" id="search-submit" value="" /><?php } ?>
 					</form>
 				</div>
 			<?php echo $after_widget; ?>

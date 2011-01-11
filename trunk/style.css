@@ -2,7 +2,7 @@
 Theme Name: SimpleDark
 Theme URI: http://wordpress.org/extend/themes/simpledark/
 Description: A simple, dark 2-column WordPress theme with support for widgets, custom menu and threaded comments. It includes quite a few AJAX features with flexible configurations. Compatible with WordPress 3.0 and above.
-Version: 1.2.4
+Version: 1.2.5
 Author: Justice
 Author URI: http://lync.in/
 License: GNU General Public License v2.0
@@ -1023,11 +1023,7 @@ body {
 		}
 
 		#search-form {
-			margin:0;
-			padding:0;
-		}
-
-		#search-form div {
+			margin:0; padding:0;
 			position:relative;
 		}
 
@@ -1123,22 +1119,6 @@ body {
 				background:url(images/feed.gif) no-repeat 2px center;
 			}
 
-			.widget#recentcomments li {
-				background:none;
-				padding:0; margin:2px 0 4px;
-				overflow:hidden;
-			}
-
-			.widget#recentcomments .rc_avatar img {
-				padding:1px;
-				background:#333;
-				border:1px solid #aaa;
-			}
-
-			.widget#recentcomments .rc_item .rc_left {
-				padding-top:4px;
-			}
-
 			.widget_tag_cloud {
 				line-height:1.6;
 			}
@@ -1208,3 +1188,36 @@ body {
 	#fixed-nav .buttons a.cmnts:hover {
 		background-position:-24px -48px;
 	}
+	
+/* -- Plugin Overwrite -- */
+#sidebar #recentcomments li {
+	background:none;
+	padding:0; margin:2px 0 4px;
+	overflow:hidden;
+}
+
+#sidebar #recentcomments .rc-avatar {
+	padding:1px;
+	background:#333;
+	border:1px solid #aaa;
+	margin-top:4px;
+}
+
+#sidebar #recentcomments .rc-navi {
+	margin-top:10px;
+	line-height:1.2;
+}
+
+#sidebar #recentcomments .rc-navi .rc-newest {
+	padding:0;
+	margin-right:10px;
+}
+
+#sidebar #recentcomments .rc-toggle {
+	border:none;
+	background:url(images/up-down.gif) no-repeat 0 0;
+}
+
+#sidebar #recentcomments .rc-collapse {
+	background-position:0 -16px;
+}

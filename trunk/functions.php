@@ -360,6 +360,8 @@ function simpledark_script_params() {
 	var scriptParams = new Array();
 	scriptParams['blogurl'] = '<?php echo home_url(); ?>';
 	scriptParams['tmpldir'] = '<?php echo get_template_directory_uri(); ?>';
+	scriptParams['quicksubmit'] = <?php echo $options['ctrl_enter_submit_comment'] ? 'true' : 'false'; ?>;
+	scriptParams['atreply'] = <?php echo $options['enable_at_reply'] ? 'true' : 'false'; ?>;
 <?php
 	if($options['hide_borders_for_small_images']) {
 ?>
@@ -367,7 +369,6 @@ function simpledark_script_params() {
 	scriptParams['smallimgwidth'] = <?php echo empty($options['small_image_width']) ? '0' : $options['small_image_width']; ?>;
 	scriptParams['smallimgheight'] = <?php echo empty($options['small_image_height']) ? '0' : $options['small_image_height']; ?>;
 	scriptParams['smallimglogic'] = '<?php echo $options['small_image_size_logic']; ?>';
-	scriptParams['quicksubmit'] = <?php echo $options['ctrl_enter_submit_comment'] ? 'true' : 'false'; ?>;
 <?php
 	}
 	if(get_option('thread_comments')) {

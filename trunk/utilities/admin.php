@@ -10,7 +10,7 @@ class SimpleDarkAdmin {
 
 	public function __construct(array $options, array $options_default) {
 		$this->options_default = $options_default;
-		if(!get_option(SIMPLEDARK_OPTIONS))
+//		if(!get_option(SIMPLEDARK_OPTIONS))
 			update_option(SIMPLEDARK_OPTIONS, SimpleDarkOptions::getInstance()->merge_array($this->options_default));
 		$this->string_options = isset($options['string']) ? (array)$options['string'] : array();
 		$this->bool_options = isset($options['bool']) ? (array)$options['bool'] : array();
@@ -166,6 +166,14 @@ $small_image_size = array(
 			<td colspan="2" class="section-title"><h3><?php _e('Discussion', THEME_NAME); ?></h3></td>
 		</tr>
 		<tr valign="top">
+			<th scope="row"><?php _e('@ Reply', THEME_NAME); ?></th>
+			<td>
+				<label for="enable_at_reply">
+					<input type="checkbox" <?php if($saved_options['enable_at_reply']) echo 'checked="checked" '; ?>value="checkbox" id="enable_at_reply" name="enable_at_reply" /> <?php _e('Automatically prepend a link to the original comment when replying', THEME_NAME); ?>
+				</label>
+			</td>
+		</tr>
+		<tr valign="top">
 			<th scope="row"><?php _e('Pingbacks and Trackbacks', THEME_NAME); ?></th>
 			<td>
 				<label for="hide_pingbacks">
@@ -316,6 +324,7 @@ if(is_admin()){
 			'hide_pingbacks',
 			'show_allowed_tags',
 			'enable_comment_images',
+			'enable_at_reply',
 			'ctrl_enter_submit_comment',
 			'strict_comment',
 			'show_footer_license',
@@ -346,6 +355,7 @@ if(is_admin()){
 		'show_allowed_tags'						=> 1,
 		'hide_borders_for_small_images'			=> 1,
 		'enable_comment_images'					=> 0,
+		'enable_at_reply'						=> 1,
 		'ctrl_enter_submit_comment'				=> 1,
 		'enable_google_analytics'				=> 0,
 		'exclude_admin_analytics'				=> 1,

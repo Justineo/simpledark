@@ -870,7 +870,7 @@ body {
 				#respond #cancel-comment-reply-link {
 					position:absolute;
 					right:10px;
-					font-size:10px;
+					font-size:11px; font-family:pmingliu,serif;
 				}
 
 				#submit.disabled {
@@ -916,7 +916,7 @@ body {
 
 		.commentnavi {
 			margin-top:10px;
-			font-size:12px; text-align:center; line-height:1.2;
+			font-size:12px; text-align:center; line-height:1.8;
 			overflow:hidden;
 		}
 
@@ -1025,11 +1025,7 @@ body {
 		}
 
 		#search-form {
-			margin:0;
-			padding:0;
-		}
-
-		#search-form div {
+			margin:0; padding:0;
 			position:relative;
 		}
 
@@ -1125,22 +1121,6 @@ body {
 				background:url(images/feed.gif) no-repeat 2px center;
 			}
 
-			.widget#recentcomments li {
-				background:none;
-				padding:0; margin:2px 0 4px;
-				overflow:hidden;
-			}
-
-			.widget#recentcomments .rc_avatar img {
-				padding:1px;
-				background:#333;
-				border:1px solid #aaa;
-			}
-
-			.widget#recentcomments .rc_item .rc_left {
-				padding-top:4px;
-			}
-
 			.widget_tag_cloud {
 				line-height:1.6;
 			}
@@ -1210,3 +1190,36 @@ body {
 	#fixed-nav .buttons a.cmnts:hover {
 		background-position:-24px -48px;
 	}
+	
+/* -- Plugin Overwrite -- */
+#sidebar #recentcomments li {
+	background:none;
+	padding:0; margin:2px 0 4px;
+	overflow:hidden;
+}
+
+#sidebar #recentcomments .rc-avatar {
+	padding:1px;
+	background:#333;
+	border:1px solid #aaa;
+	margin-top:4px;
+}
+
+#sidebar #recentcomments .rc-navi {
+	margin-top:10px;
+	font-size:11px; font-family:pmingliu,serif; line-height:1.2;
+}
+
+#sidebar #recentcomments .rc-navi .rc-newest {
+	padding:0;
+	margin-right:10px;
+}
+
+#sidebar #recentcomments .rc-toggle {
+	border:none;
+	background:url(images/up-down.gif) no-repeat 0 0;
+}
+
+#sidebar #recentcomments .rc-collapse {
+	background-position:0 -16px;
+}
