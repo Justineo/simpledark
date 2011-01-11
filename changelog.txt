@@ -143,7 +143,7 @@ Now adjust image size only after images are loaded.
 修改了主题元数据。
 修改了博客描述区的大小以显示更长的描述文字而不与导航栏重叠。
 页内滚动现在可以滚动到带有name属性的锚点。(thanks to Mark Amgine)
-next_post_link / previous_post_link(thanks to Mark Amgine)
+调整了next_post_link和previous_post_link调用的位置。(thanks to Mark Amgine)
 修复了导致AJAX设置可能无效的问题。(thanks to Sc千寻)
 修正了CSS文件中的一个语法错误。
 修正了Ctrl+Enter提交评论无效的问题。(thanks to 白手)
@@ -152,6 +152,7 @@ Added Italian language support.
 Changed theme meta information.
 Adjusted the size of blog description area which better displays long description, preventing it from overlapping with menu area.
 Scroll easing for anchors with name attributes is now available.
+Changed the order of calling next_post_link and previous_post_link.
 Fixed a problem which will make AJAX settings uneffective.
 Fixed a syntax error in the CSS file.
 Fixed the problem when submitting comment using Ctrl+Enter.
@@ -160,3 +161,13 @@ Fixed the problem that video width restriction might fail under IE6.
 1.2.4
 根据官方主题自动扫描结果更新了一些WordPress模板标签。
 Updated some WordPress template tags according to the result of automated theme scanning on WordPress.org.
+
+1.2.5
+调整了简体中文版样式的一处文字大小。
+微调了WP-RecentComments插件显示的样式。
+修正了一个选项Ctrl+Enter提交评论设置无效的问题。(thanks to 毕扬)
+增加了一个主题选项，用来设置是否自动在评论中添加@回复链接。(thanks to 亦白。)
+Adjusted a font size setting for Simplified Chinese version.
+Slightly changed the style for the plugin WP-RecentComments.
+Fixed the problem that Ctrl+Enter submit setting did not work properly.
+Added a theme option to turn on/off automatically inserting links for '@reply'.

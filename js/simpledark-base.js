@@ -62,14 +62,6 @@ function showError(msg, callback) {
  * refined from mg12's code
  */
 function reply(author, commentID, commentBoxID) {
-	// make '@commenter' link
-	var atReplyCode = '<a href="#' + commentID + '">@' + author.replace(/\t|\n/g, "") + ' </a> \n';
-
-	// append reply to the comment textarea
-	appendReply(atReplyCode, commentBoxID);
-}
-
-function appendReply(atReplyCode, commentBoxID) {
 
 	var field;
 	// set the comment textarea as the target if it exists
@@ -80,6 +72,23 @@ function appendReply(atReplyCode, commentBoxID) {
 		showError('Cannot find the comment text box!');
 		return false;
 	}
+
+	if(scriptParams['atreply']) {
+		// make '@commenter' link
+		var atReplyCode = '<a href="#' + commentID + '">@' + author.replace(/\t|\n/g, "") + ' </a> \n';
+
+		// append reply to the comment textarea
+		appendReply(field, atReplyCode, commentBoxID);
+	}
+
+	// focus the textarea
+	if(!scriptParams['threadcmnts']) {
+		$('#respond').ScrollTo(500);
+		field.focus();
+	}
+}
+
+function appendReply(field, atReplyCode, commentBoxID) {
 
 	if(scriptParams['threadcmnts']) {
 		field.value = '';
@@ -96,12 +105,6 @@ function appendReply(atReplyCode, commentBoxID) {
 		} else {
 			field.value = field.value.replace(/[\n]*$/g, '') + '\n\n' + atReplyCode;
 		}
-	}
-
-	// focus the textarea
-	if(!scriptParams['threadcmnts']) {
-		$('#respond').ScrollTo(500);
-		field.focus();
 	}
 }
 
