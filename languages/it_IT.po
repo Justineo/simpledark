@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimpleDark in italiano\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-22 11:28+0100\n"
-"PO-Revision-Date: 2010-10-23 19:58+0100\n"
+"POT-Creation-Date: 2010-12-22 13:34+0800\n"
+"PO-Revision-Date: 2011-01-11 18:24+0100\n"
 "Last-Translator: Gianni Diurno (aka gidibao) <gidibao[at]gmail[dot]com>\n"
 "Language-Team: Gianni Diurno | Gidibao.net <gidibao[at]gmail[dot]com>\n"
 "MIME-Version: 1.0\n"
@@ -110,7 +110,7 @@ msgstr "X Commenti"
 
 #: ajax-posts-load.php:20
 #: attachment.php:13
-#: functions.php:404
+#: functions.php:405
 #: index.php:18
 #: templates/singular.php:14
 msgid "No Comments"
@@ -118,7 +118,7 @@ msgstr "Nessun commento"
 
 #: ajax-posts-load.php:20
 #: attachment.php:13
-#: functions.php:405
+#: functions.php:406
 #: index.php:18
 #: templates/singular.php:14
 msgid "1 Comment"
@@ -126,7 +126,7 @@ msgstr "1 commento"
 
 #: ajax-posts-load.php:20
 #: attachment.php:13
-#: functions.php:406
+#: functions.php:407
 #: index.php:18
 #: templates/singular.php:14
 msgid "% Comments"
@@ -473,7 +473,7 @@ msgstr "Attiva navigazione pagina commento (AJAX)"
 
 #: utilities/admin.php:101
 msgid "Post Content Page Navigation"
-msgstr "Navigazione pagina contenuto articolo"
+msgstr "Nav pagina contenuto articolo"
 
 #: utilities/admin.php:104
 msgid "Enable AJAX post content page navigation"
@@ -549,178 +549,186 @@ msgid "Discussion"
 msgstr "Discussione"
 
 #: utilities/admin.php:169
+msgid "@ Reply"
+msgstr "Rispondi a"
+
+#: utilities/admin.php:172
+msgid "Automatically prepend a link to the original comment when replying"
+msgstr "Aggiungi in automatico alla risposta un link al commento originale"
+
+#: utilities/admin.php:177
 msgid "Pingbacks and Trackbacks"
 msgstr "Trackback e Pingback"
 
-#: utilities/admin.php:172
+#: utilities/admin.php:180
 msgid "Hide pingbacks and trackbacks"
 msgstr "Nascondi pingback e trackback"
 
-#: utilities/admin.php:177
+#: utilities/admin.php:185
 msgid "Allowed Tags"
 msgstr "Tag permessi"
 
-#: utilities/admin.php:180
+#: utilities/admin.php:188
 msgid "Show allowed tags for comments"
 msgstr "Mostra i tag disponibili per i commenti"
 
-#: utilities/admin.php:185
+#: utilities/admin.php:193
 msgid "Comment Images"
 msgstr "Immagini nei commenti"
 
-#: utilities/admin.php:188
+#: utilities/admin.php:196
 msgid "Comments can include the &lt;img&gt; tag"
 msgstr "I commenti possono contenere il tag &lt;img&gt;"
 
-#: utilities/admin.php:193
+#: utilities/admin.php:201
 msgid "Comment Submit Shortcut"
 msgstr "Scorciatoia invio commento"
 
-#: utilities/admin.php:196
+#: utilities/admin.php:204
 msgid "Use Ctrl+Enter to submit comment"
 msgstr "Usa Ctrl+Invio per inviare il commento"
 
-#: utilities/admin.php:201
+#: utilities/admin.php:209
 msgid "Sidebar"
 msgstr "Barra laterale"
 
-#: utilities/admin.php:204
+#: utilities/admin.php:212
 msgid "Search Form Text"
 msgstr "Testo modulo ricerca"
 
-#: utilities/admin.php:205
+#: utilities/admin.php:213
 msgid "Default text of the search form"
 msgstr "Testo predefinito modulo ricerca"
 
-#: utilities/admin.php:208
+#: utilities/admin.php:216
 msgid "Footer"
 msgstr "Footer"
 
-#: utilities/admin.php:211
+#: utilities/admin.php:219
 msgid "Footer License"
 msgstr "Licenza nel footer"
 
-#: utilities/admin.php:214
+#: utilities/admin.php:222
 msgid "Show footer license"
 msgstr "Mostra licenza nel footer"
 
-#: utilities/admin.php:216
+#: utilities/admin.php:224
 msgid "You can choose a way to reserve your rights when sharing your creative works by specifying a copyright-license like <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> in your footer area."
 msgstr "Scegli un modo per proteggere il tuo lavoro (diritti di autore) specificando il copyright di tua preferenza: ad esempio, inserendo il link a <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> nell'area del footer."
 
-#: utilities/admin.php:220
+#: utilities/admin.php:228
 msgid "License Name"
 msgstr "Nome licenza"
 
-#: utilities/admin.php:221
+#: utilities/admin.php:229
 msgid "The anchor text of the license to be displayed"
 msgstr "L'anchor text da mostrare associato alla licenza"
 
-#: utilities/admin.php:224
+#: utilities/admin.php:232
 msgid "License URL"
 msgstr "URL licenza"
 
-#: utilities/admin.php:225
+#: utilities/admin.php:233
 msgid "A link to the license details"
 msgstr "Un link ai termini della licenza"
 
-#: utilities/admin.php:228
+#: utilities/admin.php:236
 msgid "Custom Footer Information"
 msgstr "Informazione personalizzata nel footer"
 
-#: utilities/admin.php:231
+#: utilities/admin.php:239
 msgid "Show custom information in the footer"
 msgstr "Mostra nel footer l'informazione personalizzata"
 
-#: utilities/admin.php:236
+#: utilities/admin.php:244
 msgid "Custom Footer Information Code"
 msgstr "Codice informativo footer personalizzato"
 
-#: utilities/admin.php:237
+#: utilities/admin.php:245
 msgid "Write your custom HTML code to display in the footer"
 msgstr "Inserisci il tuo codice HTML personalizzato da mostrare nel footer"
 
-#: utilities/admin.php:243
+#: utilities/admin.php:251
 msgid "Custom Feed Information Before Content"
 msgstr "Informazioni feed personalizzate prima del contenuto"
 
-#: utilities/admin.php:244
+#: utilities/admin.php:252
 msgid "Write your custom HTML code to display before the content of each entry of your RSS feed"
 msgstr "Inserisci il tuo codice HTML personalizzato da mostrare prima del contenuto di ogni pubblicazione presente nel tuo feed RSS"
 
-#: utilities/admin.php:247
+#: utilities/admin.php:255
 msgid "Custom Feed Information After Content"
 msgstr "Informazioni feed personalizzate in coda al contenuto"
 
-#: utilities/admin.php:249
+#: utilities/admin.php:257
 msgid "Write your custom HTML code to display after the content of each entry of your RSS feed"
 msgstr "Inserisci il tuo codice HTML personalizzato da mostrare in coda al contenuto di ogni pubblicazione presente nel tuo feed RSS"
 
-#: utilities/admin.php:251
+#: utilities/admin.php:259
 msgid "You can use these placeholders in your code:"
 msgstr "Puoi usare nel tuo codice i seguenti placeholder:"
 
-#: utilities/admin.php:253
+#: utilities/admin.php:261
 msgid "The name of the post author without a link"
 msgstr "Il nome (senza il link) dell'autore dell'articolo"
 
-#: utilities/admin.php:254
+#: utilities/admin.php:262
 msgid "The link of posts by the post author"
 msgstr "I link degli articoli per autore"
 
-#: utilities/admin.php:255
+#: utilities/admin.php:263
 msgid "The link of your blog homepage"
 msgstr "Il link alla homepage del tuo blog"
 
-#: utilities/admin.php:256
+#: utilities/admin.php:264
 msgid "The RSS feed URL of your blog posts"
 msgstr "L'URL del feed RSS per gli articoli del tuo blog"
 
-#: utilities/admin.php:257
+#: utilities/admin.php:265
 msgid "The URL of your post"
 msgstr "URL del tuo articolo"
 
-#: utilities/admin.php:259
+#: utilities/admin.php:267
 msgid "eg. The post is written by %AUTHOR_LINK%. To read more interesting posts, visit %BLOG_LINK% or &lt;a href=\"%FEED_URL%\"&gt;subscribe our updates&lt;/a&gt;."
 msgstr "ad esempio: Questo articolo é stato scritto da %AUTHOR_LINK%. Per potere leggere degli altri articoli interessanti, visita %BLOG_LINK% oppure &lt;a href=\"%FEED_URL%\"&gt;abbonati&lt;/a&gt;."
 
-#: utilities/admin.php:260
+#: utilities/admin.php:268
 msgid "The output will be wrapped in a &lt;DIV&gt; element."
 msgstr "L'output sarà avvolto con un elemento &lt;DIV&gt;."
 
-#: utilities/admin.php:265
+#: utilities/admin.php:273
 msgid "Analytics"
 msgstr "Analytics"
 
-#: utilities/admin.php:268
+#: utilities/admin.php:276
 msgid "Google Analytics"
 msgstr "Google Analytics"
 
-#: utilities/admin.php:271
+#: utilities/admin.php:279
 msgid "Enable Google Analytics"
 msgstr "Attiva Google Analytics"
 
-#: utilities/admin.php:276
+#: utilities/admin.php:284
 msgid "Google Analytics Code"
 msgstr "Codice Google Analytics"
 
-#: utilities/admin.php:278
+#: utilities/admin.php:286
 msgid "Paste your Google Analytics code snippet here"
 msgstr "Aggiungi qui il tuo codice Google Analytics"
 
-#: utilities/admin.php:281
+#: utilities/admin.php:289
 msgid "Google Analytics for Administrators"
 msgstr "Google Analytics per gli amministratori"
 
-#: utilities/admin.php:284
+#: utilities/admin.php:292
 msgid "Do not load Google Analytics when administrators are logged in"
 msgstr "Non caricare Google Analytics quando gli amministratori sono collegati"
 
-#: utilities/admin.php:291
+#: utilities/admin.php:299
 msgid "Save Changes"
 msgstr "Salva le modifiche"
 
-#: utilities/admin.php:353
+#: utilities/admin.php:365
 msgid "Search..."
 msgstr "Cerca..."
 
@@ -757,3 +765,55 @@ msgstr "Testo feed:"
 msgid "Feed URL:"
 msgstr "URL feed :"
 
+msgid "Hide borders for images"
+msgstr "Nascondi bordi alle immagini"
+
+msgid "narrower than %1$spx %2$s lower than %3$spx"
+msgstr "più stretto di %1$spx %2$s inferiore a %3$spx"
+
+msgid "General"
+msgstr "Generale"
+
+msgid "Leave a Reply"
+msgstr "Lascia un commento"
+
+msgid "Leave a Reply to %s"
+msgstr "Rispondi a %s"
+
+msgid "Logged in as %s."
+msgstr "Collegato a nome %s."
+
+msgid "Manage Profile"
+msgstr "Gestione profilo"
+
+msgid "Logout"
+msgstr "Esci"
+
+msgid "%s Entries RSS Feed"
+msgstr "%s Feed RSS Articoli"
+
+msgid "Top Menu"
+msgstr "Menu principale"
+
+msgid "Page %1$d of %2$d"
+msgstr "Pagina %1$d di %2$d"
+
+#, fuzzy
+#~ msgid "Submit Comment"
+#~ msgstr "1 commento"
+
+#, fuzzy
+#~ msgid "Comments are closed."
+#~ msgstr "Immagini nei commenti"
+
+#, fuzzy
+#~ msgid "%s Comments RSS Feed"
+#~ msgstr "% commenti"
+
+#, fuzzy
+#~ msgid "Next page"
+#~ msgstr "Pagina successiva"
+
+#, fuzzy
+#~ msgid "Previous page"
+#~ msgstr "Pagina precedente"
