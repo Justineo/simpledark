@@ -177,3 +177,7 @@ Added a theme option to turn on/off automatically inserting links for '@reply'.
 修改了ie.css的URL的输出代码。
 Fixed the problem that theme options are reset each time the admin logs in.
 Changed the URL output code for ie.css.
+
+1.2.7
+将404.php中的一处硬编码属性改为调用bloginfo进行输出。
+Replaced a hard-coded meta tag in 404.php with bloginfo call.
