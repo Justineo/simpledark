@@ -10,7 +10,7 @@ class SimpleDarkAdmin {
 
 	public function __construct(array $options, array $options_default) {
 		$this->options_default = $options_default;
-//		if(!get_option(SIMPLEDARK_OPTIONS))
+		if(!get_option(SIMPLEDARK_OPTIONS))
 			update_option(SIMPLEDARK_OPTIONS, SimpleDarkOptions::getInstance()->merge_array($this->options_default));
 		$this->string_options = isset($options['string']) ? (array)$options['string'] : array();
 		$this->bool_options = isset($options['bool']) ? (array)$options['bool'] : array();
