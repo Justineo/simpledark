@@ -171,3 +171,9 @@ Adjusted a font size setting for Simplified Chinese version.
 Slightly changed the style for the plugin WP-RecentComments.
 Fixed the problem that Ctrl+Enter submit setting did not work properly.
 Added a theme option to turn on/off automatically inserting links for '@reply'.
+
+1.2.6
+修正了每次登陆会重置选项的bug。(thanks to 毕扬)
+修改了ie.css的URL的输出代码。
+Fixed the problem that theme options are reset each time the admin logs in.
+Changed the URL output code for ie.css.
