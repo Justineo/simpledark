@@ -1,0 +1,819 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SimpleDark in italiano\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-22 13:34+0800\n"
+"PO-Revision-Date: 2011-01-19 19:15+0100\n"
+"Last-Translator: Michal Marek <ahoj@michal-marek.cz>\n"
+"Language-Team: Gianni Diurno | Gidibao.net <gidibao[at]gmail[dot]com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:7
+#: header.php:7
+msgid "/style.css"
+msgstr "/style.css"
+
+#: 404.php:15
+msgid "Sorry, the page you are looking for cannot be found."
+msgstr "Omlouváme se, stránka kterou hledáte není k dispozici."
+
+#: 404.php:17
+#, php-format
+msgid "The requested URL <code>%s</code> was not found on this server."
+msgstr "Požadované URL <code>%s</code> nebylo nalezeno."
+
+#: 404.php:18
+msgid "It is possible that the address is incorrect, or that the page no longer exists."
+msgstr "Je možné, že tato adresa není správná, nebo stránka již neexistuje."
+
+#: 404.php:19
+msgid "We suggest you to try these links:"
+msgstr "Doporučujeme vyzkoušet tyto odkazy:"
+
+#: 404.php:21
+msgid "Go back to last page"
+msgstr "Zpět na předchozí stránku"
+
+#: 404.php:22
+#, php-format
+msgid "Go to the home page of %s"
+msgstr "Zpět na titulní stranu %s"
+
+#: 404.php:24
+msgid "Or you can search for the content you need:"
+msgstr "Nebo můžete vyhledávat obsah, který chcete:"
+
+#: ajax-comments-post.php:66
+msgid "Please don't send duplicate comment."
+msgstr "Prosím, neposílejte duplicitní komentáře."
+
+#: ajax-comments-post.php:95
+msgid "You are posting comments too quickly."
+msgstr "Odesíláte komentáře moc rychle za sebou."
+
+#: ajax-comments-post.php:108
+msgid "Error: comment ID not found."
+msgstr "Chyba: ID komentáře nebylo nalezeno."
+
+#: ajax-comments-post.php:113
+msgid "Sorry, comments are closed for this item."
+msgstr "Omlouváme se, komentáře jsou uzavřené."
+
+#: ajax-comments-post.php:147
+msgid "Sorry, you must be logged in to post a comment."
+msgstr "Omlouváme se, ke komentování musíte být přihlášen."
+
+#: ajax-comments-post.php:155
+msgid "Error: please fill the required fields (name, email)."
+msgstr "Chyba: vyplňte povinné údaje (jméno, email)."
+
+#: ajax-comments-post.php:158
+msgid "Error: please enter a valid email address."
+msgstr "Chyba: zadejte platnou emailovou adresu prosím."
+
+#: ajax-comments-post.php:163
+msgid "Error: please type a comment."
+msgstr "Chyba: vyplňte text komentáře prosím."
+
+#: ajax-comments-post.php:194
+msgid "Comment submitted!"
+msgstr "Komentář přidán!"
+
+#: ajax-posts-load.php:19
+#: attachment.php:12
+#: index.php:17
+#: templates/singular.php:13
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Trvalý odkaz na %s"
+
+#: ajax-posts-load.php:20
+#: index.php:18
+#: templates/singular.php:14
+msgid " posted in "
+msgstr " publikováno v "
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: index.php:18
+#: templates/singular.php:14
+msgid "X Comments"
+msgstr "X komentářů"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: functions.php:405
+#: index.php:18
+#: templates/singular.php:14
+msgid "No Comments"
+msgstr "Žádné komentáře"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: functions.php:406
+#: index.php:18
+#: templates/singular.php:14
+msgid "1 Comment"
+msgstr "1 komentář"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: functions.php:407
+#: index.php:18
+#: templates/singular.php:14
+msgid "% Comments"
+msgstr "% komentářů"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: index.php:18
+#: templates/singular.php:14
+msgid "Comments Off"
+msgstr "Komentáře vypnuty"
+
+#: ajax-posts-load.php:20
+#: attachment.php:13
+#: index.php:18
+#: templates/comment.php:26
+#: templates/singular.php:14
+msgid "Edit"
+msgstr "Upravit"
+
+#: ajax-posts-load.php:22
+#: index.php:21
+msgid "Read More"
+msgstr "Zobrazit více"
+
+#: ajax-posts-load.php:25
+#: index.php:33
+#: templates/singular.php:28
+msgid "NO TAGS"
+msgstr "BEZ ŠTÍTKŮ"
+
+#: ajax-posts-load.php:40
+#: index.php:48
+msgid "Older Posts"
+msgstr "Starší příspěvky"
+
+#: ajax-posts-load.php:40
+#: index.php:48
+msgid "Newer Posts"
+msgstr "Novější příspěvky"
+
+#: ajax-posts-load.php:50
+#, php-format
+msgid "No posts found. Why not <a title=\"Go Back\" href=\"%s\">go back to the last page</a> ?"
+msgstr "Žádné příspěvky nenalezeny. <a title=\"Zpět\" href=\"%s\">Zpět na poslední stránku</a> ?"
+
+#: attachment.php:13
+#, php-format
+msgid "Uploaded by %s"
+msgstr "Nahrál %s"
+
+#: attachment.php:41
+#, php-format
+msgid "Permalink: %s"
+msgstr "Trvalý odkaz: %s"
+
+#: attachment.php:48
+#, php-format
+msgid "Full size: %s"
+msgstr "Plná velikost: %s"
+
+#: attachment.php:50
+msgid "Link to full-size image"
+msgstr "Odkaz na plnou velikost"
+
+#: attachment.php:57
+#, php-format
+msgid "MIME Type: %s"
+msgstr "MIME typ: %s"
+
+#: attachment.php:62
+#, php-format
+msgid "Caption: %s"
+msgstr "Titulek: %s"
+
+#: attachment.php:68
+#, php-format
+msgid "Description: %s"
+msgstr "Popis: %s"
+
+#: comments.php:8
+msgid "Comments"
+msgstr "Komentáře"
+
+#: comments.php:8
+#: comments.php:60
+msgid "X"
+msgstr "X"
+
+#: comments.php:12
+msgid "You must enter the password to view the comments."
+msgstr "Pro zobrazení komentářů musíte zadat heslo."
+
+#: comments.php:24
+msgid "No comments yet."
+msgstr "Zatím bez komentářů."
+
+#: comments.php:43
+#, php-format
+msgid "Welcome back, %s."
+msgstr "Vítejte zpět <strong>%s</strong>."
+
+#: comments.php:43
+msgid "Change"
+msgstr "Změnit"
+
+#: comments.php:44
+msgid "Name"
+msgstr "Jméno"
+
+#: comments.php:45
+msgid "Email"
+msgstr "Email"
+
+#: comments.php:46
+msgid "Website"
+msgstr "Web"
+
+#: comments.php:50
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Pro přidání komentáře musíte být <a href=\"%s\">přihlášen</a>."
+
+#: comments.php:51
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
+msgstr "Přihlášen jako <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Odhlásit tento účet\">Odhlásit &raquo;</a>"
+
+#: comments.php:52
+msgid "Post Comment"
+msgstr "Odeslat komentář"
+
+#: comments.php:60
+msgid "Pingbacks"
+msgstr "Vnější odkazy"
+
+#: comments.php:78
+msgid "No pingbacks yet."
+msgstr "Žádné vnější odkazy."
+
+#: footer.php:4
+#, php-format
+msgid "Powered by %s"
+msgstr "Pohání %s"
+
+#: footer.php:4
+#, php-format
+msgid "Theme %1$s by %2$s"
+msgstr "Téma %1$s od %2$s"
+
+#: footer.php:9
+#, php-format
+msgid "Licensed under a <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a>"
+msgstr "Licencováno pod <a rel=\"license\" href=\"%s\" title=\"%s\">%s</a>"
+
+#: footer.php:9
+msgid "License Details"
+msgstr "Detaily licence"
+
+#: functions.php:65
+msgid "Top Navigation Menu"
+msgstr "Horní navigační menu"
+
+#: functions.php:115
+#: functions.php:228
+#, php-format
+msgid "Posts by %s"
+msgstr "Publikoval %s"
+
+#: functions.php:148
+msgid "Home"
+msgstr "Domů"
+
+#: functions.php:186
+msgid "F, Y"
+msgstr "F, Y"
+
+#: functions.php:189
+msgid "Y"
+msgstr "Y"
+
+#: functions.php:219
+msgid "Untitled"
+msgstr "Bez názvu"
+
+#: functions.php:269
+msgid "<strong>Allowed Tags</strong> - You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes in your comment."
+msgstr "<strong>Povolené tagy</strong> - V komentářích můžete použít následující <abbr title=\"HyperText Markup Language\">HTML</abbr> tagy."
+
+#: functions.php:295
+msgid "Protected"
+msgstr "Chráněno"
+
+#: functions.php:297
+msgid "Private"
+msgstr "Privátní"
+
+#: functions.php:300
+msgid "Announcement"
+msgstr "Oznámení"
+
+#: functions.php:301
+#: functions.php:302
+msgid "Sticky"
+msgstr "Sticky"
+
+#: functions.php:305
+msgid "Attachment"
+msgstr "Příloha"
+
+#: functions.php:319
+msgid "Missing Attachment"
+msgstr "Chybí příloha"
+
+#: index.php:18
+#: templates/singular.php:14
+#, php-format
+msgid "Posted by %s"
+msgstr "Publikoval %s"
+
+#: index.php:24
+#: templates/singular.php:19
+msgid "Pages:"
+msgstr "Stránky:"
+
+#: index.php:26
+#: templates/singular.php:21
+msgid "Next Page"
+msgstr "Další stránka"
+
+#: index.php:27
+#: templates/singular.php:22
+msgid "Previous Page"
+msgstr "Předchozí stránka"
+
+#: index.php:58
+#, php-format
+msgid "No posts found. Why not <a title=\"Go Back\" href=\"%1$s\"%2$s>go back to the last page</a> ?"
+msgstr "Žádné příspěvky. <a title=\"Ritorna\" href=\"%1$s\"%2$s>Zpět na předchozí stránku</a> ?"
+
+#: sidebar.php:14
+msgid "RSS Feed"
+msgstr "Zdroj RSS"
+
+#: sidebar.php:15
+msgid "Subscribe Updates"
+msgstr "Přihlásit se k novinkám"
+
+#: templates/comment.php:20
+msgid "Reply to this comment"
+msgstr "Odpovědět na tento komentář"
+
+#: templates/comment.php:20
+msgid "Reply"
+msgstr "Odpovědět"
+
+#: templates/comment.php:28
+msgid "Your comment is awaiting moderation."
+msgstr "Váš komentář čeká na schválení."
+
+#: templates/content-header.php:7
+#, php-format
+msgid "Search results for <strong>&ldquo;%s&rdquo;</strong>"
+msgstr "Výsledky vyhledávání <strong>&ldquo;%s&rdquo;</strong>"
+
+#: templates/content-header.php:8
+#, php-format
+msgid "Posts under <strong>%s</strong>"
+msgstr "Příspěvky z <strong>%s</strong>"
+
+#: templates/content-header.php:9
+#, php-format
+msgid "Posts tagged <strong>%s</strong>"
+msgstr "Příspěvky se štítkem <strong>%s</strong>"
+
+#: templates/content-header.php:10
+#, php-format
+msgid "Posts by <strong>%s</strong>"
+msgstr "Příspěvky od <strong>%s</strong>"
+
+#: templates/content-header.php:11
+#, php-format
+msgid "Archives on <strong>%s</strong>"
+msgstr "Archiv <strong>%s</strong>"
+
+#: templates/content-header.php:12
+#: templates/content-header.php:13
+#, php-format
+msgid "Archives in <strong>%s</strong>"
+msgstr "Archiv v <strong>%s</strong>"
+
+#: templates/content-header.php:14
+msgid "Archives page"
+msgstr "Archiv stránky"
+
+#: utilities/admin.php:23
+#: utilities/admin.php:49
+msgid "SimpleDark Options"
+msgstr "Nastavení SimpleDark"
+
+#: utilities/admin.php:25
+msgid "Check here for more information."
+msgstr "Klikněte pro více informací."
+
+#: utilities/admin.php:56
+msgid "Changes have been saved."
+msgstr "Změny byly uloženy."
+
+#: utilities/admin.php:66
+msgid "AJAX"
+msgstr "AJAX"
+
+#: utilities/admin.php:69
+msgid "Global"
+msgstr "Globální"
+
+#: utilities/admin.php:72
+msgid "Enable AJAX functionalities (page navigation, comment post, search, etc. The following settings will not work if this option is off.)"
+msgstr "Aktivovat AJAX (navigace stránek, odesílání komentářů, vyhledávání, atd. Následující nastavení nefungují, pokud je toto vypnuto)"
+
+#: utilities/admin.php:77
+msgid "Comment Post"
+msgstr "Komentování příspěvků"
+
+#: utilities/admin.php:80
+msgid "Enable AJAX comment post"
+msgstr "Nastavit AJAXové komentování příspěvků"
+
+#: utilities/admin.php:85
+msgid "Comment Page Navigation"
+msgstr "Navigace mezi komentáři"
+
+#: utilities/admin.php:88
+msgid "Enable AJAX comment page navigation"
+msgstr "Nastavit AJAXovou navigaci mezi komentáři"
+
+#: utilities/admin.php:93
+msgid "Post Page Navigation"
+msgstr "Navigace mezi příspěvky"
+
+#: utilities/admin.php:96
+msgid "Enable AJAX post page navigation"
+msgstr "Zapnout AJAXovou navigaci mezi příspěvky"
+
+#: utilities/admin.php:101
+msgid "Post Content Page Navigation"
+msgstr "Navigace mezi obsahem příspěvků"
+
+#: utilities/admin.php:104
+msgid "Enable AJAX post content page navigation"
+msgstr "Zapnout AJAXovou navigaci mezi obsahem příspěvků"
+
+#: utilities/admin.php:109
+msgid "Search"
+msgstr "Vyhledávání"
+
+#: utilities/admin.php:112
+msgid "Enable AJAX search"
+msgstr "Zapnout AJAXové vyhledávání"
+
+#: utilities/admin.php:117
+msgid "Navigation Menu"
+msgstr "Navigační menu"
+
+#: utilities/admin.php:121
+msgid "Settings in this section will be overriden by your settings in Appearance &raquo; Menus."
+msgstr "Nastavení v této sekci přebíjí nastavení z menu Vzhled &raquo; Menu."
+
+#: utilities/admin.php:125
+msgid "Show Homepage Link"
+msgstr "Zobrazit odkaz Domů"
+
+#: utilities/admin.php:128
+msgid "Show the link of the homepage on the top menu"
+msgstr "Zobrazovat odkaz na titulní stranu v horním menu"
+
+#: utilities/admin.php:133
+msgid "Menu Items"
+msgstr "Položky menu"
+
+#: utilities/admin.php:136
+msgid "Show categories as top menu items instead of pages"
+msgstr "Zobrazovat kategorie v horním menu namísto stránek."
+
+#: utilities/admin.php:141
+msgid "Posts"
+msgstr "Příspěvky"
+
+#: utilities/admin.php:144
+msgid "Post Tags"
+msgstr "Štítky příspěvků"
+
+#: utilities/admin.php:147
+msgid "Show post tags on archive pages (home, archive, etc.)"
+msgstr "Zobrazovat štítky na stránkách archivu"
+
+#: utilities/admin.php:158
+msgid "Image Borders"
+msgstr "Okraje obrázků"
+
+#: utilities/admin.php:161
+#, php-format
+msgid "Hide borders for images with width less than or equal to %1$spx %2$s height less than or equal to %3$spx"
+msgstr "Skrýt okraje obrázků užších nebo rovných %1$spx %2$s a nižších nebo rovných %3$spx"
+
+#: utilities/admin.php:161
+msgid "and"
+msgstr "a"
+
+#: utilities/admin.php:161
+msgid "or"
+msgstr "nebo"
+
+#: utilities/admin.php:162
+msgid "Set the value to 0 or just leave it blank to ignore width or height restriction. If both restrictions are set to 0, all image borders will be removed."
+msgstr "Nastavte hodnotu 0 nebo ponechte prázdné pro ignorování omezení šířky či výšky. Pokud jsou obě hodnoty 0, všechny okraje obrázků budou skryty."
+
+#: utilities/admin.php:166
+msgid "Discussion"
+msgstr "Diskuse"
+
+#: utilities/admin.php:169
+msgid "@ Reply"
+msgstr "@ odpovědi"
+
+#: utilities/admin.php:172
+msgid "Automatically prepend a link to the original comment when replying"
+msgstr "Při odpovědi automaticky přidat odkaz na původní komentář."
+
+#: utilities/admin.php:177
+msgid "Pingbacks and Trackbacks"
+msgstr "Vnější odkazy a trackback"
+
+#: utilities/admin.php:180
+msgid "Hide pingbacks and trackbacks"
+msgstr "Skrýt vnější odkazy a trackback"
+
+#: utilities/admin.php:185
+msgid "Allowed Tags"
+msgstr "Povolené štítky"
+
+#: utilities/admin.php:188
+msgid "Show allowed tags for comments"
+msgstr "Zobrazit povolené tagy u komentářů"
+
+#: utilities/admin.php:193
+msgid "Comment Images"
+msgstr "Obrázky v komentářích"
+
+#: utilities/admin.php:196
+msgid "Comments can include the &lt;img&gt; tag"
+msgstr "Do komentářů možno vkládat tag &lt;img&gt;"
+
+#: utilities/admin.php:201
+msgid "Comment Submit Shortcut"
+msgstr "Zkratka pro odeslání komentáře"
+
+#: utilities/admin.php:204
+msgid "Use Ctrl+Enter to submit comment"
+msgstr "Použít Ctrl+Enter pro odeslání komentáře"
+
+#: utilities/admin.php:209
+msgid "Sidebar"
+msgstr "Postranní panel"
+
+#: utilities/admin.php:212
+msgid "Search Form Text"
+msgstr "Text vyhledávacího pole"
+
+#: utilities/admin.php:213
+msgid "Default text of the search form"
+msgstr "Výchozí text ve vyhledávacím poli"
+
+#: utilities/admin.php:216
+msgid "Footer"
+msgstr "Patička"
+
+#: utilities/admin.php:219
+msgid "Footer License"
+msgstr "Licence v patičce"
+
+#: utilities/admin.php:222
+msgid "Show footer license"
+msgstr "Zobrazovat licenci v patičce"
+
+#: utilities/admin.php:224
+msgid "You can choose a way to reserve your rights when sharing your creative works by specifying a copyright-license like <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> in your footer area."
+msgstr "Můžete si vybrat způsob, kterým si budete chránit autorská práva. Můžete specifikovat autorskou licenci jako třeba <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> a zobrazovat ji v patičce."
+
+#: utilities/admin.php:228
+msgid "License Name"
+msgstr "Jméno licence"
+
+#: utilities/admin.php:229
+msgid "The anchor text of the license to be displayed"
+msgstr "Zobrazovaný text odkazu na licenci."
+
+#: utilities/admin.php:232
+msgid "License URL"
+msgstr "URL na licenci"
+
+#: utilities/admin.php:233
+msgid "A link to the license details"
+msgstr "Odkaz na detaily licence"
+
+#: utilities/admin.php:236
+msgid "Custom Footer Information"
+msgstr "Volitelné informace v patičce"
+
+#: utilities/admin.php:239
+msgid "Show custom information in the footer"
+msgstr "Zobrazovat volitelné informace v patičce"
+
+#: utilities/admin.php:244
+msgid "Custom Footer Information Code"
+msgstr "Volitelný kód pro zobrazení v patičce"
+
+#: utilities/admin.php:245
+msgid "Write your custom HTML code to display in the footer"
+msgstr "Zadejte svůj HTML kód, který bude zobrazen v patičce."
+
+#: utilities/admin.php:251
+msgid "Custom Feed Information Before Content"
+msgstr "Volitelné informace před obsahem v RSS"
+
+#: utilities/admin.php:252
+msgid "Write your custom HTML code to display before the content of each entry of your RSS feed"
+msgstr "Zadejte volitelný HTML kód, který bude zobrazen v RSS před obsahem každého příspěvku."
+
+#: utilities/admin.php:255
+msgid "Custom Feed Information After Content"
+msgstr "Volitelné informace po obsahu v RSS"
+
+#: utilities/admin.php:257
+msgid "Write your custom HTML code to display after the content of each entry of your RSS feed"
+msgstr "Zadejte volitelný HTML kód, který bude zobrazen v RSS za obsahem každého příspěvku."
+
+#: utilities/admin.php:259
+msgid "You can use these placeholders in your code:"
+msgstr "V kódu můžete použít tyto zástupné symboly:"
+
+#: utilities/admin.php:261
+msgid "The name of the post author without a link"
+msgstr "Jméno autora příspěvku bez odkazu"
+
+#: utilities/admin.php:262
+msgid "The link of posts by the post author"
+msgstr "Odkaz na příspěvky autora"
+
+#: utilities/admin.php:263
+msgid "The link of your blog homepage"
+msgstr "Odkaz na úvodní stranu blogu"
+
+#: utilities/admin.php:264
+msgid "The RSS feed URL of your blog posts"
+msgstr "Odkaz na RSS zdroj příspěvků na blogu."
+
+#: utilities/admin.php:265
+msgid "The URL of your post"
+msgstr "URL adresa příspěvku"
+
+#: utilities/admin.php:267
+msgid "eg. The post is written by %AUTHOR_LINK%. To read more interesting posts, visit %BLOG_LINK% or &lt;a href=\"%FEED_URL%\"&gt;subscribe our updates&lt;/a&gt;."
+msgstr "například: Příspěvek napsal %AUTHOR_LINK%. Pro zobrazení více zajímavých příspěvků navštivte %BLOG_LINK% nebo &lt;a href=\"%FEED_URL%\"&gt;se přihlašte k odběru novinek&lt;/a&gt;."
+
+#: utilities/admin.php:268
+msgid "The output will be wrapped in a &lt;DIV&gt; element."
+msgstr "Výstup bude obalen &lt;DIV&gt; elementem."
+
+#: utilities/admin.php:273
+msgid "Analytics"
+msgstr "Analytics"
+
+#: utilities/admin.php:276
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: utilities/admin.php:279
+msgid "Enable Google Analytics"
+msgstr "Zapnout Google Analytics"
+
+#: utilities/admin.php:284
+msgid "Google Analytics Code"
+msgstr "Kód Google Analytics"
+
+#: utilities/admin.php:286
+msgid "Paste your Google Analytics code snippet here"
+msgstr "Vložte zde svůj sledovací kód Google Analytics"
+
+#: utilities/admin.php:289
+msgid "Google Analytics for Administrators"
+msgstr "Google Analytics pro administrátory"
+
+#: utilities/admin.php:292
+msgid "Do not load Google Analytics when administrators are logged in"
+msgstr "Nezobrazovat kód Google Analytics pokud je přihlášen administrátor"
+
+#: utilities/admin.php:299
+msgid "Save Changes"
+msgstr "Uložit změny"
+
+#: utilities/admin.php:365
+msgid "Search..."
+msgstr "Hledat..."
+
+#: utilities/ajax-comments.php:82
+msgid "Cannot retrieve the comment."
+msgstr "Nelze zobrazit komentář."
+
+#: utilities/widgets.php:5
+msgid "A search form for your blog"
+msgstr "Vyhledávací formulář pro váš blog"
+
+#: utilities/widgets.php:6
+msgid "SimpleDark Search"
+msgstr "Vyhledávání SimpleDark"
+
+#: utilities/widgets.php:37
+#: utilities/widgets.php:80
+msgid "Title:"
+msgstr "Nadpis:"
+
+#: utilities/widgets.php:47
+msgid "An RSS feed widget for your blog"
+msgstr "RSS widget pro váš blog"
+
+#: utilities/widgets.php:48
+msgid "SimpleDark Feed"
+msgstr "SimpleDark RSS zdroj"
+
+#: utilities/widgets.php:81
+msgid "Feed Text:"
+msgstr "Text RSS zdroje:"
+
+#: utilities/widgets.php:82
+msgid "Feed URL:"
+msgstr "URL adresa RSS zdroje:"
+
+msgid "Hide borders for images"
+msgstr "Skrýt okraje obrázků"
+
+msgid "narrower than %1$spx %2$s lower than %3$spx"
+msgstr "užší než %1$spx %2$s nižší než %3$spx"
+
+msgid "General"
+msgstr "Hlavní"
+
+msgid "Leave a Reply"
+msgstr "Odpovědět"
+
+msgid "Leave a Reply to %s"
+msgstr "Odpovědět na %s"
+
+msgid "Logged in as %s."
+msgstr "Přihlášen jako %s."
+
+msgid "Manage Profile"
+msgstr "Spravovat profil"
+
+msgid "Logout"
+msgstr "Odhlásit"
+
+msgid "%s Entries RSS Feed"
+msgstr "%s RSS článků"
+
+msgid "Top Menu"
+msgstr "Horní menu"
+
+msgid "Page %1$d of %2$d"
+msgstr "Strana %1$d z %2$d"
+
+#, fuzzy
+#~ msgid "Submit Comment"
+#~ msgstr "1 commento"
+
+#, fuzzy
+#~ msgid "Comments are closed."
+#~ msgstr "Immagini nei commenti"
+
+#, fuzzy
+#~ msgid "%s Comments RSS Feed"
+#~ msgstr "% commenti"
+
+#, fuzzy
+#~ msgid "Next page"
+#~ msgstr "Pagina successiva"
+
+#, fuzzy
+#~ msgid "Previous page"
+#~ msgstr "Pagina precedente"
