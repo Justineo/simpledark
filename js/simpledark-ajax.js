@@ -103,7 +103,7 @@ function ajaxSubmitComment() {
 
 	function appendCommentToList(data) {
 		var list;
-		if(!scriptParams['threadcmnts']) {
+		if(!scriptParams['threadcmnts'] || $('.comment #respond').length == 0) {
 			list = $('ol.comment-list').append(data);
 		} else {
 			var respond = $('#respond');
@@ -308,7 +308,7 @@ function ajaxSearch(url) {
 	});
 
 	function searchSubmitting() {
-		$('#search-form div').append('<span class="processing"></span>');
+		$('#search-form').append('<span class="processing"></span>');
 	}
 
 	function searchComplete() {
@@ -413,7 +413,7 @@ $(document).ready(function() {
 	}
 
 	if(ajaxParams['postpagenav']) {
-		$('body.home .pagenavi a, body.archive .pagenavi a, body.search .pagenavi a').live('click', function() {
+		$('body.home .pagenavi a, body.archive .pagenavi a, body.search .pagenavi a, #content.search .pagenavi a').live('click', function() {
 			var url = $(this).attr('href');
 			if(/action=/i.test(url)) {
 				url = url.replace(/action=[^#&]+/ig, 'action=ppage_ajax');
@@ -433,6 +433,7 @@ $(document).ready(function() {
 			var s = $(this).find('#s').val();
 			var url = $(this).attr('action') + '?s=' + encodeURIComponent(s) + '&action=search_ajax';
 			ajaxSearch(url);
+			$('#content').addClass('search');
 			cmntNav.detach();
 			$('.top-menu').find('.current_page_item, .current-cat, .current_menu_item, .current-menu-item, .current_page_ancestor, .current-cat-parent, .current-menu-ancestor').each(function() {
 				$(this).attr('class', $(this).attr('class').replace(/current/g, 'kurrent'));
@@ -454,6 +455,7 @@ $(document).ready(function() {
 	$(this).attr('class', $(this).attr('class').replace(/kurrent/g, 'current'));
 });
 							cmntNav.insertAfter($('#fixed-nav .top'));
+							$('#content').removeClass('search');
 						});
 						$('#search-form span.processing').remove();
 						searched = false;
