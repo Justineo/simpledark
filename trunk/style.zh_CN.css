@@ -910,7 +910,7 @@ body {
 		.pagenavi {
 			padding-bottom:20px;
 			background:url(images/hsep.png) repeat-x 0 bottom;
-			font-size:12px; text-align:center; line-height:1.2;
+			font-size:12px; text-align:center; line-height:2;
 			overflow:hidden;
 		}
 
@@ -920,7 +920,7 @@ body {
 			overflow:hidden;
 		}
 
-			.pagenavi .previous-page, .pagenavi .previous-page, .commentnavi .previous-page, .commentnavi .previous-page {
+			.pagenavi .previous-page, .pagenavi .next-page, .commentnavi .previous-page, .commentnavi .next-page {
 				padding-bottom:2px;
 			}
 

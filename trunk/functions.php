@@ -77,24 +77,24 @@ function simpledark_scripts() {
 		$options = &$GLOBALS['simpledark_options'];
 		wp_deregister_script('jquery');
 		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', null, '1.4.2');
-		wp_enqueue_script('scrollto', get_bloginfo('template_directory') . '/js/scrollto.min.js', 'jquery');
-		wp_enqueue_script('autoresize', get_bloginfo('template_directory') . '/js/autoresize.min.js', 'jquery', '1.04');
-		wp_enqueue_script('simpledark-base', get_bloginfo('template_directory') . '/js/simpledark-base.min.js', 'jquery', null, true);
+		wp_enqueue_script('scrollto', get_template_directory_uri() . '/js/scrollto.min.js', 'jquery');
+		wp_enqueue_script('autoresize', get_template_directory_uri() . '/js/autoresize.min.js', 'jquery', '1.04');
+		wp_enqueue_script('simpledark-base', get_template_directory_uri() . '/js/simpledark-base.min.js', 'jquery', null, true);
 		if($options['enable_ajax']) {
-			wp_enqueue_script('simpledark-ajax', get_bloginfo('template_directory') . '/js/simpledark-ajax.min.js', 'jquery', null, true);
+			wp_enqueue_script('simpledark-ajax', get_template_directory_uri() . '/js/simpledark-ajax.min.js', 'jquery', null, true);
 		}
 	}
 }
 add_action('wp_print_scripts', 'simpledark_scripts');
 
 function simpledark_admin_scripts() {
-	wp_enqueue_script('autoresize', get_bloginfo('template_directory') . '/js/autoresize.min.js', 'jquery', '1.04');
-	wp_enqueue_script('simpledark-admin', get_bloginfo('template_directory') . '/js/simpledark-admin.min.js', 'jquery', null, true);
+	wp_enqueue_script('autoresize', get_template_directory_uri() . '/js/autoresize.min.js', 'jquery', '1.04');
+	wp_enqueue_script('simpledark-admin', get_template_directory_uri() . '/js/simpledark-admin.min.js', 'jquery', null, true);
 }
 add_action('admin_enqueue_scripts', 'simpledark_admin_scripts');
 
 function simpledark_admin_style() {
-	wp_register_style('simpledark_admin', get_bloginfo('template_directory') . '/admin.css');
+	wp_register_style('simpledark_admin', get_template_directory_uri() . '/admin.css');
 	wp_enqueue_style('simpledark_admin');
 }
 add_action('admin_print_styles', 'simpledark_admin_style');
@@ -113,7 +113,7 @@ function simpledark_feed_additional_info($content) {
 			$after = '<div class="feed-after" style="margin:15px 0; clear:both;">' . $options['custom_feed_info_after'] . '</div>';
 		$author_name = the_author($idmode, false);
 		$author_link = '<a href="' . get_author_posts_url(0, $authordata->ID, $authordata->user_nicename) . '" title="' . sprintf(__("Posts by %s"), esc_html(the_author($idmode, false))) . '">' . $author_name . '</a>';
-		$blog_link = '<a href="' . get_bloginfo('url') . '">' . get_bloginfo('name') . '</a>';
+		$blog_link = '<a href="' . home_url() . '">' . get_bloginfo('name') . '</a>';
 		$feed_url = get_bloginfo('rss2_url');
 		$post_url = get_permalink();
 		$before = str_replace('%AUTHOR_NAME%', $author_name, $before);
