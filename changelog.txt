@@ -1,4 +1,4 @@
-1.0.1
+﻿1.0.1
 去除一个调试时遗留的alert信息。
 Removed an alert message since debugging stage.
 
@@ -186,10 +186,22 @@ Replaced a hard-coded meta tag in 404.php with bloginfo call.
 修正了AJAX搜索时搜索框Loading图片不显示的问题。
 修正了在单篇文章页面进行AJAX搜索翻页失效的问题。(thanks to Huangliu)
 修正了样式上的一些小问题。
+添加了捷克语支持。(thanks to Michal Marek)
 Fixed the problem that the loading image is missing when doing AJAX search.
 Fixed the problem that AJAX pagination fails when doing AJAX search at a single post/page.
 Fixed some flaws on styles.
+Added Czech language support.
 
 1.2.9
 修正了开启嵌套评论情况下AJAX提交评论后显示的一个问题。(thanks to Huangliu)
 Fixed a problem of displaying new comments submitted by AJAX when threaded comments are enabled.
+
+1.2.10
+修正了在评论中显示的WP-Syntax代码样式。
+修正了评论中图片边框的处理问题。
+添加了俄语支持。(thanks to kowack)
+修正了<dt>标签样式上小问题。
+Fixed WP-Syntax code style within comments.
+Fixed the unhandled image border removal problem in comments.
+Added Russian language support.
+Fixed a flaw on <dt> styles.

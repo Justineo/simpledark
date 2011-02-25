@@ -243,11 +243,47 @@ function processComments() {
 			resizeToFit($(this), commentWidth[depth], r);
 		}
 	});
-	$('.entry img').each(function() {
+
+	/* Clearing Borders for Small Images */
+	if(scriptParams['hidesmallimgbdr']) {
+		$('.comment-body img').load(function() {
+			var image = $(this);
+			var w = image.width();
+			var h = image.height();
+			if(scriptParams['smallimgwidth'] > 0 && scriptParams['smallimgheight'] > 0) {
+				if(scriptParams['smallimglogic'] == 'and') {
+					if(w <= scriptParams['smallimgwidth'] && h <= scriptParams['smallimgheight'] > 0) {
+						image.addClass('no-border');
+					}
+				} else {
+					if(w <= scriptParams['smallimgwidth'] || h <= scriptParams['smallimgheight'] > 0) {
+						image.addClass('no-border');
+					}
+				}
+			} else if(scriptParams['smallimgwidth'] > 0) {
+				if(w < scriptParams['smallimgwidth']) {
+					image.addClass('no-border');
+				}
+			} else if(scriptParams['smallimgheight'] > 0) {
+				if(h < scriptParams['smallimgheight']) {
+					image.addClass('no-border');
+				}
+			} else {
+				image.addClass('no-border');
+			}
+		});
+		$('img.no-border').load(function() {
+			var cap = $(this).parents('.wp-caption');
+			cap.width(cap.width() - 4);
+		});
+	}
+
+	$('.comment-body img').each(function() {
 		if(this.complete || ($.browser.msie && parseInt($.browser.version) == 6))
 			$(this).trigger('load');
 	});
 }
+
 function processTooltip(tooltip) {
 	tooltip.find('.comment-body img').each(function() {
 		var w = $(this).width();

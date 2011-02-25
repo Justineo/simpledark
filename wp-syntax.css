@@ -1,7 +1,11 @@
 .wp_syntax_wrapper {
   position: relative;
-  margin-top:20px;
+  margin-top:10px;
   width: 600px;
+}
+
+.comment .wp_syntax_wrapper {
+  width: 533px;
 }
 
 .wp_syntax {
@@ -9,8 +13,12 @@
   color: #100;
   background: #2c2c2c;
   border: 1px solid #3c3c3c;
-  margin: 0 0 1.5em 0;
+  margin: 0 0 10px 0;
   overflow: auto;
+}
+
+.comment .wp_syntax {
+  width: 531px;
 }
 
 .wp_syntax_lang {
