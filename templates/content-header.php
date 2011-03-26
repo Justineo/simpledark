@@ -4,7 +4,7 @@ if(!(is_single() || is_home() || is_page())) {
 	<div class="content-header">
 <?php
 	echo '&laquo; ';
-	if(is_search()) { global $s; printf(__('Search results for <strong>&ldquo;%s&rdquo;</strong>', THEME_NAME), $s); }
+	if(is_search()) { global $s; printf(__('Search results for <strong>&ldquo;%s&rdquo;</strong>', THEME_NAME), htmlspecialchars($s)); }
 	else if(is_category()) { printf(__('Posts under <strong>%s</strong>', THEME_NAME), single_cat_title('', false)); }
 	else if(is_tag()) { printf(__('Posts tagged <strong>%s</strong>', THEME_NAME), single_cat_title('', false)); }
 	else if(is_author()) { printf(__('Posts by <strong>%s</strong>', THEME_NAME), get_userdata(get_query_var('author'))->display_name); }

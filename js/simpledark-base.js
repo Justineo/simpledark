@@ -203,9 +203,12 @@ function processContent() {
 
 	/* Video Width Restriction */
 	$('.entry object').each(function() {
+		var w, h;
 		var embed = $(this).find('embed');
-		var w = embed.width();
-		var h = embed.height();
+		if(embed.length > 0) {
+			w = embed.width();
+			h = embed.height();
+		}
 		if(!w || !h) {
 			w = $(this).width();
 			h = $(this).height();
@@ -213,17 +216,19 @@ function processContent() {
 		var r = w / h;
 		if(w > contentWidth) {
 			resizeToFit($(this), contentWidth, r);
-			resizeToFit(embed, contentWidth, r);
+			if(embed.length > 0) {
+				resizeToFit(embed, contentWidth, r);
+			}
+		} else if($.browser.msie && $.browser.version == 8) {
+			$(this).width(w).height(h);
 		}
 	});
 
 	/* Table Row Colorization */
-	if($.browser.msie) {
-		if($.browser.version <= 7) {
-			$('.entry table').not('.wp_syntax table').each(function() {
-				$(this).find('tr:not(thead tr, tfoot tr):odd').addClass('even');
-			});
-		}
+	if($.browser.msie && $.browser.version <= 7) {
+		$('.entry table').not('.wp_syntax table').each(function() {
+			$(this).find('tr:not(thead tr, tfoot tr):odd').addClass('even');
+		});
 	}
 }
 
@@ -423,7 +428,7 @@ $(document).ready(function() {
 			}
 		}
 	} else {
-		list.width(stops[stops.length - 1]).css({'float': 'right', 'margin-right': 5});
+		list.width(stops[stops.length - 1]).animate({'margin-left': menuWindow.width() - stops[stops.length - 1] - 5}, 500);
 	}
 	list.children('li').mouseenter(function() {
 		menuWindow.stop().height($(document).height() - menuWindow.offset().top - 45);

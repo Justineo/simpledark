@@ -2,7 +2,7 @@
 Theme Name: SimpleDark
 Theme URI: http://lync.in/projects/simpledark/
 Description: A simple, dark 2-column WordPress theme with support for widgets, custom menu and threaded comments. It includes quite a few AJAX features with flexible configurations. Compatible with WordPress 3.0 and above.
-Version: 1.2.10
+Version: 1.2.11
 Author: Justice
 Author URI: http://lync.in/
 License: GNU General Public License v2.0
@@ -384,7 +384,7 @@ body {
 				}
 
 				.entry p {
-					padding:10px 0;
+					margin:5px 0 15px;
 				}
 
 				.entry .more-link {
@@ -421,15 +421,21 @@ body {
 
 				.entry .wp-caption {
 					background-color:#2e2e2e;
-					padding:10px 10px 0; margin-bottom:10px;
+					padding:10px; margin-bottom:10px;
 					-moz-border-radius:4px;
 					-khtml-border-radius:4px;
 					-webkit-border-radius:4px;
 					border-radius:4px;
 				}
 
+				#content .wp-caption a {
+					display:block;
+					border:none;
+				}
+
 				.entry .wp-caption-text {
 					text-align:center; color:#999;
+					margin-bottom:0;
 				}
 
 				.entry table {
@@ -529,6 +535,22 @@ body {
 					-webkit-box-shadow:0 0 5px #000;
 					-khtml-box-shadow:0 0 5px #000;
 					box-shadow:0 0 5px #000;
+				}
+
+				.entry embed {
+					border:3px solid #cfcfcf;
+					-moz-box-shadow:0 0 5px #000;
+					-webkit-box-shadow:0 0 5px #000;
+					-khtml-box-shadow:0 0 5px #000;
+					box-shadow:0 0 5px #000;
+				}
+
+				.entry object embed {
+					border:none;
+					-moz-box-shadow:none;
+					-webkit-box-shadow:none;
+					-khtml-box-shadow:none;
+					box-shadow:none;
 				}
 
 				.entry del, .entry strike {
@@ -918,11 +940,11 @@ body {
 
 		.commentnavi {
 			margin-top:10px;
-			font-size:10px; text-align:center; font-weight:700; line-height:1.8;
+			font-size:10px; text-align:center; font-weight:700; line-height:2;
 			overflow:hidden;
 		}
 
-			.pagenavi .previous-page, .pagenavi .previous-page, .commentnavi .previous-page, .commentnavi .previous-page {
+			.pagenavi .previous-page, .pagenavi .next-page, .commentnavi .previous-page, .commentnavi .next-page {
 				padding-bottom:2px;
 			}
 
