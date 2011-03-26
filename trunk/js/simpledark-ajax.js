@@ -429,7 +429,11 @@ $(document).ready(function() {
 
 	if(ajaxParams['search']) {
 		var cmntNav = $('#fixed-nav .cmnts');
+		var timer, currentKey;
 		$('#search-form').submit(function() {
+			if(timer) {
+				clearTimeout(timer);
+			}
 			var s = $(this).find('#s').val();
 			var url = $(this).attr('action') + '?s=' + encodeURIComponent(s) + '&action=search_ajax';
 			ajaxSearch(url);
@@ -441,9 +445,10 @@ $(document).ready(function() {
 			return false;
 		});
 
-		var timer, currentKey;
 		$('#s').bind('keyup', function() {
-			clearTimeout(timer);
+			if(timer) {
+				clearTimeout(timer);
+			}
 			timer = setTimeout(function() {
 				var sInput = $('#s');
 				var s = sInput.val();
