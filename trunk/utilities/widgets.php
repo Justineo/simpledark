@@ -34,7 +34,7 @@ class SimpleDark_Widget_Search extends WP_Widget {
 		$title = $instance['title'];
 ?>
 <p>
-	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', THEME_NAME); ?><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label>
 </p>
 
 <?php
@@ -45,7 +45,7 @@ class SimpleDark_Widget_Feed extends WP_Widget {
 
 	function SimpleDark_Widget_Feed() {
 		$widget_ops = array('classname' => 'widget_feed', 'description' => __('An RSS feed widget for your blog', THEME_NAME));
-		$this->WP_Widget('simpledark_feed', __('SimpleDark Feed'), $widget_ops);
+		$this->WP_Widget('simpledark_feed', __('SimpleDark Feed', THEME_NAME), $widget_ops);
 	}
 
     function widget($args, $instance) {
@@ -77,9 +77,9 @@ class SimpleDark_Widget_Feed extends WP_Widget {
 		$feed_url = $instance['feed_url'];
 ?>
 <p>
-	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label>
-	<label for="<?php echo $this->get_field_id('feed_text'); ?>"><?php _e('Feed Text:'); ?><input class="widefat" id="<?php echo $this->get_field_id('feed_text'); ?>" name="<?php echo $this->get_field_name('feed_text'); ?>" type="text" value="<?php echo esc_attr($feed_text); ?>" /></label>
-	<label for="<?php echo $this->get_field_id('feed_url'); ?>"><?php _e('Feed URL:'); ?><input class="widefat" id="<?php echo $this->get_field_id('feed_url'); ?>" name="<?php echo $this->get_field_name('feed_url'); ?>" type="text" value="<?php echo esc_attr($feed_url); ?>" /></label>
+	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', THEME_NAME); ?><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label>
+	<label for="<?php echo $this->get_field_id('feed_text'); ?>"><?php _e('Feed Text:', THEME_NAME); ?><input class="widefat" id="<?php echo $this->get_field_id('feed_text'); ?>" name="<?php echo $this->get_field_name('feed_text'); ?>" type="text" value="<?php echo esc_attr($feed_text); ?>" /></label>
+	<label for="<?php echo $this->get_field_id('feed_url'); ?>"><?php _e('Feed URL:', THEME_NAME); ?><input class="widefat" id="<?php echo $this->get_field_id('feed_url'); ?>" name="<?php echo $this->get_field_name('feed_url'); ?>" type="text" value="<?php echo esc_attr($feed_url); ?>" /></label>
 </p>
 
 <?php

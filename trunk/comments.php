@@ -66,7 +66,7 @@
 				foreach($pingbacks as $comment) {
 ?>
 				<li class="pingback" id="#comment-<?php comment_ID(); ?>">
-					<div class="comment-meta"><span class="datetime"><?php comment_time(simpledark_time_format('datetime')); ?></span><a class="title" href="<?php comment_author_url() ?>" rel="nofollow<?php if(strpos(get_comment_author_url(), get_bloginfo('url')) != 0) echo ' external'; ?>"><img class="favicon" src="http://www.google.com/s2/favicons?domain=<?php $host = simpledark_get_host(get_comment_author_url()); echo $host; ?>" alt="Favicon of <?php echo $host; ?>" width="16" height="16" /><?php comment_author(); ?></a></div>
+					<div class="comment-meta"><span class="datetime"><?php comment_time(simpledark_time_format('datetime')); ?></span><a class="title" href="<?php comment_author_url() ?>" rel="nofollow<?php if(strpos(get_comment_author_url(), home_url()) != 0) echo ' external'; ?>"><img class="favicon" src="http://www.google.com/s2/favicons?domain=<?php $host = simpledark_get_host(get_comment_author_url()); echo $host; ?>" alt="Favicon of <?php echo $host; ?>" width="16" height="16" /><?php comment_author(); ?></a></div>
 				</li>
 <?php
 				}
