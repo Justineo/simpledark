@@ -211,7 +211,11 @@ Fixed a flaw on <dt> styles.
 修正了WordPress 3.1中新添的管理工具条在单篇文章页面无法显示的问题。
 修正了一个XSS漏洞。
 改善了AJAX搜索中的一点问题。
+增加了readme.txt。
+增加了一些缺失的文字域。
 Improved styles for <object> and <embed> elememts. Fixed some style problems.
 Fixed the problem that the Admin Bar added in WordPress 3.1 was unable to display on single posts or pages.
 Fixed an XSS vulnerability.
 Improved AJAX search a little bit.
+Added readme.txt.
+Added some missing text domains.

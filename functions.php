@@ -70,13 +70,14 @@ add_action('init', 'simpledark_register_nav_menu');
 
 function simpledark_scripts() {
 	if(!is_admin()) {
-		if ( is_singular() && get_option( 'thread_comments' ) ) {
-			wp_deregister_script( 'comment-reply' );
-			wp_enqueue_script( 'comment-reply', get_template_directory_uri() . '/js/simpledark-threaded-comment.min.js', 'jquery');
-		}
 		$options = &$GLOBALS['simpledark_options'];
 		wp_deregister_script('jquery');
 		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', null, '1.4.2');
+		if ( is_singular() && get_option( 'thread_comments' ) ) {
+			wp_deregister_script( 'comment-reply' );
+			wp_register_script( 'comment-reply', get_template_directory_uri() . '/js/simpledark-threaded-comment.min.js', 'jquery' );
+			wp_enqueue_script( 'comment-reply' );
+		}
 		wp_enqueue_script('scrollto', get_template_directory_uri() . '/js/scrollto.min.js', 'jquery');
 		wp_enqueue_script('autoresize', get_template_directory_uri() . '/js/autoresize.min.js', 'jquery', '1.04');
 		wp_enqueue_script('simpledark-base', get_template_directory_uri() . '/js/simpledark-base.min.js', 'jquery', null, true);
@@ -112,7 +113,7 @@ function simpledark_feed_additional_info($content) {
 		if(!preg_match('/^\w*$/', $after))
 			$after = '<div class="feed-after" style="margin:15px 0; clear:both;">' . $options['custom_feed_info_after'] . '</div>';
 		$author_name = the_author($idmode, false);
-		$author_link = '<a href="' . get_author_posts_url(0, $authordata->ID, $authordata->user_nicename) . '" title="' . sprintf(__("Posts by %s"), esc_html(the_author($idmode, false))) . '">' . $author_name . '</a>';
+		$author_link = '<a href="' . get_author_posts_url(0, $authordata->ID, $authordata->user_nicename) . '" title="' . sprintf(__("Posts by %s", THEME_NAME), esc_html(the_author($idmode, false))) . '">' . $author_name . '</a>';
 		$blog_link = '<a href="' . home_url() . '">' . get_bloginfo('name') . '</a>';
 		$feed_url = get_bloginfo('rss2_url');
 		$post_url = get_permalink();
@@ -145,7 +146,7 @@ function simpledark_menu( $args = array(), $show_type = 0 ) {
 	// Show Home in the menu
 	if ( isset($args['show_home']) && ! empty($args['show_home']) ) {
 		if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
-			$text = __('Home');
+			$text = __('Home', THEME_NAME);
 		else
 			$text = $args['show_home'];
 		$class = '';
@@ -225,7 +226,7 @@ function simpledark_get_the_author_posts_link() {
 	$link = sprintf(
 		'<a href="%1$s" title="%2$s">%3$s</a>',
 		get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
-		esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'Posts by %s', THEME_NAME ), get_the_author() ) ),
 		get_the_author()
 	);
 	return apply_filters( 'the_author_posts_link', $link );
@@ -316,7 +317,7 @@ function simpledark_get_attachment_link($id = 0, $size = 'full', $permalink = fa
 	$_post = & get_post( $id );
 	 
 	if ( ('attachment' != $_post->post_type) || !$url = wp_get_attachment_url($_post->ID) )
-	return __('Missing Attachment');
+	return __('Missing Attachment', THEME_NAME);
 
 	if ( $permalink )
 	$url = get_attachment_link($_post->ID);
