@@ -219,3 +219,39 @@ Fixed an XSS vulnerability.
 Improved AJAX search a little bit.
 Added readme.txt.
 Added some missing text domains.
+
+1.3.0
+完善了样式。
+为RSS源中输出的WP-Syntax加亮代码添加了一个深色背景。
+修改完善了editor-style.css，使其和文章显示效果一致。
+增加了点击评论中@回复链接后导航到那条评论所在分页的功能。
+修正了在关闭嵌套评论的情况下评论仍嵌套显示的问题。
+修正了一个管理页面中的JS错误。
+修正了在关闭AJAX评论提交时无法使用Ctrl+Enter提交评论的问题。
+调整了Analytics代码输出的位置。
+更新了AJAX评论提交的客户端代码。
+优化了WP-Syntax的主题配色，并解决了一些样式上的问题。
+调整了主题选项代码，增加了是否开启评论快速修改的选项。
+修改了attachment.php使其兼容Jetpack的Sharedaddy功能。
+为每条评论增加了固定链接。
+jQuery更换为WordPress自带的版本。
+增加了对评论时表情选择的支持。
+增加了评论编辑功能。
+增加了对post format功能的支持。
+Slightly improved the styles.
+Added a dark background color for code highlighted by WP-Syntax in RSS feed.
+Modified and improved editor-style.css making it consistent with post styles.
+Now clicking on @reply link will navigate to the page of the original comment.
+Fixed a JS error in admin pages.
+Fixed the problem that Ctrl+Enter comment submission doesn't work when AJAX comment submission is turned off.
+Adjusted the location of Analytics code snippet.
+Fixed the problem that comments are displayed in threads even if thread comment is disabled.
+Updated the server-side code for AJAX comment submission.
+Improved the color settings for WP-Syntax and fixed some style problems.
+Adjusted some code for theme options and added a new theme option to turn on/off comment quick edit.
+Modified attachments.php to make it compatible with Sharedaddy in Jetpack.
+Added a permalink for each comment.
+Changed jQuery lib to the one comes with WordPress itself.
+Added support for comment smileys selection.
+Added support for comment editing.
+Added support for post formats.

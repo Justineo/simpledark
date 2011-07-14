@@ -5,7 +5,7 @@ function simpledark_custom_geshi_styles(&$geshi)
 {
 	$geshi->set_overall_style('color: #FFF; font-family:&quot;Consolas&quot;,monospace,&quot;Courier New&quot;');
     $geshi->set_keyword_group_style(1, 'color: #3D9EDD;');
-    $geshi->set_keyword_group_style(2, 'color: #996600;');
+    $geshi->set_keyword_group_style(2, 'color: #F2B646;');
     $geshi->set_keyword_group_style(3, 'color: #996699;');
     $geshi->set_keyword_group_style(4, 'color: #99FFFF;');
     $geshi->set_methods_style(1, 'color: #FFF;');
@@ -16,6 +16,11 @@ function simpledark_custom_geshi_styles(&$geshi)
 	$geshi->set_strings_style('color: #7ACC00;', false, 0);
 	$geshi->set_strings_style('color: #7ACC00;', false, 'HARD');
 	$geshi->set_regexps_style(0, 'color: #7AB9BE;');
+	$geshi->set_regexps_style(1, 'color: #7AB9BE;');
+	$geshi->set_regexps_style(2, 'color: #7AB9BE;');
+	$geshi->set_regexps_style(3, 'color: #7AB9BE;');
+	$geshi->set_regexps_style(4, 'color: #7AB9BE;');
+	$geshi->set_regexps_style(5, 'color: #00E813;');
 	$geshi->set_numbers_style('color: #FFCC00;');
 	$geshi->set_symbols_style('color: #CCC;', false, 0);
 	$geshi->set_symbols_style('color: #CCC;', false, 1);
@@ -30,11 +35,6 @@ function simpledark_custom_geshi_styles(&$geshi)
 	$geshi->set_escape_characters_style('color: #99FF00;', false, 5);
 }
 add_action('wp_syntax_init_geshi', 'simpledark_custom_geshi_styles');
-
-function simpledark_replace_tab($content) {
-	return str_replace('	', '  ', $content);
-}
-add_filter('the_content', 'simpledark_replace_tab', 100);
 
 function simpledark_display_code_language($content) {
 	return preg_replace_callback('|(<div class="wp_syntax">[\s\S]*?<pre class=\")([^\"]+)([\s\S]*?<\/div>)|i', 'refine_code', $content);
@@ -193,6 +193,15 @@ function get_display_lang_name($lang) {
 		return strtoupper($lang);
 	}
 }
+
+function simpledark_wp_syntax_feed_background($content) {
+	if(is_feed()) {
+		$new = preg_replace('/<td class="line_numbers">/i', '<td class="line_numbers" style="color:#eee; background:#3c3c3c">', $content);
+		return preg_replace('/<div class="wp_syntax">/i', '<div class="wp_syntax" style="background:#2c2c2c; overflow:auto">', $new);
+	}
+	return $content;
+}
+add_filter('the_content', 'simpledark_wp_syntax_feed_background', 100);
 
 }
 ?>

@@ -56,18 +56,15 @@ if(have_posts()) {
 	}
 	printf(__('MIME Type: %s', THEME_NAME), get_post_mime_type());
 	if(wp_attachment_is_image()) {
-		$caption = get_the_excerpt();
-		if(!empty($caption)) {
+		if(!empty($post->post_excerpt)) {
 			echo '<br />';
-			printf(__('Caption: %s', THEME_NAME), $caption);
+			printf(__('Caption: %s', THEME_NAME), get_the_excerpt());
 		}
 	}
-	$desc = get_the_content();
-	if(!empty($desc)) {
-		echo '<br />';
-		printf(__('Description: %s', THEME_NAME), $desc);
-	}
 ?>
+			</div>
+			<div class="entry">
+				<?php the_content(); ?>
 			</div>
 		</div>
 		<div class="pagenavi">

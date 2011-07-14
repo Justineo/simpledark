@@ -3,6 +3,9 @@
 	$ping_count = count($pingbacks);
 	$comment_count = count($comments) - $ping_count;
 	$options = &$GLOBALS['simpledark_options'];
+	global $comment_page_number_cache;
+	global $paged;
+	$paged = (bool)(get_comment_pages_count() > 1);
 ?>
 			<div id="comments" class="section">
 			<h3><?php _e('Comments', THEME_NAME); ?> (<span class="comment-count"><?php echo post_password_required()? __('X', THEME_NAME) : $comment_count; ?></span>)</h3>
@@ -14,9 +17,13 @@
 	}
 	else {
 		if($comment_count > 0) {
+			$comments_args = 'type=comment&callback=simpledark_comment';
+			if(get_option('thread_comments')) {
+				$comments_args .= '&max_depth=5';
+			}
 ?>
 			<ol class="comment-list">
-<?php wp_list_comments('type=comment&callback=simpledark_comment&max_depth=5'); ?>
+<?php wp_list_comments($comments_args); ?>
 			</ol>
 <?php
 		} else {
@@ -25,11 +32,12 @@
 <?php
 		}
 		if (get_option('page_comments')) {
-			if (paginate_comments_links('echo=0')) {
+			if ($paged) {
 ?>
 			<div class="commentnavi">
 				<?php paginate_comments_links(); ?>
 				<span id="cp_post_id" style="display:none"><?php the_ID(); ?></span>
+				<input id="comment-page-number" type="hidden" value="<?php echo esc_attr( json_encode($comment_page_number_cache) ); ?>" />
 			</div>
 <?php
 			}

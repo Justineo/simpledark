@@ -88,6 +88,10 @@ a:hover, a:active {
 	color:#fff;	text-decoration:none;
 }
 
+img {
+	-ms-interpolation-mode:bicubic;
+}
+
 .hide {
 	display:none;
 }
@@ -371,11 +375,13 @@ body {
 				.entry h1, .entry h2, .entry h3, .entry h4, .entry h5, .entry h6 {
 					color:#eee; text-shadow:0 -1px 0 #111;
 					clear:both;
+					margin-bottom:5px;
 				}
 
 				.entry h3 {
 					margin-top:10px; padding:2px 8px;
 					background-color:#333;
+					display:inline-block;
 					-moz-border-radius:4px;
 					-khtml-border-radius:4px;
 					-webkit-border-radius:4px;
@@ -394,7 +400,7 @@ body {
 
 				.entry img, .comment-body img {
 					border:2px solid #CFCFCF;
-					margin:5px;
+					margin:3px;
 					-moz-box-shadow:0 0 5px #000;
 					-webkit-box-shadow:0 0 5px #000;
 					-khtml-box-shadow:0 0 5px #000;
@@ -409,13 +415,16 @@ body {
 					display:block;
 				}
 
-				.entry img.no-border, .comment-body img.no-border {
-					margin:0;
+				.entry .no-border, .comment-body .no-border, .entry .wp-smiley, .comment-body .wp-smiley {
 					border:none;
 					-moz-box-shadow:none;
 					-webkit-box-shadow:none;
 					-khtml-box-shadow:none;
 					box-shadow:none;
+				}
+
+				.entry img.wp-smiley, .comment-body img.wp-smiley {
+					margin:0;
 				}
 
 				.entry .wp-caption {
@@ -439,6 +448,7 @@ body {
 
 				.entry table {
 					border:2px solid #3c3c3c;
+					margin-bottom:15px;
 				}
 
 				.entry caption {
@@ -517,7 +527,7 @@ body {
 				}
 
 				.entry blockquote, .comment-body blockquote {
-					padding:5px 20px; margin:0 5px;
+					padding:5px 20px; margin:0 5px 15px;
 					border:1px solid #3c3c3c; border-left:8px solid #3c3c3c;
 					background-color:#2c2c2c;
 					overflow:auto;
@@ -536,7 +546,7 @@ body {
 					box-shadow:0 0 5px #000;
 				}
 
-				.entry embed {
+				.entry embed, .entry iframe {
 					border:3px solid #cfcfcf;
 					-moz-box-shadow:0 0 5px #000;
 					-webkit-box-shadow:0 0 5px #000;
@@ -572,6 +582,12 @@ body {
 					font-weight:700;
 				}
 
+				.entry hr {
+					margin:5px 0 10px;
+					background:url(images/hr.gif) no-repeat center center;
+					height:13px;
+				}
+
 				.entry .gallery-icon {
 					text-align:center;
 				}
@@ -588,6 +604,150 @@ body {
 				#content .entry .gallery a {
 					border:none;
 				}
+
+				.entry .note {
+					padding:5px 10px; margin:0 0 10px;
+					background-color:#2c2c2c;
+					border:1px solid #3c3c3c;
+					color:#999;
+				}
+
+				.entry .note p {
+					margin:0 0 5px;
+				}
+
+				.entry .translation {
+					padding-left:50px;
+					background:#2c2c2c url(images/translation.gif) no-repeat 5px 5px;
+				}
+
+			/* Post Formats */
+
+			.format-link .entry {
+				margin-bottom:10px;
+			}
+
+			.format-link .entry .link-title {
+				padding:4px 30px 4px 10px;
+				max-width:560px; _width:560px;
+				overflow:hidden;
+				background:url(images/link.gif) #333 no-repeat right center;
+				display:inline-block;
+				-moz-border-radius:4px;
+				-khtml-border-radius:4px;
+				-webkit-border-radius:4px;
+				border-radius:4px;
+				font-size:12px;
+			}
+
+			.format-link .entry .link-desc {
+				padding:5px 10px;
+				color:#999; font-size:12px;
+			}
+
+			#content .format-link .link-title {
+				border:none;
+			}
+
+			#content .format-link .link-title:hover {
+				background-color:#444;
+			}
+
+			#content div.format-status {
+				padding-bottom:20px;
+			}
+
+			.format-status .status {
+				padding:0 20px 5px;
+				_zoom:1;
+			}
+
+			.format-status .status-avatar {
+				float:left;
+				margin-top:5px;
+				padding:1px;
+				background-color:#333;
+				border:1px solid #fff;
+				-moz-box-shadow:0 0 8px #fff;
+				-webkit-box-shadow:0 0 6px #fff;
+				-khtml-box-shadow:0 0 8px #fff;
+				box-shadow:0 0 5px #fff;
+			}
+
+			.format-status .status-content {
+				margin-left:68px;
+			}
+
+			.format-status .status-content div {
+				line-height:1.8;
+			}
+
+			.format-status .status-timestamp {
+				font-size:11px; font-family:pmingliu,sans-serif; color:#999;
+			}
+
+			.format-quote blockquote {
+				position:relative;
+				padding:10px 25px;
+				font-style:italic;
+			}
+
+			.format-quote q {
+				padding:5px 15px;
+			}
+
+			.format-quote .entry {
+				margin-bottom:15px;
+			}
+
+			.format-quote .quote-left, .format-quote .quote-right {
+				display:inline-block;
+				width:12px;
+				background:url(images/quote.gif) no-repeat left center;
+				text-indent:-2000px;
+			}
+
+			.format-quote blockquote .quote-left, .format-quote blockquote .quote-right {
+				position:absolute;
+			}
+
+			.format-quote blockquote .quote-left {
+				top:10px; left:8px;
+			}
+
+			.format-quote blockquote .quote-right {
+				right:8px; bottom:0;
+			}
+
+			.format-quote q .quote-left {
+				margin-right:5px;
+			}
+
+			.format-quote .quote-right {
+				background-position:-12px center;
+				margin-left:5px;
+			}
+
+			.format-quote .quote-source {
+				margin:10px 0 0 30px;
+				font-size:12px; color:#999;
+			}
+
+			.format-image .media-title, .format-video .media-title, .format-audio .media-title {
+				display:inline-block;
+				padding-left:20px;
+				background:url(images/tri-down.gif) no-repeat left center;
+				font-weight:700; font-size:14px; text-shadow:0 -1px 0 #080808; color:#eee;
+			}
+
+			.format-aside .extra-meta, .format-link .extra-meta, .format-quote .extra-meta, .format-image .extra-meta, .format-video .extra-meta, .format-audio .extra-meta {
+				margin-top:8px;
+			}
+
+			.format-chat table {
+				width:100%;
+				font-family: Consolas, "Courier New", Courier, monospace;
+			}
 
 			.post-pages {
 				margin-top:10px; padding:10px 0;
@@ -892,8 +1052,8 @@ body {
 
 				#respond #cancel-comment-reply-link {
 					position:absolute;
-					right:10px;
-					font-size:11px; font-family:pmingliu,serif;
+					top:12px; right:10px;
+					font-size:11px; font-family:pmingliu,sans-serif;
 				}
 
 				#submit.disabled {
@@ -906,11 +1066,15 @@ body {
 					box-shadow:0 0 3px #666;
 				}
 
-				.allowed-tags {
-					padding:7px 10px 0; margin:10px 0;
+				.allowed-tags, .smileys-toolbar {
+					padding:7px 10px; margin:10px 0;
 					font-size:12px;
 					background:#2c2c2c;
 					border:1px solid #333;
+				}
+
+				.smileys-toolbar {
+					padding:5px 10px;
 				}
 
 				.bypostauthor > #respond .allowed-tags {
@@ -926,8 +1090,17 @@ body {
 					margin-bottom:10px;
 				}
 
+				#commentform .allowed-tags p:last-child {
+					margin-bottom:0;
+				}
+
 				.allowed-tags code {
 					font-style:italic;
+				}
+
+				.smiley-select {
+					margin:0 3px;
+					cursor:pointer;
 				}
 
 		.pagenavi {
@@ -939,6 +1112,7 @@ body {
 
 		.commentnavi {
 			margin-top:10px;
+			height:22px;
 			font-size:12px; text-align:center; line-height:1.8;
 			overflow:hidden;
 		}
@@ -1230,7 +1404,7 @@ body {
 
 #sidebar #recentcomments .rc-navi {
 	margin-top:10px;
-	font-size:11px; font-family:pmingliu,serif; line-height:1.2;
+	font-size:11px; font-family:pmingliu,sans-serif; line-height:1.2;
 }
 
 #sidebar #recentcomments .rc-navi .rc-newest {
