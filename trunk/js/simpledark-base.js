@@ -1,4 +1,7 @@
 /* <![CDATA[ */
+if(!window.ajaxParams) {
+	var ajaxParams = false;
+}
 
 function extractParams() {
 	var scripts = document.getElementsByTagName('script');
@@ -63,13 +66,14 @@ function showError(msg, callback) {
  */
 function reply(author, commentID, commentBoxID) {
 
-	var field;
+	if($('#comment_edit_ID').val() != 0 && !scriptParams['threadcmnts']) {
+		cancelCommentEdit();
+	}
+
+	var field = $('#' + commentBoxID);
+
 	// set the comment textarea as the target if it exists
-	if(document.getElementById(commentBoxID) && document.getElementById(commentBoxID).type == 'textarea') {
-		field = document.getElementById(commentBoxID);
-	// or make an alert and return
-	} else {
-		showError('Cannot find the comment text box!');
+	if(field.length == 0) {
 		return false;
 	}
 
@@ -78,7 +82,21 @@ function reply(author, commentID, commentBoxID) {
 		var atReplyCode = '<a href="#' + commentID + '">@' + author.replace(/\t|\n/g, "") + ' </a> \n';
 
 		// append reply to the comment textarea
-		appendReply(field, atReplyCode, commentBoxID);
+		if(scriptParams['threadcmnts']) {
+			field.val('');
+		}
+
+		if (field.val().indexOf(atReplyCode) == -1) {
+		
+			// set the content of the textarea as the string to append if the textarea is empty (ignoring white spaces and tabs)
+			if (field.val().replace(/\s|\t|\n/g, '') == '') {
+				field.val(atReplyCode);
+			// or clear all unnecessary new lines and append the string to the textarea
+			} else {
+				field.val(field.val().replace(/[\n]*$/g, '') + '\n\n' + atReplyCode);
+			}
+		}
+		textAreaFixCursorPosition();
 	}
 
 	// focus the textarea
@@ -88,24 +106,72 @@ function reply(author, commentID, commentBoxID) {
 	}
 }
 
-function appendReply(field, atReplyCode, commentBoxID) {
-
-	if(scriptParams['threadcmnts']) {
-		field.value = '';
+function editComment(comment)  {
+	var field = $('#comment'), editIdField = $('#comment_edit_ID'), commentID = comment.attr('id').split('comment-')[1];
+	if(editIdField.val() == commentID) {
+		field.focus();
+		return;
+	} else if(editIdField.val() != 0) {
+		$('#comment-' + editIdField.val()).fadeTo(200, 1);
+		comment.fadeTo(200, .2);
+		editIdField.val(commentID);
+		field.val(comment.children().children('.comment-text').text());
+		return;
 	}
-
-	// make an alert and return when to reply the same comment more than once
-	if (field.value.indexOf(atReplyCode) > -1) {
-		showMessage('You\'ve already replied this comment!');
-	} else {
-		// set the content of the textarea as the string to append if the textarea is empty (ignoring white spaces and tabs)
-		if (field.value.replace(/\s|\t|\n/g, '') == '') {
-			field.value = atReplyCode;
-		// or clear all unnecessary new lines and append the string to the textarea
-		} else {
-			field.value = field.value.replace(/[\n]*$/g, '') + '\n\n' + atReplyCode;
-		}
+	editIdField.val(commentID);
+	field.val(comment.children().children('.comment-text').text());
+	var respondElement = $('#respond'), cancelLinkElement = $("#cancel-comment-reply-link");
+	if(!ajaxParams || !ajaxParams['cmntpost']) {
+		$('<input type="hidden" name="action" id="action" value="comment_edit" />').insertAfter($('#comment_edit_ID'));
+		var commentForm = $('#commentform'); defaultAction = commentForm.attr('action');
+		commentForm.attr('action', scriptParams['tmpldir'] + '/comment-edit-post.php').data('action', defaultAction);
 	}
+	cancelLinkElement.fadeIn(200, function() {
+		$(this).removeAttr('style');
+	});
+	comment.fadeTo(200, .2);
+	textAreaFixCursorPosition();
+	respondElement.find('#reply-title').animate({opacity:0}, 200, function() {
+		shiftText();
+		$(this).animate({opacity:1}, 200, function() {
+			$(this).removeAttr('style');
+		});
+		respondElement.ScrollTo(500);
+		field.focus();
+	})
+}
+
+function cancelCommentEdit() {
+	var field = $('#comment'), respondElement = $('#respond'), cancelLinkElement = $("#cancel-comment-reply-link"), comment = $('#comment-' + $('#comment_edit_ID').val());
+	$('#comment_edit_ID').val(0);
+	field.val('');
+	if(!ajaxParams || !ajaxParams['cmntpost']) {
+		$('#action').remove();
+		var commentForm = $('#commentform');
+		commentForm.attr('action', commentForm.data('action'));
+	}
+	cancelLinkElement.fadeOut(200).unbind('click');
+	comment.fadeTo(200, 1, function() {
+		$(this).removeAttr('style');
+	});
+	respondElement.find('#reply-title').animate({opacity:0}, 200, function() {
+		shiftText();
+		$(this).animate({opacity:1}, 200, function() {
+			$(this).removeAttr('style');
+		});
+	});
+	return false;
+}
+
+function shiftText() {
+	var titleElement = $('#reply-title'), cancelElement = $('#cancel-comment-reply-link'), titleAltElement = $('#edit-or-reply-title'), cancelAltElement = $('#edit-or-reply-cancel'), s = titleElement.children('small');
+	s.detach();
+	title = titleElement.html(), cancel = cancelElement.html();
+	titleElement.html(titleAltElement.html());
+	cancelElement.html(cancelAltElement.html());
+	titleAltElement.html(title);
+	cancelAltElement.html(cancel);
+	s.appendTo(titleElement);
 }
 
 var imageCache = [];
@@ -117,28 +183,6 @@ function loadImage() {
 	  cacheImage.src = arguments[i];
 	  imageCache.push(cacheImage);
 	}
-}
-
-function fadingSlideDown(performer, callback) {
-	var h = performer.css({
-		height: 'auto',
-		position: 'absolute',
-		visibility: 'hidden'
-	}).height();
-	performer.css({
-		opacity: 0,
-		height: 0,
-		position: 'static',
-		visibility: 'visible'
-	});
-	performer.animate({
-		opacity: 1,
-		height: h
-	}, 500, function() {
-		performer.removeAttr('style');
-		if(callback && typeof(callback) == 'function')
-			callback();
-	});
 }
 
 var contentWidth = 580;
@@ -164,8 +208,7 @@ function processContent() {
 
 	/* Clearing Borders for Small Images */
 	if(scriptParams['hidesmallimgbdr']) {
-		$('.entry img').load(function() {
-			var image = $(this);
+		var checkSize = function(image) {
 			var w = image.width();
 			var h = image.height();
 			if(scriptParams['smallimgwidth'] > 0 && scriptParams['smallimgheight'] > 0) {
@@ -189,6 +232,14 @@ function processContent() {
 			} else {
 				image.addClass('no-border');
 			}
+		};
+		$('.entry img').load(function() {
+			var image = $(this);
+			checkSize(image);
+		});
+		$('.entry embed, .entry object, .entry iframe').each(function() {
+			var image = $(this);
+			checkSize(image);
 		});
 		$('img.no-border').load(function() {
 			var cap = $(this).parents('.wp-caption');
@@ -224,10 +275,15 @@ function processContent() {
 		}
 	});
 
-	/* Table Row Colorization */
 	if($.browser.msie && $.browser.version <= 7) {
+		/* Table Row Colorization */
 		$('.entry table').not('.wp_syntax table').each(function() {
 			$(this).find('tr:not(thead tr, tfoot tr):odd').addClass('even');
+		});
+
+		/* Fix Cursor Position */
+		$('#comment').focus(function() {
+			$(this).val($(this).val());
 		});
 	}
 }
@@ -449,7 +505,33 @@ $(document).ready(function() {
 	/**************************
 	 * Internal Anchor Easing *
 	 **************************/
-	$('a[href*=#]:not(.comment-reply-link, .cancel-comment-reply-link)').live('click', function() {
+	$('body').delegate('a[href*=#]:not(.comment-reply-link, #cancel-comment-reply-link, .comment-edit-link, .commentnavi a)', 'click', function() {
+		// comment page navigation on clicking @reply link
+		if($(this).is('li:not(.tooltip)>.comment-body a[href^=#comment-]')) {
+			var m, id, map, current;
+			if((m = $(this).attr('href').match(/#comment-(\d+)/)) != null) {
+				id = m[1];
+			}
+			current = $('.commentnavi .page-numbers.current').text();
+			map = $.parseJSON($('#comment-page-number').val());
+			if(map && (current != map[id])) {
+				var url = document.URL.split(/#.*$/)[0].split(/\/comment-page-[\d]+\//)[0];
+				var postId = $('#cp_post_id').text();
+				url += /\?/i.test(url) ? '&' : '?';
+				if(ajaxParams && ajaxParams['cmntpagenav']) { // AJAX pagination is on
+					url += 'action=cpage_ajax&post=' + postId + '&page=' + map[id];
+					ajaxPaginateComments(url, function() {
+						$('#comment-' + id).ScrollTo(500);
+					});
+				} else {
+					url += 'cpage=' + map[id];
+					window.location.href = url + '#comment-' + id;
+				}
+			} else {
+				$('#comment-' + id).ScrollTo(300);
+			}
+		}
+
 		if(location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && location.search == this.search) {
 			var target = $(this).attr('href');
 			target = target.substring(target.indexOf('#'));
@@ -485,9 +567,9 @@ $(document).ready(function() {
 	processContent();
 	
 	/* WP-Syntax Support */
-	$('.wp_syntax_wrapper').live('hover', function(event) {
-		if (event.type == 'mouseover') {
-			$(this).children('.wp_syntax_lang').stop().fadeTo(200, 0);
+	$('#content').delegate('.wp_syntax_wrapper', 'hover', function(event) {
+		if (event.type == 'mouseenter') {
+			$(this).children('.wp_syntax_lang').stop().fadeTo(200, .2);
 		} else {
 			$(this).children('.wp_syntax_lang').stop().fadeTo(200, 1, function() {
 				$(this).removeAttr('style');
@@ -501,10 +583,11 @@ $(document).ready(function() {
 	processComments();
 
 	/* Comment Hover Effect */
-	$('.comment').live('mouseenter', function() {
+	$('#reaction').delegate('.comment', 'mouseenter', function(e) {
 		$(this).addClass('hover').parents('.comment').removeClass('hover');
-	}).live('mouseleave', function() {
-		$(this).removeClass('hover');
+		e.stopPropagation();
+	}).delegate('.comment', 'mouseleave', function() {
+		$(this).removeClass('hover').parent().closest('.comment').addClass('hover');
 	});
 
 	/* Toggle Commenter Info */
@@ -514,9 +597,9 @@ $(document).ready(function() {
 			info.slideDown(500);
 		}
 		$('#commentform .comment-notes').animate({
-			opacity: '0',
-			height: '0',
-			marginBottom: '0'
+			opacity: 'hide',
+			height: 'hide',
+			marginBottom: 'hide'
 		}, 500, function() {
 			$(this).remove();
 		});
@@ -530,18 +613,62 @@ $(document).ready(function() {
 	}).focus(textAreaFixCursorPosition);
 	/* Allowed Tags Display End */
 
-	/* Move Insertion Point to the End of the Textarea */
-	$('#comment').focus(textAreaFixCursorPosition);
-	
-	/* Reply Button Behaviour */
+	/* Smiley Select Button Behaviour */
+	if($('#comment').length > 0) {
+		var commentInput = $('#comment').get(0);
+		$('.smiley-select').click(function() {
+			var tag = $(this).attr('alt');
+			if (document.selection) {
+				commentInput.focus();
+				sel = document.selection.createRange();
+				sel.text = tag;
+				commentInput.focus();
+			}
+			else if (commentInput.selectionStart || commentInput.selectionStart == '0') {
+				var startPos = commentInput.selectionStart;
+				var endPos = commentInput.selectionEnd;
+				var cursorPos = endPos;
+				commentInput.value = commentInput.value.substring(0, startPos) + tag + commentInput.value.substring(endPos, commentInput.value.length);
+				cursorPos += tag.length;
+				commentInput.focus();
+				commentInput.selectionStart = cursorPos;
+				commentInput.selectionEnd = cursorPos;
+			}
+			else {
+				commentInput.value += tag;
+				commentInput.focus();
+			}
+		});
+	}
+
+	/* Comment Reply Link Behaviour */
 	$('.comment-reply-link').live('click', function() {
 		var comment = $(this).parent().parent().parent();
 		reply(comment.children().children('span.author').text(), comment.attr('id'), 'comment');
 		return false;
 	});
 
+	/* Comment Edit Link Behaviour */
+	if(scriptParams['commentquickedit'] && !scriptParams['threadcmnts']) {
+		$('.comment-edit-link').live('click', function(e) {
+			var comment = $(this).parent().parent().parent();
+			editComment(comment, 'comment');
+			return false;
+		});
+	}
+	
+	/* Cancel Comment Edit or Reply Link Behaviour */
+	var cancelLinkElement = $("#cancel-comment-reply-link");
+	if(cancelLinkElement.length > 0) {
+		if(scriptParams['threadcmnts']) {
+			cancelLinkElement.click(cancelCommentReplyOrEdit);
+		} else if(scriptParams['commentquickedit']) {
+			cancelLinkElement.click(cancelCommentEdit);
+		}
+	}
+
 	/* Show Tooltip Comment When Hover the '@somebody' Link */
-	$('li:not(.tooltip)>.comment-body a[href^=#comment-]').live('mouseover', function() {
+	$('#comments').delegate('li:not(.tooltip)>.comment-body a[href^=#comment-]', 'mouseenter', function() {
 		var id, m, tooltip;
 		if((m = $(this).attr('href').match(/#comment-(\d+)/)) != null) {
 			id = m[1];
@@ -578,7 +705,7 @@ $(document).ready(function() {
 			tooltip.css({ left : x + 30, top : y + 10 });
 			processTooltip(tooltip);
 		}
-	}).live('mouseout', function() {
+	}).delegate('li:not(.tooltip)>.comment-body a[href^=#comment-]', 'mouseleave', function() {
 		$('.tooltip').stop().fadeTo(200, 0, function() {
 			$(this).detach();
 		});
@@ -592,14 +719,11 @@ $(document).ready(function() {
 	/* Use Ctrl+Enter to Submit Comment */
 	if(scriptParams['quicksubmit']) {
 		$('#comment').keydown(function(e) {
-			var ev;
-			if(window.event) {
-				ev = window.event;
-			} else {
-				ev = e;
+			var ev = window.event || e;
+			if(ev != null && ev.ctrlKey && ev.keyCode == 13) {
+				// Comment form in WordPress has an input[name="submit"] which overwrites the object's submit() function, use the function in its prototype to invoke
+				HTMLFormElement.prototype.submit.apply($('#commentform').get(0));
 			}
-			if(ev != null && ev.ctrlKey && ev.keyCode == 13)
-				$('#commentform').submit();
 		});
 	}
 

@@ -49,13 +49,13 @@ class SimpleDarkOptions implements ArrayAccess {
 		}
 	}
 
-	public function merge_array($true_array, $override=true) {
-		$result = $true_array;
-		foreach($this->options_array as $key => $val) {
-			if(!array_key_exists($key, $result) || $override)
-				$result[$key] = $val;
+	public function merge_array($true_array, $override=false) {
+		foreach($true_array as $key => $val) {
+			if(!array_key_exists($key, $this->options_array) || $override) {
+				$this->options_array[$key] = $val;
+			}
 		}
-		return $result;
+		return $this->options_array;
 	}
 }
 ?>

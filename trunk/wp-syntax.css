@@ -1,11 +1,7 @@
 .wp_syntax_wrapper {
   position: relative;
   margin-top:10px;
-  width: 600px;
-}
-
-.comment .wp_syntax_wrapper {
-  width: 533px;
+  _width:100%;
 }
 
 .wp_syntax {
@@ -15,10 +11,6 @@
   border: 1px solid #3c3c3c;
   margin: 0 0 10px 0;
   overflow: auto;
-}
-
-.comment .wp_syntax {
-  width: 531px;
 }
 
 .wp_syntax_lang {
@@ -34,6 +26,10 @@
   z-index:1;
 }
 
+.wp_syntax table {
+	margin:0;
+}
+
 .wp_syntax table, .wp_syntax td, .wp_syntax th {
 	border:none;
 }
@@ -43,7 +39,6 @@
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: expression(this.scrollWidth > this.offsetWidth ? 15 : 0);
-  width: 598px;
 }
 
 .wp_syntax table {

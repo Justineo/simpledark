@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kowack translate\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-29 13:53+0200\n"
-"PO-Revision-Date: 2011-03-09 19:50+0200\n"
-"Last-Translator: kowack <kowack@gmail.com>\n"
+"POT-Creation-Date: 2011-07-14 09:13+0200\n"
+"PO-Revision-Date: 2011-07-14 10:07+0200\n"
+"Last-Translator: www.kowack.info <kowack@gmail.com>\n"
 "Language-Team: www.kowack.info <kowack@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,124 +53,173 @@ msgstr "На главную %s"
 msgid "Or you can search for the content you need:"
 msgstr "Или ты можешь поискать что желаешь:"
 
-#: ../ajax-comments-post.php:66
-msgid "Please don't send duplicate comment."
-msgstr "Будь добр не дублировать комменты."
-
-#: ../ajax-comments-post.php:95
-msgid "You are posting comments too quickly."
-msgstr "Ты слишком бысто коментишь."
-
-#: ../ajax-comments-post.php:108
-msgid "Error: comment ID not found."
-msgstr "Ошибка: ID комента не найден."
-
-#: ../ajax-comments-post.php:113
+#: ../ajax-comments-post.php:34
+#: ../comment-edit-post.php:34
 msgid "Sorry, comments are closed for this item."
 msgstr "Извини, но комментарии закрыты для этого элемента."
 
-#: ../ajax-comments-post.php:147
+#: ../ajax-comments-post.php:72
+#: ../comment-edit-post.php:74
 msgid "Sorry, you must be logged in to post a comment."
-msgstr "Извини, но что бы коментить ты должен войти."
+msgstr "Извини, но что бы комментить ты должен войти."
 
-#: ../ajax-comments-post.php:155
+#: ../ajax-comments-post.php:79
+#: ../comment-edit-post.php:81
 msgid "Error: please fill the required fields (name, email)."
 msgstr "Ошибка: будь добр заполнить нужные поля ( имя типа там, эмейл)."
 
-#: ../ajax-comments-post.php:158
+#: ../ajax-comments-post.php:81
+#: ../comment-edit-post.php:83
 msgid "Error: please enter a valid email address."
 msgstr "Ошибка: формат эмейла не верен."
 
-#: ../ajax-comments-post.php:163
+#: ../ajax-comments-post.php:85
+#: ../comment-edit-post.php:87
 msgid "Error: please type a comment."
 msgstr "Ошибка: введи комментарий, он не может быть пустым =)"
 
-#: ../ajax-comments-post.php:194
+#: ../ajax-comments-post.php:100
+#: ../comment-edit-post.php:93
+msgid "Error: you cannot edit this comment."
+msgstr "Ошибка: Вы не можете редактировать этот комментарий."
+
+#: ../ajax-comments-post.php:113
+#: ../comment-edit-post.php:55
+#: ../comment-edit-post.php:101
+msgid "Error: fail to update the comment."
+msgstr "Ошибка: не удалось обновить комментарий."
+
+#: ../ajax-comments-post.php:145
 msgid "Comment submitted!"
 msgstr "Комментарий отправлен!"
 
-#: ../ajax-posts-load.php:19
+#: ../ajax-comments-post.php:145
+msgid "Changes committed!"
+msgstr "Изменения сохранены!"
+
+#: ../ajax-posts-load.php:18
 #: ../attachment.php:12
-#: ../index.php:17
-#: ../templates/singular.php:13
+#: ../index.php:16
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "Пермалинк для  %s"
 
-#: ../ajax-posts-load.php:20
-#: ../index.php:18
-#: ../templates/singular.php:14
+#: ../ajax-posts-load.php:19
+#: ../functions.php:590
+#: ../index.php:21
+#: ../index.php:41
+#: ../index.php:58
+#: ../index.php:106
+#: ../index.php:194
+#: ../index.php:216
+#: ../index.php:231
 msgid " posted in "
 msgstr " запостил в "
 
-#: ../ajax-posts-load.php:20
+#: ../ajax-posts-load.php:19
 #: ../attachment.php:13
-#: ../index.php:18
-#: ../templates/singular.php:14
+#: ../functions.php:590
+#: ../index.php:21
+#: ../index.php:41
+#: ../index.php:58
+#: ../index.php:106
+#: ../index.php:194
+#: ../index.php:216
+#: ../index.php:231
 msgid "X Comments"
 msgstr ""
 
-#: ../ajax-posts-load.php:20
+#: ../ajax-posts-load.php:19
 #: ../attachment.php:13
-#: ../functions.php:406
-#: ../index.php:18
-#: ../templates/singular.php:14
+#: ../functions.php:590
+#: ../functions.php:645
+#: ../index.php:21
+#: ../index.php:41
+#: ../index.php:58
+#: ../index.php:106
+#: ../index.php:194
+#: ../index.php:216
+#: ../index.php:231
 msgid "No Comments"
 msgstr "Комментариев нет"
 
-#: ../ajax-posts-load.php:20
+#: ../ajax-posts-load.php:19
 #: ../attachment.php:13
-#: ../functions.php:407
-#: ../index.php:18
-#: ../templates/singular.php:14
+#: ../functions.php:590
+#: ../functions.php:646
+#: ../index.php:21
+#: ../index.php:41
+#: ../index.php:58
+#: ../index.php:106
+#: ../index.php:194
+#: ../index.php:216
+#: ../index.php:231
 msgid "1 Comment"
 msgstr "1 комментарий"
 
-#: ../ajax-posts-load.php:20
+#: ../ajax-posts-load.php:19
 #: ../attachment.php:13
-#: ../functions.php:408
-#: ../index.php:18
-#: ../templates/singular.php:14
+#: ../functions.php:590
+#: ../functions.php:647
+#: ../index.php:21
+#: ../index.php:41
+#: ../index.php:58
+#: ../index.php:106
+#: ../index.php:194
+#: ../index.php:216
+#: ../index.php:231
 msgid "% Comments"
-msgstr "Коментарии ( % )"
+msgstr "Комментарии ( % )"
 
-#: ../ajax-posts-load.php:20
+#: ../ajax-posts-load.php:19
 #: ../attachment.php:13
-#: ../index.php:18
-#: ../templates/singular.php:14
+#: ../functions.php:590
+#: ../index.php:21
+#: ../index.php:41
+#: ../index.php:58
+#: ../index.php:106
+#: ../index.php:194
+#: ../index.php:216
+#: ../index.php:231
 msgid "Comments Off"
-msgstr "Коментарии выключены"
+msgstr "Комментарии выключены"
 
-#: ../ajax-posts-load.php:20
+#: ../ajax-posts-load.php:19
 #: ../attachment.php:13
-#: ../index.php:18
-#: ../templates/comment.php:26
-#: ../templates/singular.php:14
+#: ../functions.php:590
+#: ../index.php:21
+#: ../index.php:41
+#: ../index.php:58
+#: ../index.php:106
+#: ../index.php:194
+#: ../index.php:216
+#: ../index.php:231
+#: ../templates/comment.php:23
+#: ../templates/comment.php:27
 msgid "Edit"
 msgstr "Изменить"
 
-#: ../ajax-posts-load.php:22
-#: ../index.php:21
+#: ../ajax-posts-load.php:21
+#: ../index.php:25
 msgid "Read More"
 msgstr "Читать всё"
 
-#: ../ajax-posts-load.php:25
-#: ../index.php:33
-#: ../templates/singular.php:28
+#: ../ajax-posts-load.php:24
+#: ../index.php:36
 msgid "NO TAGS"
 msgstr "без тегов"
 
-#: ../ajax-posts-load.php:40
-#: ../index.php:48
+#: ../ajax-posts-load.php:39
+#: ../index.php:264
 msgid "Older Posts"
 msgstr "Более старые посты"
 
-#: ../ajax-posts-load.php:40
-#: ../index.php:48
+#: ../ajax-posts-load.php:39
+#: ../index.php:264
 msgid "Newer Posts"
 msgstr "Более новые посты"
 
-#: ../ajax-posts-load.php:50
+#: ../ajax-posts-load.php:49
 #, php-format
 msgid "No posts found. Why not <a title=\"Go Back\" href=\"%s\">go back to the last page</a> ?"
 msgstr "К сожалению ничего не найдено.<br />Может вернуться на предыдущую <a title=\"Назад\" href=\"%s\">страницу</a> ?"
@@ -199,73 +248,68 @@ msgstr "Ссылка на полное изображение"
 msgid "MIME Type: %s"
 msgstr ""
 
-#: ../attachment.php:62
+#: ../attachment.php:61
 #, php-format
 msgid "Caption: %s"
 msgstr "Название: %s."
 
-#: ../attachment.php:68
-#, php-format
-msgid "Description: %s"
-msgstr "Описание: %s."
-
-#: ../comments.php:8
+#: ../comments.php:11
 msgid "Comments"
-msgstr "Коментарии"
+msgstr "Комментарии"
 
-#: ../comments.php:8
-#: ../comments.php:60
+#: ../comments.php:11
+#: ../comments.php:68
 msgid "X"
 msgstr ""
 
-#: ../comments.php:12
+#: ../comments.php:15
 msgid "You must enter the password to view the comments."
 msgstr "Надобно ввести пароль для просмора этих комментов"
 
-#: ../comments.php:24
+#: ../comments.php:31
 msgid "No comments yet."
 msgstr "Комментов пока нет."
 
-#: ../comments.php:43
+#: ../comments.php:51
 #, php-format
 msgid "Welcome back, %s."
 msgstr "Рад тебя снова видеть, %s."
 
-#: ../comments.php:43
+#: ../comments.php:51
 msgid "Change"
 msgstr "Изменить"
 
-#: ../comments.php:44
+#: ../comments.php:52
 msgid "Name"
 msgstr "Имя"
 
-#: ../comments.php:45
+#: ../comments.php:53
 msgid "Email"
 msgstr ""
 
-#: ../comments.php:46
+#: ../comments.php:54
 msgid "Website"
 msgstr "Сайт"
 
-#: ../comments.php:50
+#: ../comments.php:58
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "Ты должен <a href=\"%s\">войти</a> для возможности комментить."
 
-#: ../comments.php:51
+#: ../comments.php:59
 #, php-format
 msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out &raquo;</a>"
 msgstr "Ты вошёл как <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Выйти с этого аккаунта\">Выйти &raquo;</a>"
 
-#: ../comments.php:52
+#: ../comments.php:60
 msgid "Post Comment"
 msgstr "Закомментить этот пост"
 
-#: ../comments.php:60
+#: ../comments.php:68
 msgid "Pingbacks"
 msgstr ""
 
-#: ../comments.php:78
+#: ../comments.php:86
 msgid "No pingbacks yet."
 msgstr ""
 
@@ -288,83 +332,94 @@ msgstr ""
 msgid "License Details"
 msgstr "Детали лицензии"
 
-#: ../functions.php:65
+#: ../functions.php:74
 msgid "Top Navigation Menu"
 msgstr "Верхнее меню навигации"
 
-#: ../functions.php:115
-#: ../functions.php:228
+#: ../functions.php:124
+#: ../functions.php:238
 #, php-format
 msgid "Posts by %s"
 msgstr "Посты %s"
 
-#: ../functions.php:148
+#: ../functions.php:157
 msgid "Home"
 msgstr "Главная"
 
-#: ../functions.php:186
+#: ../functions.php:195
 msgid "F, Y"
 msgstr ""
 
-#: ../functions.php:189
+#: ../functions.php:198
 msgid "Y"
 msgstr ""
 
-#: ../functions.php:219
+#: ../functions.php:228
 msgid "Untitled"
 msgstr "Без названия"
 
-#: ../functions.php:269
+#: ../functions.php:279
 msgid "<strong>Allowed Tags</strong> - You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes in your comment."
 msgstr "<strong>Теги включены</strong> - Можно использовать следующие <abbr title=\"HyperText Markup Language\">HTML</abbr> теги и атрибуты в комментариях."
 
-#: ../functions.php:295
+#: ../functions.php:401
+#: ../templates/comment.php:23
+msgid "Edit comment"
+msgstr "Редактировать коммент"
+
+#: ../functions.php:401
+msgid "Cancel edit"
+msgstr "Отмена редактирования"
+
+#: ../functions.php:412
 msgid "Protected"
 msgstr "Защищено"
 
-#: ../functions.php:297
+#: ../functions.php:414
 msgid "Private"
 msgstr "Приватно"
 
-#: ../functions.php:300
+#: ../functions.php:417
 msgid "Announcement"
 msgstr "Объявление"
 
-#: ../functions.php:301
-#: ../functions.php:302
+#: ../functions.php:418
+#: ../functions.php:419
 msgid "Sticky"
 msgstr "Липкий"
 
-#: ../functions.php:305
+#: ../functions.php:422
 msgid "Attachment"
 msgstr "Приложение"
 
-#: ../functions.php:319
+#: ../functions.php:436
 msgid "Missing Attachment"
-msgstr "Недостающие преложение"
+msgstr "Недостающие приложение"
 
-#: ../index.php:18
-#: ../templates/singular.php:14
+#: ../index.php:21
 #, php-format
 msgid "Posted by %s"
 msgstr "Запостил %s"
 
-#: ../index.php:24
-#: ../templates/singular.php:19
+#: ../index.php:27
 msgid "Pages:"
 msgstr "Страницы: "
 
-#: ../index.php:26
-#: ../templates/singular.php:21
+#: ../index.php:29
 msgid "Next Page"
 msgstr "Туда"
 
-#: ../index.php:27
-#: ../templates/singular.php:22
+#: ../index.php:30
 msgid "Previous Page"
 msgstr "Сюда"
 
-#: ../index.php:58
+#: ../index.php:132
+#: ../index.php:149
+#: ../index.php:174
+msgid "View All"
+msgstr "Просмотреть всё"
+
+#: ../index.php:274
 #, php-format
 msgid "No posts found. Why not <a title=\"Go Back\" href=\"%1$s\"%2$s>go back to the last page</a> ?"
 msgstr "К сожалению ничего не найдено.<br />Может <a title=\"Назад\" href=\"%1$s\"%2$s>вернуться на предыдущую страницу</a> ?"
@@ -377,15 +432,15 @@ msgstr "RSS Фид"
 msgid "Subscribe Updates"
 msgstr "Подписаться на обновления"
 
-#: ../templates/comment.php:20
-msgid "Reply to this comment"
-msgstr "Ответить на этот коммент"
+#: ../templates/comment.php:18
+msgid "Reply comment"
+msgstr "Ответить на этот комментарий"
 
-#: ../templates/comment.php:20
+#: ../templates/comment.php:18
 msgid "Reply"
 msgstr "Ответить"
 
-#: ../templates/comment.php:28
+#: ../templates/comment.php:39
 msgid "Your comment is awaiting moderation."
 msgstr "Твой комент в очереди на модерацию."
 
@@ -424,319 +479,348 @@ msgstr "Архивы в <strong>%s</strong>"
 msgid "Archives page"
 msgstr "Архив"
 
-#: ../utilities/admin.php:23
-#: ../utilities/admin.php:49
-msgid "SimpleDark Options"
-msgstr "Опции этой темы"
-
-#: ../utilities/admin.php:25
-msgid "Check here for more information."
-msgstr "Детальнее об этом."
-
-#: ../utilities/admin.php:56
-msgid "Changes have been saved."
-msgstr "Изменения сохранены."
-
-#: ../utilities/admin.php:66
-msgid "AJAX"
-msgstr "AJAX"
-
-#: ../utilities/admin.php:69
-msgid "Global"
-msgstr "Глобально"
-
-#: ../utilities/admin.php:72
-msgid "Enable AJAX functionalities (page navigation, comment post, search, etc. The following settings will not work if this option is off.)"
-msgstr "Включить AJAX функции ( навигацию страницы, комменты постов, поиск, тп. )"
-
-#: ../utilities/admin.php:77
-msgid "Comment Post"
-msgstr "Комменирий поста"
-
-#: ../utilities/admin.php:80
-msgid "Enable AJAX comment post"
-msgstr "Включить AJAX для комментов поста."
-
-#: ../utilities/admin.php:85
-msgid "Comment Page Navigation"
-msgstr "Навигация по странице коментария"
-
-#: ../utilities/admin.php:88
-msgid "Enable AJAX comment page navigation"
-msgstr "Включить AJAX для навигации по странице комментария"
-
-#: ../utilities/admin.php:93
-msgid "Post Page Navigation"
-msgstr "Навигация по странице поста"
-
-#: ../utilities/admin.php:96
-msgid "Enable AJAX post page navigation"
-msgstr "Включить AJAX для навигации по странице поста"
-
-#: ../utilities/admin.php:101
-msgid "Post Content Page Navigation"
-msgstr "Навигация по странице поста контента"
-
-#: ../utilities/admin.php:104
-msgid "Enable AJAX post content page navigation"
-msgstr "Включить AJAX для навигации по странице поста контента."
-
-#: ../utilities/admin.php:109
-msgid "Search"
-msgstr "Поиск по блогу:"
-
-#: ../utilities/admin.php:112
-msgid "Enable AJAX search"
-msgstr "Включить AJAX для поиска"
-
-#: ../utilities/admin.php:117
-msgid "Navigation Menu"
-msgstr "Меню навигации"
-
-#: ../utilities/admin.php:121
-msgid "Settings in this section will be overriden by your settings in Appearance &raquo; Menus."
-msgstr "Настройки этой секции перекрывают настройки Меню внешнего вида О_О"
-
-#: ../utilities/admin.php:125
-msgid "Show Homepage Link"
-msgstr "Показывать ссылку на домашнюю страницу"
-
-#: ../utilities/admin.php:128
-msgid "Show the link of the homepage on the top menu"
-msgstr "Показывать ссылку на домашнюю страницу в вверхнем меню"
-
-#: ../utilities/admin.php:133
-msgid "Menu Items"
-msgstr "Пункты меню"
-
-#: ../utilities/admin.php:136
-msgid "Show categories as top menu items instead of pages"
-msgstr "Показать категории вместо страниц в вверхнем меню."
-
-#: ../utilities/admin.php:141
-msgid "Posts"
-msgstr "Посты."
-
-#: ../utilities/admin.php:144
-msgid "Post Tags"
-msgstr "Теги постов."
-
-#: ../utilities/admin.php:147
-msgid "Show post tags on archive pages (home, archive, etc.)"
-msgstr "Показать теги постов на страницах архива ( домашняя, архив, тп )"
-
-#: ../utilities/admin.php:158
-msgid "Image Borders"
-msgstr "Границы изображения"
-
-#: ../utilities/admin.php:161
-#, php-format
-msgid "Hide borders for images with width less than or equal to %1$spx %2$s height less than or equal to %3$spx"
-msgstr "Скрыть границы для изображений с шириной менее или равной %1$spx %2$s и высотой менее ил равной %3$spx"
-
-#: ../utilities/admin.php:161
-msgid "and"
-msgstr "и"
-
-#: ../utilities/admin.php:161
-msgid "or"
-msgstr "или"
-
-#: ../utilities/admin.php:162
-msgid "Set the value to 0 or just leave it blank to ignore width or height restriction. If both restrictions are set to 0, all image borders will be removed."
-msgstr "Установите значение 0 или просто оставьте его пустым, чтобы игнорировать ограничения ширины или высоты.<br />Если оба ограничения установить в 0, все раницы изображений будут удалены."
-
-#: ../utilities/admin.php:166
-msgid "Discussion"
-msgstr "Обсуждение"
-
-#: ../utilities/admin.php:169
-msgid "@ Reply"
-msgstr "Ответ"
-
-#: ../utilities/admin.php:172
-msgid "Automatically prepend a link to the original comment when replying"
-msgstr "Автоматически при ответе на коммент вставлять на него ссылку"
-
-#: ../utilities/admin.php:177
-msgid "Pingbacks and Trackbacks"
-msgstr ""
-
-#: ../utilities/admin.php:180
-msgid "Hide pingbacks and trackbacks"
-msgstr "Спрятать pingbacks и trackbacks"
-
-#: ../utilities/admin.php:185
-msgid "Allowed Tags"
-msgstr "Включить теги"
-
-#: ../utilities/admin.php:188
-msgid "Show allowed tags for comments"
-msgstr "Показать теги для комменов"
-
-#: ../utilities/admin.php:193
-msgid "Comment Images"
-msgstr "Комменты изображений"
-
-#: ../utilities/admin.php:196
-msgid "Comments can include the &lt;img&gt; tag"
-msgstr "Комментарии могут содержать  &lt;img&gt; тег"
-
-#: ../utilities/admin.php:201
-msgid "Comment Submit Shortcut"
-msgstr "Отправка комментария"
-
-#: ../utilities/admin.php:204
-msgid "Use Ctrl+Enter to submit comment"
-msgstr "Использовать Ctrl+Enter для отправки комментов"
-
-#: ../utilities/admin.php:209
-msgid "Sidebar"
-msgstr "СайдБар"
-
-#: ../utilities/admin.php:212
-msgid "Search Form Text"
-msgstr "Текст в форме поиска"
-
-#: ../utilities/admin.php:213
-msgid "Default text of the search form"
-msgstr "Текст по умолчанию в поисковой форме"
-
-#: ../utilities/admin.php:216
-msgid "Footer"
-msgstr "Футер"
-
-#: ../utilities/admin.php:219
-msgid "Footer License"
-msgstr "Футер, Лицензия"
-
-#: ../utilities/admin.php:222
-msgid "Show footer license"
-msgstr "Показать лицезию в футере"
-
-#: ../utilities/admin.php:224
-msgid "You can choose a way to reserve your rights when sharing your creative works by specifying a copyright-license like <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> in your footer area."
-msgstr "Вы можете выбрать способ указания прав совместного доступа к творчеству, указав лицензию авторского права, например как <a href=\"http://creativecommons.org/about/licenses/\"> фонда лицензий </> в футуре."
-
-#: ../utilities/admin.php:228
-msgid "License Name"
-msgstr "Лицензия, Имя"
-
-#: ../utilities/admin.php:229
-msgid "The anchor text of the license to be displayed"
-msgstr "Текст анкора лицензии, который будет отображаться"
-
-#: ../utilities/admin.php:232
-msgid "License URL"
-msgstr "Ссылка на лицензию"
-
-#: ../utilities/admin.php:233
-msgid "A link to the license details"
-msgstr "Ссылка на детали лицензии"
-
-#: ../utilities/admin.php:236
-msgid "Custom Footer Information"
-msgstr "Дополнительная инфа футера"
-
-#: ../utilities/admin.php:239
-msgid "Show custom information in the footer"
-msgstr "Показать дополнительеую инфу футера"
-
-#: ../utilities/admin.php:244
-msgid "Custom Footer Information Code"
-msgstr "Код дополнительной инфы в футере"
-
-#: ../utilities/admin.php:245
-msgid "Write your custom HTML code to display in the footer"
-msgstr "Напиши сюжа свой произвольный HTML код для отображения в футере"
-
-#: ../utilities/admin.php:251
-msgid "Custom Feed Information Before Content"
-msgstr "Произвольная инфа в фиде перед контетом"
-
-#: ../utilities/admin.php:252
-msgid "Write your custom HTML code to display before the content of each entry of your RSS feed"
-msgstr "Напиши сюда HTML код для отображения перед конетом в RSS фиде."
-
-#: ../utilities/admin.php:255
-msgid "Custom Feed Information After Content"
-msgstr "Произвольная инфа в фиде после контента."
-
-#: ../utilities/admin.php:257
-msgid "Write your custom HTML code to display after the content of each entry of your RSS feed"
-msgstr "HTML код для отображения в RSS фиде после контента."
-
-#: ../utilities/admin.php:259
-msgid "You can use these placeholders in your code:"
-msgstr "Вы можете использовать эти прототипы в коде:"
-
-#: ../utilities/admin.php:261
-msgid "The name of the post author without a link"
-msgstr "Имя автора поста ( не ссылка )"
-
-#: ../utilities/admin.php:262
-msgid "The link of posts by the post author"
-msgstr "Ссылка на посты автора"
-
-#: ../utilities/admin.php:263
-msgid "The link of your blog homepage"
-msgstr "Ссылка на главную твоего блога"
-
-#: ../utilities/admin.php:264
-msgid "The RSS feed URL of your blog posts"
-msgstr "RSS фид твоего блога"
-
-#: ../utilities/admin.php:265
-msgid "The URL of your post"
-msgstr "Ссылка на пост"
-
-#: ../utilities/admin.php:267
-msgid "eg. The post is written by %AUTHOR_LINK%. To read more interesting posts, visit %BLOG_LINK% or &lt;a href=\"%FEED_URL%\"&gt;subscribe our updates&lt;/a&gt;."
-msgstr "Например: Автор поста  %AUTHOR_LINK%. Вот те его блог %BLOG_LINK% или &lt;a href=\"%FEED_URL%\"&gt;RSS&lt;/a&gt;."
-
-#: ../utilities/admin.php:268
-msgid "The output will be wrapped in a &lt;DIV&gt; element."
-msgstr "Результат будет обёрнут в  &lt;DIV&gt;."
-
-#: ../utilities/admin.php:273
-msgid "Analytics"
-msgstr "Анализ."
-
-#: ../utilities/admin.php:276
-msgid "Google Analytics"
-msgstr "Google Analytics"
-
-#: ../utilities/admin.php:279
-msgid "Enable Google Analytics"
-msgstr "Включить Google Analytics"
-
-#: ../utilities/admin.php:284
-msgid "Google Analytics Code"
-msgstr "Код Google Analytics"
-
-#: ../utilities/admin.php:286
-msgid "Paste your Google Analytics code snippet here"
-msgstr "Вставьте фрагмент кода Google Analytics сюда"
-
-#: ../utilities/admin.php:289
-msgid "Google Analytics for Administrators"
-msgstr "Google Analytics для админов"
-
-#: ../utilities/admin.php:292
-msgid "Do not load Google Analytics when administrators are logged in"
-msgstr "Не загружать Google Analytics когда работает админ"
-
-#: ../utilities/admin.php:299
-msgid "Save Changes"
-msgstr "Сохранить изменения!"
-
-#: ../utilities/admin.php:365
+#: ../templates/thread-comment.php:18
+msgid "Reply to this comment"
+msgstr "Ответить на этот коммент"
+
+#: ../utilities/admin.php:36
 msgid "Search..."
 msgstr "Поиск..."
 
-#: ../utilities/ajax-comments.php:82
+#: ../utilities/admin.php:50
+#: ../utilities/admin.php:80
+msgid "SimpleDark Options"
+msgstr "Опции этой темы"
+
+#: ../utilities/admin.php:52
+msgid "Check here for more information."
+msgstr "Детальнее об этом."
+
+#: ../utilities/admin.php:87
+msgid "Changes have been saved."
+msgstr "Изменения сохранены."
+
+#: ../utilities/admin.php:94
+msgid "Default settings have been restored."
+msgstr "Настройки по умолчанию восстановлены."
+
+#: ../utilities/admin.php:104
+msgid "AJAX"
+msgstr "AJAX"
+
+#: ../utilities/admin.php:107
+msgid "Global"
+msgstr "Глобально"
+
+#: ../utilities/admin.php:110
+msgid "Enable AJAX functionalities (page navigation, comment post, search, etc. The following settings will not work if this option is off.)"
+msgstr "Включить AJAX функции ( навигацию страницы, комменты постов, поиск, тп. )"
+
+#: ../utilities/admin.php:115
+msgid "Comment Post"
+msgstr "Комментарий поста"
+
+#: ../utilities/admin.php:118
+msgid "Enable AJAX comment post"
+msgstr "Включить AJAX для комментов поста."
+
+#: ../utilities/admin.php:123
+msgid "Comment Page Navigation"
+msgstr "Навигация по странице комментария"
+
+#: ../utilities/admin.php:126
+msgid "Enable AJAX comment page navigation"
+msgstr "Включить AJAX для навигации по странице комментария"
+
+#: ../utilities/admin.php:131
+msgid "Post Page Navigation"
+msgstr "Навигация по странице поста"
+
+#: ../utilities/admin.php:134
+msgid "Enable AJAX post page navigation"
+msgstr "Включить AJAX для навигации по странице поста"
+
+#: ../utilities/admin.php:139
+msgid "Post Content Page Navigation"
+msgstr "Навигация по странице поста контента"
+
+#: ../utilities/admin.php:142
+msgid "Enable AJAX post content page navigation"
+msgstr "Включить AJAX для навигации по странице поста контента."
+
+#: ../utilities/admin.php:147
+msgid "Search"
+msgstr "Поиск по блогу:"
+
+#: ../utilities/admin.php:150
+msgid "Enable AJAX search"
+msgstr "Включить AJAX для поиска"
+
+#: ../utilities/admin.php:155
+msgid "Navigation Menu"
+msgstr "Меню навигации"
+
+#: ../utilities/admin.php:159
+msgid "Settings in this section will be overriden by your settings in Appearance &raquo; Menus."
+msgstr "Настройки этой секции перекрывают настройки пользовательского Меню WordPress-a."
+
+#: ../utilities/admin.php:163
+msgid "Show Homepage Link"
+msgstr "Показывать ссылку на домашнюю страницу"
+
+#: ../utilities/admin.php:166
+msgid "Show the link of the homepage on the top menu"
+msgstr "Показывать ссылку на домашнюю страницу в вверхнем меню"
+
+#: ../utilities/admin.php:171
+msgid "Menu Items"
+msgstr "Пункты меню"
+
+#: ../utilities/admin.php:174
+msgid "Show categories as top menu items instead of pages"
+msgstr "Показать категории вместо страниц в вверхнем меню."
+
+#: ../utilities/admin.php:179
+msgid "Posts"
+msgstr "Посты."
+
+#: ../utilities/admin.php:182
+msgid "Post Tags"
+msgstr "Теги постов."
+
+#: ../utilities/admin.php:185
+msgid "Show post tags on archive pages (home, archive, etc.)"
+msgstr "Показать теги постов на страницах архива ( домашняя, архив, тп )"
+
+#: ../utilities/admin.php:196
+msgid "Image Borders"
+msgstr "Рамка изображения"
+
+#: ../utilities/admin.php:199
+#, php-format
+msgid "Hide borders for images with width less than or equal to %1$spx %2$s height less than or equal to %3$spx"
+msgstr "Скрыть рамки для изображений с шириной менее или равной %1$spx %2$s и высотой менее или равной %3$spx"
+
+#: ../utilities/admin.php:199
+msgid "and"
+msgstr "и"
+
+#: ../utilities/admin.php:199
+msgid "or"
+msgstr "или"
+
+#: ../utilities/admin.php:200
+msgid "Set the value to 0 or just leave it blank to ignore width or height restriction. If both restrictions are set to 0, all image borders will be removed."
+msgstr "Установите значение 0 или просто оставьте его пустым, чтобы игнорировать ограничения ширины или высоты.<br />Если оба ограничения установить в 0, рамки у изображений будут удалены."
+
+#: ../utilities/admin.php:204
+msgid "Discussion"
+msgstr "Обсуждение"
+
+#: ../utilities/admin.php:207
+msgid "@ Reply"
+msgstr "Ответ"
+
+#: ../utilities/admin.php:210
+msgid "Automatically prepend a link to the original comment when replying"
+msgstr "Автоматически при ответе на коммент вставлять на него ссылку"
+
+#: ../utilities/admin.php:215
+msgid "Pingbacks and Trackbacks"
+msgstr ""
+
+#: ../utilities/admin.php:218
+msgid "Hide pingbacks and trackbacks"
+msgstr "Спрятать pingbacks и trackbacks"
+
+#: ../utilities/admin.php:223
+msgid "Allowed Tags"
+msgstr "Включить теги"
+
+#: ../utilities/admin.php:226
+msgid "Show allowed tags for comments"
+msgstr "Показать теги для комментов"
+
+#: ../utilities/admin.php:231
+msgid "Comment Images"
+msgstr "Комменты изображений"
+
+#: ../utilities/admin.php:234
+msgid "Comments can include the &lt;img&gt; tag"
+msgstr "Комментарии могут содержать  &lt;img&gt; тег"
+
+#: ../utilities/admin.php:239
+msgid "Comment Submit Shortcut"
+msgstr "Отправка комментария"
+
+#: ../utilities/admin.php:242
+msgid "Use Ctrl+Enter to submit comment"
+msgstr "Использовать Ctrl+Enter для отправки комментов"
+
+#: ../utilities/admin.php:247
+msgid "Comment Quick Edit"
+msgstr "Быстрое редактирование комментов"
+
+#: ../utilities/admin.php:250
+msgid "Enable comment quick edit"
+msgstr "Включить быстрое редактирование комментов."
+
+#: ../utilities/admin.php:252
+msgid "Comment authors can edit their comments after submission. After a comment is submitted, users who are not logged in can only edit it within 30 minutes."
+msgstr "Автор комментария может его редактировать после отправки. Гости же могут редактировать только в течении первых 30 минут."
+
+#: ../utilities/admin.php:256
+msgid "Sidebar"
+msgstr "СайдБар"
+
+#: ../utilities/admin.php:259
+msgid "Search Form Text"
+msgstr "Текст в форме поиска"
+
+#: ../utilities/admin.php:260
+msgid "Default text of the search form"
+msgstr "Текст по умолчанию в поисковой форме"
+
+#: ../utilities/admin.php:263
+msgid "Footer"
+msgstr "Футер"
+
+#: ../utilities/admin.php:266
+msgid "Footer License"
+msgstr "Футер, Лицензия"
+
+#: ../utilities/admin.php:269
+msgid "Show footer license"
+msgstr "Показать лицезию в футере"
+
+#: ../utilities/admin.php:271
+msgid "You can choose a way to reserve your rights when sharing your creative works by specifying a copyright-license like <a href=\"http://creativecommons.org/about/licenses/\">Creative Commons</a> in your footer area."
+msgstr "Вы можете выбрать способ указания прав совместного доступа к творчеству, указав лицензию авторского права, например как <a href=\"http://creativecommons.org/about/licenses/\"> фонда лицензий </> в футере."
+
+#: ../utilities/admin.php:275
+msgid "License Name"
+msgstr "Лицензия, Имя"
+
+#: ../utilities/admin.php:276
+msgid "The anchor text of the license to be displayed"
+msgstr "Текст анкора лицензии, который будет отображаться"
+
+#: ../utilities/admin.php:279
+msgid "License URL"
+msgstr "Ссылка на лицензию"
+
+#: ../utilities/admin.php:280
+msgid "A link to the license details"
+msgstr "Ссылка на детали лицензии"
+
+#: ../utilities/admin.php:283
+msgid "Custom Footer Information"
+msgstr "Дополнительная инфа футера"
+
+#: ../utilities/admin.php:286
+msgid "Show custom information in the footer"
+msgstr "Показать дополнительеую инфу футера"
+
+#: ../utilities/admin.php:291
+msgid "Custom Footer Information Code"
+msgstr "Код дополнительной инфы в футере"
+
+#: ../utilities/admin.php:292
+msgid "Write your custom HTML code to display in the footer"
+msgstr "Напиши сюжа свой произвольный HTML код для отображения в футере"
+
+#: ../utilities/admin.php:298
+msgid "Custom Feed Information Before Content"
+msgstr "Произвольная инфа в фиде перед контетом"
+
+#: ../utilities/admin.php:299
+msgid "Write your custom HTML code to display before the content of each entry of your RSS feed"
+msgstr "Напиши сюда HTML код для отображения перед контентом в RSS фиде."
+
+#: ../utilities/admin.php:302
+msgid "Custom Feed Information After Content"
+msgstr "Произвольная инфа в фиде после контента."
+
+#: ../utilities/admin.php:304
+msgid "Write your custom HTML code to display after the content of each entry of your RSS feed"
+msgstr "HTML код для отображения в RSS фиде после контента."
+
+#: ../utilities/admin.php:306
+msgid "You can use these placeholders in your code:"
+msgstr "Вы можете использовать эти прототипы в коде:"
+
+#: ../utilities/admin.php:308
+msgid "The name of the post author without a link"
+msgstr "Имя автора поста ( не ссылка )"
+
+#: ../utilities/admin.php:309
+msgid "The link of posts by the post author"
+msgstr "Ссылка на посты автора"
+
+#: ../utilities/admin.php:310
+msgid "The link of your blog homepage"
+msgstr "Ссылка на главную твоего блога"
+
+#: ../utilities/admin.php:311
+msgid "The RSS feed URL of your blog posts"
+msgstr "RSS фид твоего блога"
+
+#: ../utilities/admin.php:312
+msgid "The URL of your post"
+msgstr "Ссылка на пост"
+
+#: ../utilities/admin.php:314
+msgid "eg. The post is written by %AUTHOR_LINK%. To read more interesting posts, visit %BLOG_LINK% or &lt;a href=\"%FEED_URL%\"&gt;subscribe our updates&lt;/a&gt;."
+msgstr "Например: Автор поста  %AUTHOR_LINK%. Вот те его блог %BLOG_LINK% или &lt;a href=\"%FEED_URL%\"&gt;RSS&lt;/a&gt;."
+
+#: ../utilities/admin.php:315
+msgid "The output will be wrapped in a &lt;DIV&gt; element."
+msgstr "Результат будет обёрнут в  &lt;DIV&gt;."
+
+#: ../utilities/admin.php:320
+msgid "Analytics"
+msgstr "Анализ."
+
+#: ../utilities/admin.php:323
+msgid "Google Analytics"
+msgstr "Google Analytics"
+
+#: ../utilities/admin.php:326
+msgid "Enable Google Analytics"
+msgstr "Включить Google Analytics"
+
+#: ../utilities/admin.php:331
+msgid "Google Analytics Code"
+msgstr "Код Google Analytics"
+
+#: ../utilities/admin.php:333
+msgid "Paste your Google Analytics code snippet here"
+msgstr "Вставьте фрагмент кода Google Analytics сюда"
+
+#: ../utilities/admin.php:336
+msgid "Google Analytics for Administrators"
+msgstr "Google Analytics для админов"
+
+#: ../utilities/admin.php:339
+msgid "Do not load Google Analytics when administrators are logged in"
+msgstr "Не загружать Google Analytics когда работает админ"
+
+#: ../utilities/admin.php:346
+msgid "Save Changes"
+msgstr "Сохранить изменения!"
+
+#: ../utilities/admin.php:347
+msgid "Restore to Default Settings"
+msgstr "Восстановить настройки по умолчанию"
+
+#: ../utilities/ajax-comments.php:78
 msgid "Cannot retrieve the comment."
 msgstr "Неудалось получить комментарий."
+
+#: ../utilities/ajax-comments.php:140
+#: ../utilities/ajax-comments.php:142
+msgid "Sorry, please do not send duplicate comments!"
+msgstr "Будь добр не дублировать комменты."
 
 #: ../utilities/widgets.php:5
 msgid "A search form for your blog"
@@ -767,3 +851,11 @@ msgstr "Текст фида:"
 msgid "Feed URL:"
 msgstr "Ссылка фида:"
 
+#~ msgid "You are posting comments too quickly."
+#~ msgstr "Ты слишком бысто коментишь."
+
+#~ msgid "Error: comment ID not found."
+#~ msgstr "Ошибка: ID комента не найден."
+
+#~ msgid "Description: %s"
+#~ msgstr "Описание: %s."

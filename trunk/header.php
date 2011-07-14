@@ -6,7 +6,15 @@
 <title><?php if ( is_singular() || is_archive() ) { wp_title(''); } else { bloginfo('name'); } ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); _e('/style.css', THEME_NAME); ?>" media="screen" />
 <!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/ie.css" media="screen" /><![endif]-->
-<?php wp_head(); ?>
+<?php
+	$options = &$GLOBALS['simpledark_options'];
+	wp_head();
+	if($options['enable_google_analytics']) {
+		if(!$options['exclude_admin_analytics'] || !current_user_can('manage_options')) {
+			echo $options['google_analytics_code'];
+		}
+	}
+?>
 </head>
 <body <?php body_class(); ?>>
 <div id="page">
@@ -15,7 +23,6 @@
 	<div id="blog-description"><?php bloginfo('description'); ?></div>
 	<div class="top-menu">
 <?php
-		$options = &$GLOBALS['simpledark_options'];
 		$menu_args = 'echo=0&depth=2&container=div&container_class=top-menu-window&theme_location=top-nav&fallback_cb=simpledark_menu';
 		if($options['top_menu_show_home']) {
 			$menu_args = $menu_args . '&show_home=1';

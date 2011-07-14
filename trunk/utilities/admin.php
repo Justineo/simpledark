@@ -6,17 +6,44 @@ class SimpleDarkAdmin {
 	private $bool_options = array();
 	private $int_options = array();
 	private $options = array();
-	private $options_default = array();
+	private static $options_default = array();
 
-	public function __construct(array $options, array $options_default) {
-		$this->options_default = $options_default;
+	public static function get_options_default() {
+		return self::$options_default;
+	}
+
+	public static function init() {
+		self::$options_default = array(
+			'enable_ajax'						 => 1,
+			'enable_ajax_commemt_post'			 => 1,
+			'enable_ajax_commemt_pagenav'		 => 1,
+			'enable_ajax_post_content_pagenav'	 => 1,
+			'enable_ajax_post_pagenav'			 => 1,
+			'enable_ajax_search'				 => 1,
+			'top_menu_show_home'				 => 1,
+			'top_category_menu'					 => 0,
+			'show_allowed_tags'					 => 1,
+			'hide_borders_for_small_images'		 => 1,
+			'enable_comment_images'				 => 0,
+			'enable_at_reply'					 => 1,
+			'ctrl_enter_submit_comment'			 => 1,
+			'comment_quick_edit'				 => 1,
+			'enable_google_analytics'			 => 0,
+			'exclude_admin_analytics'			 => 1,
+			'small_image_size_logic'			 => 'and',
+			'small_image_width'					 => 128,
+			'small_image_height'				 => 128,
+			'search_form_text'					 => __('Search...', THEME_NAME)
+		);
+	}
+
+	public function __construct(array $options) {
 		if(!get_option(SIMPLEDARK_OPTIONS))
-			update_option(SIMPLEDARK_OPTIONS, SimpleDarkOptions::getInstance()->merge_array($this->options_default));
+			update_option(SIMPLEDARK_OPTIONS, SimpleDarkOptions::getInstance()->merge_array(self::$options_default));
 		$this->string_options = isset($options['string']) ? (array)$options['string'] : array();
 		$this->bool_options = isset($options['bool']) ? (array)$options['bool'] : array();
 		$this->int_options = isset($options['int']) ? (array)$options['int'] : array();
 		add_action('admin_menu', array($this,'_admin'));
-//		delete_option(SIMPLEDARK_OPTIONS);
 	}
 
 	public function _admin() {
@@ -42,6 +69,10 @@ class SimpleDarkAdmin {
 		update_option(SIMPLEDARK_OPTIONS, $this->options);
 	}
 
+	public function restore() {
+		update_option(SIMPLEDARK_OPTIONS, self::$options_default);
+	}
+
 	public function _admin_panel() {
 ?>
 <div class="wrap">
@@ -53,7 +84,14 @@ if(isset($_POST['Submit'])) {
 	$this->save($_POST);
 ?>
 	<div id="message" class="updated fade">
-		<p><strong><?php _e('Changes have been saved.', THEME_name); ?></strong></p>
+		<p><strong><?php _e('Changes have been saved.', THEME_NAME); ?></strong></p>
+	</div>
+<?php
+} else if(isset($_POST['Restore'])) {
+	$this->restore();
+?>
+	<div id="message" class="updated fade">
+		<p><strong><?php _e('Default settings have been restored.', THEME_NAME); ?></strong></p>
 	</div>
 <?php
 }
@@ -206,6 +244,15 @@ $small_image_size = array(
 			</td>
 		</tr>
 		<tr valign="top">
+			<th scope="row"><?php _e('Comment Quick Edit', THEME_NAME); ?></th>
+			<td>
+				<label for="comment_quick_edit">
+					<input type="checkbox" <?php if($saved_options['comment_quick_edit']) echo 'checked="checked" '; ?>value="checkbox" id="comment_quick_edit" name="comment_quick_edit" /> <?php _e('Enable comment quick edit', THEME_NAME); ?>
+				</label>
+				<div class="info"><?php _e('Comment authors can edit their comments after submission. After a comment is submitted, users who are not logged in can only edit it within 30 minutes.', THEME_NAME); ?></div>
+			</td>
+		</tr>
+		<tr valign="top">
 			<td colspan="2" class="section-title"><h3><?php _e('Sidebar', THEME_NAME); ?></h3></td>
 		</tr>
 		<tr valign="top">
@@ -297,12 +344,15 @@ $small_image_size = array(
 	</table>
 	<p class="submit">
 		<input class="button-primary" type="submit" value="<?php _e('Save Changes', THEME_NAME); ?>" name="Submit"/>
+		<input class="button-primary" type="submit" value="<?php _e('Restore to Default Settings', THEME_NAME); ?>" name="Restore"/>
 	</p>
 	</form>
 </div>
 <?php
 	}
 }
+
+SimpleDarkAdmin::init();
 
 if(is_admin()){
 	$simpledark_default_option_types = array(
@@ -326,6 +376,7 @@ if(is_admin()){
 			'enable_comment_images',
 			'enable_at_reply',
 			'ctrl_enter_submit_comment',
+			'comment_quick_edit',
 			'strict_comment',
 			'show_footer_license',
 			'show_custom_footer_info',
@@ -343,27 +394,6 @@ if(is_admin()){
 			'small_image_height'
 		)
 	);
-	$options_default = array(
-		'enable_ajax'							=> 1,
-		'enable_ajax_commemt_post'				=> 1,
-		'enable_ajax_commemt_pagenav'			=> 1,
-		'enable_ajax_post_content_pagenav'		=> 1,
-		'enable_ajax_post_pagenav'				=> 1,
-		'enable_ajax_search'					=> 1,
-		'top_menu_show_home'					=> 1,
-		'top_category_menu'						=> 0,
-		'show_allowed_tags'						=> 1,
-		'hide_borders_for_small_images'			=> 1,
-		'enable_comment_images'					=> 0,
-		'enable_at_reply'						=> 1,
-		'ctrl_enter_submit_comment'				=> 1,
-		'enable_google_analytics'				=> 0,
-		'exclude_admin_analytics'				=> 1,
-		'small_image_size_logic'				=> 'and',
-		'small_image_width'						=> 128,
-		'small_image_height'					=> 128,
-		'search_form_text'						=> __('Search...', THEME_NAME)
-	);
-	new SimpleDarkAdmin($simpledark_default_option_types, $options_default);
+	new SimpleDarkAdmin($simpledark_default_option_types);
 }
 ?>

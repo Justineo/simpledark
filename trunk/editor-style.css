@@ -77,10 +77,6 @@ a:hover, a:active {
 	border-bottom-style:solid;
 }
 
-img {
-	-ms-interpolation-mode:bicubic;
-}
-
 .hide {
 	display:none;
 }
@@ -114,11 +110,14 @@ body.mceContentBody {
 
 h1, h2, h3, h4, h5, h6 {
 	color:#eee; text-shadow:0 -1px 0 #111;
+	clear:both;
+	margin-bottom:5px;
 }
 
 h3 {
 	margin-top:10px; padding:2px 8px;
 	background-color:#333;
+	display:inline-block;
 	-moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -126,7 +125,7 @@ h3 {
 }
 
 p {
-	padding:10px 0;
+	margin:5px 0 15px;
 }
 
 img {
@@ -135,6 +134,7 @@ img {
 	-moz-box-shadow:0 0 5px #000;
 	-webkit-box-shadow:0 0 5px #000;
 	box-shadow:0 0 5px #000;
+	-ms-interpolation-mode:bicubic;
 }
 
 a img {
@@ -151,17 +151,19 @@ a img {
 	border:none;
 }
 
-.wp-caption img {
-	border:2px solid #CFCFCF;
-	margin:3px;
+.wp-caption a {
+	display:block;
+	border:none;
 }
 
 .wp-caption-text {
 	text-align:center; color:#999;
+	margin-bottom:0;
 }
 
 table {
 	border:2px solid #3c3c3c;
+	margin-bottom:15px;
 }
 
 caption {
@@ -214,14 +216,6 @@ dd {
 	padding:0;
 }
 
-.wp-caption-dt {
-	font-weight:400;
-}
-
-.wp-caption-dd {
-	padding-bottom:10px;
-}
-
 ol {
 	margin-bottom:10px;
 	margin-left:20px;
@@ -237,7 +231,7 @@ li ol {
 }
 
 ul li {
-	padding:3px 2px 3px 12px;
+	padding:2px 2px 3px 12px;
 	background:url(images/dot.gif) no-repeat -4px 4px;
 	line-height:1.6;
 }
@@ -245,7 +239,7 @@ ul li {
 ol li {
 	list-style-type:decimal; list-style-position:outside;
 	padding:3px 0;
-	line-height:1.5;
+	line-height:1.6;
 }
 
 ul ol li {
@@ -254,7 +248,7 @@ ul ol li {
 }
 
 blockquote {
-	padding:5px 20px; margin:0 5px;
+	padding:5px 20px; margin:0 5px 15px;
 	border:1px solid #3c3c3c; border-left:8px solid #3c3c3c;
 	background-color:#2c2c2c;
 	overflow:auto;
@@ -269,7 +263,24 @@ object {
 	display:block;
 	-moz-box-shadow:0 0 5px #000;
 	-webkit-box-shadow:0 0 5px #000;
+	-khtml-box-shadow:0 0 5px #000;
 	box-shadow:0 0 5px #000;
+}
+
+embed, iframe {
+	border:3px solid #cfcfcf;
+	-moz-box-shadow:0 0 5px #000;
+	-webkit-box-shadow:0 0 5px #000;
+	-khtml-box-shadow:0 0 5px #000;
+	box-shadow:0 0 5px #000;
+}
+
+object embed {
+	border:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	-khtml-box-shadow:none;
+	box-shadow:none;
 }
 
 del, strike {
@@ -292,6 +303,12 @@ em {
 	font-weight:700;
 }
 
+hr {
+	margin:5px 0 10px;
+	background:url(images/hr.gif) no-repeat center center;
+	height:13px;
+}
+
 .gallery-icon {
 	text-align:center;
 }
@@ -308,3 +325,20 @@ em {
 .gallery a {
 	border:none;
 }
+
+.note {
+	padding:5px 10px; margin:0 0 10px;
+	background-color:#2c2c2c;
+	border:1px solid #3c3c3c;
+	color:#999;
+}
+
+.note p {
+	margin:0 0 5px;
+}
+
+.translation {
+	padding-left:50px;
+	background:#2c2c2c url(images/translation.gif) no-repeat 5px 5px;
+}
+
