@@ -683,7 +683,7 @@ body {
 			}
 
 			.format-status .status-timestamp {
-				font-size:11px; font-family:pmingliu,sans-serif; color:#999;
+				font-size:11px; font-family:Verdana,pmingliu,sans-serif; color:#999;
 			}
 
 			.format-quote blockquote {
@@ -753,6 +753,7 @@ body {
 				margin-top:10px; padding:10px 0;
 				font-size:12px; font-weight:700; text-align:center; line-height:16px;
 				overflow:hidden;
+				clear:both;
 			}
 
 			.page .post-pages {
@@ -953,6 +954,10 @@ body {
 					border-top:1px solid #363636;
 				}
 
+				#pings:first-child {
+					border-top:none;
+				}
+
 				#commentform {
 					margin-bottom:10px;
 					overflow:hidden;
@@ -1053,7 +1058,7 @@ body {
 				#respond #cancel-comment-reply-link {
 					position:absolute;
 					top:12px; right:10px;
-					font-size:11px; font-family:pmingliu,sans-serif;
+					font-size:11px; font-family:Verdana,pmingliu,sans-serif;
 				}
 
 				#submit.disabled {
@@ -1404,7 +1409,7 @@ body {
 
 #sidebar #recentcomments .rc-navi {
 	margin-top:10px;
-	font-size:11px; font-family:pmingliu,sans-serif; line-height:1.2;
+	font-size:11px; font-family:Verdana,pmingliu,sans-serif; line-height:1.2;
 }
 
 #sidebar #recentcomments .rc-navi .rc-newest {

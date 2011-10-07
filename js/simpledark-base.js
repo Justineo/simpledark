@@ -721,8 +721,7 @@ $(document).ready(function() {
 		$('#comment').keydown(function(e) {
 			var ev = window.event || e;
 			if(ev != null && ev.ctrlKey && ev.keyCode == 13) {
-				// Comment form in WordPress has an input[name="submit"] which overwrites the object's submit() function, use the function in its prototype to invoke
-				HTMLFormElement.prototype.submit.apply($('#commentform').get(0));
+				$('#submit').click();
 			}
 		});
 	}

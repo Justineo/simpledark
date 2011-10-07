@@ -27,6 +27,8 @@ function simpledark_custom_geshi_styles(&$geshi)
 	$geshi->set_symbols_style('color: #CCC;', false, 2);
 	$geshi->set_symbols_style('color: #CCC;', false, 3);
 	$geshi->set_symbols_style('color: #CCC;', false, 4);
+	$geshi->set_script_style('color: #808080;', false, -1);
+	$geshi->set_script_style('color: #CCFF33;', false, 2);
 	$geshi->set_escape_characters_style('color: #99FF00;', false, 0);
 	$geshi->set_escape_characters_style('color: #99FF00;', false, 1);
 	$geshi->set_escape_characters_style('color: #99FF00;', false, 2);
