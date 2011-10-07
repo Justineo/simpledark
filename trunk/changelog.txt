@@ -255,3 +255,29 @@ Changed jQuery lib to the one comes with WordPress itself.
 Added support for comment smileys selection.
 Added support for comment editing.
 Added support for post formats.
+
+1.3.1
+在CSS中增加了.sticky类的设定。
+微调了字体。
+Added styles for the class 'sticky'.
+Slightly adjusted some font settings.
+
+1.3.2
+微调了WP-Syntax样式。
+修正了Feed小工具中调用变量的错误。(thanks to 荒野无灯)
+修正了一个未定义变量错误。(thanks to willin)
+修正了引用通告列表项DOM ID多了一个'#'的问题。(thanks to willin)
+修正了利用Ctrl+Enter提交评论时AJAX失效的问题。
+在<head>中加入XFN profile链接。
+去除了关闭评论且无已有评论时page页显示的评论相关信息。
+修正了一个未清除图片浮动问题。
+不再使用Google CDN提供的jQuery 1.6.2，升级到主题自带的1.6.4版本。
+Slightly adjusted the styles for WP-Syntax.
+Fixed a wrong call to a variable in feed widget.
+Fixed an undefined variable problem.
+Removed the excessive '#' character in DOM IDs of pingbacks.
+Fixed the problem that AJAX doesn't work when using Ctrl+Enter to post comment.
+Added XFN profile link in <header>.
+Removed comments information when comments closed and there are no existing comments.
+Fixed an uncleared image float.
+Replace jQuery 1.6.2 on Google CDN with jQuery 1.6.4 included with the theme.

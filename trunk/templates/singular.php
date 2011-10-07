@@ -18,7 +18,7 @@ if(have_posts()) {
 	}
 	if(!$post_format || !in_array($format, array('aside', 'link', 'status', 'quote', 'gallery', 'image', 'video', 'audio', 'chat'))) {
 ?>
-			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php if(!is_page()) { the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); } else { printf(__('Posted by %s', THEME_NAME), simpledark_get_the_author_posts_link()); } ?> / <?php if(function_exists('the_views')) { the_views(); echo ' / '; } if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
+			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php if(!is_page()) { the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); } else { printf(__('Posted by %s', THEME_NAME), simpledark_get_the_author_posts_link()); } if(function_exists('the_views')) { echo ' / '; the_views(); } if(!is_page() || comments_open()) { echo ' / '; if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
 			<div class="entry">
 <?php
 		the_content();
@@ -37,7 +37,7 @@ if(have_posts()) {
 <?php
 	} else if($format == 'aside') {
 ?>
-			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); ?> / <?php if(function_exists('the_views')) { the_views(); echo ' / '; } if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
+			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); if(function_exists('the_views')) { echo ' / '; the_views(); } if(!is_page() || comments_open()) { echo ' / '; if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
 			<div class="entry">
 <?php the_content(); ?>
 			</div>
@@ -54,7 +54,7 @@ if(have_posts()) {
 			$anchor_text = $post->post_title;
 		}
 ?>
-			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); ?> / <?php if(function_exists('the_views')) { the_views(); echo ' / '; } if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
+			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); if(function_exists('the_views')) { echo ' / '; the_views(); } if(!is_page() || comments_open()) { echo ' / '; if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
 			<div class="entry">
 <?php
 		if($href) {
@@ -101,7 +101,7 @@ if(have_posts()) {
 		}
 		$quote = "<$quote_type><span class=\"quote-left\">&ldquo;</span>" . trim($quote, '\u0022\u2018\u2019\u0027\u201c\u201d') . "<span class=\"quote-right\">&rdquo;</span></$quote_type>";
 ?>
-			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); ?> / <?php if(function_exists('the_views')) { the_views(); echo ' / '; } if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
+			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); if(function_exists('the_views')) { echo ' / '; the_views(); } if(!is_page() || comments_open()) { echo ' / '; if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
 			<div class="entry">
 				<?php echo $quote; ?>
 <?php
@@ -138,7 +138,7 @@ if(have_posts()) {
 			$title = $post->post_title;
 		}
 ?>
-			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); ?> / <?php if(function_exists('the_views')) { the_views(); echo ' / '; } if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
+			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); if(function_exists('the_views')) { echo ' / '; the_views(); } if(!is_page() || comments_open()) { echo ' / '; if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
 			<div class="entry">
 <?php
 		if($source) {
@@ -160,7 +160,7 @@ if(have_posts()) {
 			$title = $post->post_title;
 		}
 ?>
-			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); ?> / <?php if(function_exists('the_views')) { the_views(); echo ' / '; } if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
+			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); if(function_exists('the_views')) { echo ' / '; the_views(); } if(!is_page() || comments_open()) { echo ' / '; if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
 			<div class="entry">
 <?php
 		if($content) {
@@ -175,7 +175,7 @@ if(have_posts()) {
 	} else if($format == 'chat') {
 		$lines = preg_split("/[\r\n]+/", $post->post_content);
 ?>
-			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); ?> / <?php if(function_exists('the_views')) { the_views(); echo ' / '; } if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
+			<div class="post-meta"><?php the_time(simpledark_time_format('date')); ?> / <?php the_author_posts_link(); _e(' posted in ', THEME_NAME); the_category(', '); if(function_exists('the_views')) { echo ' / '; the_views(); } if(!is_page() || comments_open()) { echo ' / '; if(post_password_required()) { _e('X Comments', THEME_NAME); } else { comments_popup_link(__('No Comments', THEME_NAME), __('1 Comment', THEME_NAME), __('% Comments', THEME_NAME), 'comment-link', __('Comments Off', THEME_NAME)); } } edit_post_link(__('Edit', THEME_NAME), ' / '); ?></div>
 			<div class="entry">
 				<table>
 					<tbody>
@@ -201,11 +201,8 @@ if(have_posts()) {
 		<div class="pagenavi">
 			<span class="previous-page"><?php previous_post_link('%link', '&laquo; %title'); ?></span><span class="next-page"><?php next_post_link('%link', '%title &raquo;'); ?></span>
 		</div>
-<?php } ?>
-		<div id="reaction">
-<?php comments_template('', true); ?>
-		</div>
-<?php
+<?php }
+	comments_template('', true); 
 }
 ?>
 <?php get_footer(); ?>

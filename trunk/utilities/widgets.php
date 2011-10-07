@@ -52,7 +52,7 @@ class SimpleDark_Widget_Feed extends WP_Widget {
 		extract($args);
 		$title = apply_filters('widget_title', $instance['title']);
 		$feed_text = empty($instance['feed_text'])? __('Subscribe Updates', THEME_NAME) : $instance['feed_text'];
-		$feed_url = empty($instance['feed_url'])? get_bloginfo('rss2_url') : (substr(strtoupper($options['feed_url']), 0, 7) == 'HTTP://'? $instance['feed_url'] : 'http://' . $instance['feed_url']);
+		$feed_url = empty($instance['feed_url'])? get_bloginfo('rss2_url') : (substr(strtoupper($instance['feed_url']), 0, 7) == 'HTTP://'? $instance['feed_url'] : 'http://' . $instance['feed_url']);
 ?>
 			<?php echo $before_widget; ?>
 				<?php if($title) echo $before_title . $title . $after_title; ?>

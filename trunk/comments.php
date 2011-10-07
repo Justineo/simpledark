@@ -6,45 +6,54 @@
 	global $comment_page_number_cache;
 	global $paged;
 	$paged = (bool)(get_comment_pages_count() > 1);
+	if($comment_count > 0 || comments_open() || pings_open()) {
 ?>
-			<div id="comments" class="section">
-			<h3><?php _e('Comments', THEME_NAME); ?> (<span class="comment-count"><?php echo post_password_required()? __('X', THEME_NAME) : $comment_count; ?></span>)</h3>
-<?php
-	if(post_password_required()) {
-?>
-			<p class="message">&rsaquo; <?php _e('You must enter the password to view the comments.', THEME_NAME); ?></p>
+		<div id="reaction">
 <?php
 	}
-	else {
-		if($comment_count > 0) {
-			$comments_args = 'type=comment&callback=simpledark_comment';
-			if(get_option('thread_comments')) {
-				$comments_args .= '&max_depth=5';
-			}
+	if($comment_count > 0 || comments_open()) {
 ?>
-			<ol class="comment-list">
+			<div id="comments" class="section">
+				<h3><?php _e('Comments', THEME_NAME); ?> (<span class="comment-count"><?php echo post_password_required()? __('X', THEME_NAME) : $comment_count; ?></span>)</h3>
+<?php
+		if(post_password_required()) {
+?>
+				<p class="message">&rsaquo; <?php _e('You must enter the password to view the comments.', THEME_NAME); ?></p>
+<?php
+		}
+		else {
+			if($comment_count > 0) {
+				$comments_args = 'type=comment&callback=simpledark_comment';
+				if(get_option('thread_comments')) {
+					$comments_args .= '&max_depth=5';
+				}
+?>
+				<ol class="comment-list">
 <?php wp_list_comments($comments_args); ?>
-			</ol>
+				</ol>
 <?php
-		} else {
+			} else {
 ?>
-			<p class="message">&rsaquo; <?php _e('No comments yet.', THEME_NAME); ?></p>
+				<p class="message">&rsaquo; <?php _e('No comments yet.', THEME_NAME); ?></p>
 <?php
-		}
-		if (get_option('page_comments')) {
-			if ($paged) {
+			}
+			if (get_option('page_comments')) {
+				if ($paged) {
 ?>
-			<div class="commentnavi">
-				<?php paginate_comments_links(); ?>
-				<span id="cp_post_id" style="display:none"><?php the_ID(); ?></span>
-				<input id="comment-page-number" type="hidden" value="<?php echo esc_attr( json_encode($comment_page_number_cache) ); ?>" />
-			</div>
+				<div class="commentnavi">
+					<?php paginate_comments_links(); ?>
+					<span id="cp_post_id" style="display:none"><?php the_ID(); ?></span>
+					<input id="comment-page-number" type="hidden" value="<?php echo esc_attr( json_encode($comment_page_number_cache) ); ?>" />
+				</div>
 <?php
+				}
 			}
 		}
 ?>
 			</div>
 <?php
+	}
+	if(comments_open() && !post_password_required()) {
 		$aria_req = ( $req ? " aria-required='true'" : '' );
 		$comment_form_args = array(
 			'fields'				=> apply_filters('comment_form_default_fields', array(
@@ -62,38 +71,38 @@
 			'comment_notes_after'	=> ''
 		);
 		comment_form($comment_form_args);
-		if(!$options['hide_pingbacks']) {
+	}
+	if(!$options['hide_pingbacks'] && pings_open() && !post_password_required()) {
 ?>
 			<div id="pings" class="section">
-			<h3><?php _e('Pingbacks', THEME_NAME); ?> (<?php echo post_password_required()? __('X', THEME_NAME) : $ping_count; ?>)</h3>
+				<h3><?php _e('Pingbacks', THEME_NAME); ?> (<?php echo post_password_required()? __('X', THEME_NAME) : $ping_count; ?>)</h3>
 <?php
-			if($ping_count > 0) {
+		if($ping_count > 0) {
 ?>
-			<ol class="pingbacks">
+				<ol class="pingbacks">
 <?php
-				foreach($pingbacks as $comment) {
+			foreach($pingbacks as $comment) {
 ?>
-				<li class="pingback" id="#comment-<?php comment_ID(); ?>">
-					<div class="comment-meta"><span class="datetime"><?php comment_time(simpledark_time_format('datetime')); ?></span><a class="title" href="<?php comment_author_url() ?>" rel="nofollow<?php if(strpos(get_comment_author_url(), home_url()) != 0) echo ' external'; ?>"><img class="favicon" src="http://www.google.com/s2/favicons?domain=<?php $host = simpledark_get_host(get_comment_author_url()); echo $host; ?>" alt="Favicon of <?php echo $host; ?>" width="16" height="16" /><?php comment_author(); ?></a></div>
-				</li>
-<?php
-				}
-?>
-			</ol>
-<?php
-			} else {
-?>
-			<p class="message">&rsaquo; <?php _e('No pingbacks yet.', THEME_NAME); ?></p>
+					<li class="pingback" id="comment-<?php comment_ID(); ?>">
+						<div class="comment-meta"><span class="datetime"><?php comment_time(simpledark_time_format('datetime')); ?></span><a class="title" href="<?php comment_author_url() ?>" rel="nofollow<?php if(strpos(get_comment_author_url(), home_url()) != 0) echo ' external'; ?>"><img class="favicon" src="http://www.google.com/s2/favicons?domain=<?php $host = simpledark_get_host(get_comment_author_url()); echo $host; ?>" alt="Favicon of <?php echo $host; ?>" width="16" height="16" /><?php comment_author(); ?></a></div>
+					</li>
 <?php
 			}
 ?>
-			</div>
+				</ol>
+<?php
+		} else {
+?>
+				<p class="message">&rsaquo; <?php _e('No pingbacks yet.', THEME_NAME); ?></p>
 <?php
 		}
-	}
-	if(post_password_required()) {
 ?>
 			</div>
+<?php
+	}
+	if($comment_count > 0 || comments_open() || pings_open()) {
+?>
+		</div>
 <?php
 	}
 ?>

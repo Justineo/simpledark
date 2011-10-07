@@ -82,7 +82,7 @@ function simpledark_scripts() {
 		$suffix = SIMPLEDARK_DEBUG ? '' : '.min';
 		$options = &$GLOBALS['simpledark_options'];
 		wp_deregister_script('jquery');
-		wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js', null, '1.6.1');
+		wp_enqueue_script('jquery', get_template_directory_uri() . "/js/jquery-1.6.4.min.js", null, '1.6.4');
 		if ( is_singular() && get_option( 'thread_comments' ) ) {
 			wp_deregister_script( 'comment-reply' );
 			wp_register_script( 'comment-reply', get_template_directory_uri() . "/js/simpledark-threaded-comment$suffix.js", 'jquery' );

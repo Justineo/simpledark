@@ -19,6 +19,7 @@
 	} else if(is_array($args)) {
 		$reply_link = get_comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => ' / ' ) ) );
 	}
+	$is_new_comment = isset($is_new_comment)? $is_new_comment : false;
 	if($options['comment_quick_edit'] && (simpledark_user_can_edit_comment($comment->comment_ID) || $is_new_comment)) {
 		$edit_link = ' / <a class="comment-edit-link" rel="nofollow" ' . (get_option('thread_comments')? 'onclick="return addComment.moveForm(\'comment-' . $comment->comment_ID . '\', \'' . $comment->comment_ID . '\', \'respond\', \'' . $comment->comment_post_ID . '\', \'edit\')" ' : '') . 'href="#respond" title="' . __('Edit comment') . '">' . __('Edit', THEME_NAME) . '</a>';
 	} else {

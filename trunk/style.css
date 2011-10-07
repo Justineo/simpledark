@@ -2,7 +2,7 @@
 Theme Name: SimpleDark
 Theme URI: http://lync.in/projects/simpledark/
 Description: A simple, dark 2-column WordPress theme with support for widgets, custom menu and threaded comments. It includes quite a few AJAX features with flexible configurations. Compatible with WordPress 3.0 and above.
-Version: 1.3.0
+Version: 1.3.2
 Author: Justice
 Author URI: http://lync.in/
 License: GNU General Public License v2.0
@@ -96,6 +96,8 @@ img {
 .hide {
 	display:none;
 }
+
+.sticky {}
 
 .entry .aligncenter {
 	display:block;
@@ -754,6 +756,7 @@ body {
 				margin-top:10px; padding:10px 0;
 				font-size:10px; font-weight:700; text-align:center; line-height:16px;
 				overflow:hidden;
+				clear:both;
 			}
 
 			.page .post-pages {
@@ -952,6 +955,10 @@ body {
 
 				#respond, #pings {
 					border-top:1px solid #363636;
+				}
+
+				#pings:first-child {
+					border-top:none;
 				}
 
 				#commentform {
