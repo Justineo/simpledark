@@ -87,7 +87,7 @@ function reply(author, commentID, commentBoxID) {
 		}
 
 		if (field.val().indexOf(atReplyCode) == -1) {
-		
+
 			// set the content of the textarea as the string to append if the textarea is empty (ignoring white spaces and tabs)
 			if (field.val().replace(/\s|\t|\n/g, '') == '') {
 				field.val(atReplyCode);
@@ -246,7 +246,7 @@ function processContent() {
 			cap.width(cap.width() - 4);
 		});
 	}
-	
+
 	$('.entry img').each(function() {
 		if(this.complete || ($.browser.msie && parseInt($.browser.version) == 6))
 			$(this).trigger('load');
@@ -484,7 +484,7 @@ $(document).ready(function() {
 			}
 		}
 	} else {
-		list.width(stops[stops.length - 1]).animate({'margin-left': menuWindow.width() - stops[stops.length - 1] - 5}, 500);
+		list.width(stops[stops.length - 1] + 1).animate({'margin-left': menuWindow.width() - stops[stops.length - 1] - 5}, 500);
 	}
 	list.children('li').mouseenter(function() {
 		menuWindow.stop().height($(document).height() - menuWindow.offset().top - 45);
@@ -496,12 +496,12 @@ $(document).ready(function() {
 		menuWindow.animate({'height':45}, 100);
 		$(this).children('a').removeClass('hover');
 	});
-	
+
 	/******************
 	 * Preload Images *
 	 ******************/
 	loadImage(scriptParams['tmpldir'] + '/images/loading.gif');
-	
+
 	/**************************
 	 * Internal Anchor Easing *
 	 **************************/
@@ -565,7 +565,7 @@ $(document).ready(function() {
 	 * Post Content Area *
 	 *********************/
 	processContent();
-	
+
 	/* WP-Syntax Support */
 	$('#content').delegate('.wp_syntax_wrapper', 'hover', function(event) {
 		if (event.type == 'mouseenter') {
@@ -656,7 +656,7 @@ $(document).ready(function() {
 			return false;
 		});
 	}
-	
+
 	/* Cancel Comment Edit or Reply Link Behaviour */
 	var cancelLinkElement = $("#cancel-comment-reply-link");
 	if(cancelLinkElement.length > 0) {
